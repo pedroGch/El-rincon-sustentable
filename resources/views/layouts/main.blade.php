@@ -13,15 +13,16 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav >
 
         </nav>
         <main class="container py-3">
             <!-- espacio cedido a templates anexos -->
             @yield('content')
         </main>
-        <footer class="footer">
-            <p>Parcial 1</p>
+        <footer>
+            <p>Portales y Comercio Electrónico - Parcial 1</p>
+            <p>Gonzalez Chavez Pedro - Scotto Rocío - Valdiviezo Ezequiel</p>
         </footer>
     </div>
 </body>

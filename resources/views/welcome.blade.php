@@ -5,8 +5,8 @@
 
 {{-- @section('title') Página Principal @endsection --}}
 
-@section('title', 'Página Principal')
+@section('title', 'Inicio')
 
 @section('content')
-<h1>Página Principal</h1>
+<h1>Bienvenidos al Rincón Sustentable</h1>
 @endsection
