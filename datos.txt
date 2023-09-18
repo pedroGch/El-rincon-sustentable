@@ -1,0 +1,9 @@
+
+Estudiantes: 
+  nombre y apellido: Pedro Gozalez Chavez.
+  Carrera: Diseño y programación web.
+  Materia: Portales y Comercio Electrónico.
+  Cuatrimestre: 4to cuatrimestre.
+  Comisión: 
+  Profesor: Santiago Gallino.
+  Carácter de entrega: 1er parcial.
