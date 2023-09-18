@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AboutController extends Controller
 {
     public function index()
     {
-        return view('about');
+        return view('nosotros');
     }
 
     // acá vamos a ir agregando los métodos que necesitemos para renderizar las otras vistas
