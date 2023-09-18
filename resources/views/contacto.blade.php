@@ -1,11 +1,12 @@
 <?PHP
 ?>
 
+
 @extends('layouts.main')
 
 {{-- @section('title') Página Principal @endsection --}}
 
-@section('title', 'Inicio')
+@section('title', 'Contacto')
 
 @section('content')
 <h1>Contacto</h1>
