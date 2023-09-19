@@ -14,8 +14,8 @@
 <body>
     <div id="app" class="min-h-screen flex flex-col">
         <nav class="w-screen h-[85px] bg-principal drop-shadow-xl flex items-center" >
-            <div class="mx-6 bg-white w-[70px] h-[70px] rounded-full shadow-lg">
-                <img src="{{ asset('img/logo-png.png') }}" alt="logo del rincon sustentable" class=" w-screen my-2 rounded-full ">
+            <div class="mx-6 bg-white w-[70px] h-[85px]  shadow-lg">
+                <img src="{{ asset('img/logo.png') }}" alt="logo del rincon sustentable" class=" w-screen my-2  ">
             </div>
             <ul class="text-white flex flex-row">
                 <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Inicio</a></li>
