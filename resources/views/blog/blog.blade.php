@@ -13,7 +13,7 @@
     <h2 class="text-principal my-4 text-4xl font-semibold">Blog</h2>
   </div> 
   <div class="mx-6 flex flex-row flex-wrap">
-    <div class="card flex flex-col w-full lg:w-1/2 p-4">
+    <article class="card flex flex-col w-full lg:w-1/2 p-4">
       <div class="card-header">
         <img src="{{ asset('img/calefactor-solar.jpeg') }}" alt="foto de calefactor solar">
       </div>
@@ -27,8 +27,8 @@
       <div class="card-footer">
         <button class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">Leer más</button>
       </div>
-    </div>
-    <div class="card flex flex-col w-full lg:w-1/2 p-4">
+    </article>
+    <article class="card flex flex-col w-full lg:w-1/2 p-4">
       <div class="card-header">
         <img src="{{ asset('img/calefactor-solar.jpeg') }}" alt="foto de calefactor solar">
       </div>
@@ -42,8 +42,8 @@
       <div class="card-footer">
         <button class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">Leer más</button>
       </div>
-    </div>
-    <div class="card flex flex-col w-full lg:w-1/2 p-4">
+    </article>
+    <article class="card flex flex-col w-full lg:w-1/2 p-4">
       <div class="card-header">
         <img src="{{ asset('img/calefactor-solar.jpeg') }}" alt="foto de calefactor solar">
       </div>
@@ -57,8 +57,8 @@
       <div class="card-footer">
         <button class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">Leer más</button>
       </div>
-    </div>
-    <div class="card flex flex-col w-full lg:w-1/2 p-4">
+    </article>
+    <article class="card flex flex-col w-full lg:w-1/2 p-4">
       <div class="card-header">
         <img src="{{ asset('img/calefactor-solar.jpeg') }}" alt="foto de calefactor solar">
       </div>
@@ -72,7 +72,7 @@
       <div class="card-footer">
         <button class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">Leer más</button>
       </div>
-    </div>
+    </article>
   </div>
   
 </section>
