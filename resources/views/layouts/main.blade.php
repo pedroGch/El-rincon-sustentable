@@ -13,8 +13,18 @@
 
 <body>
     <div id="app">
-        <nav >
+        <nav class="w-screen h-[85px] bg-principal drop-shadow-xl flex items-center" >
+            <div class="mx-6 bg-white w-[70px] h-[70px] rounded-full">
 
+            </div>
+            <ul class="text-white flex flex-row">
+                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Inicio</a></li>
+                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Tienda</a></li>
+                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Noticias</a></li>
+                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Blog</a></li>
+                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Contacto</a></li>
+                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Nosotros</a></li>
+            </ul>
         </nav>
         <main class="container py-3">
             <!-- espacio cedido a templates anexos -->
