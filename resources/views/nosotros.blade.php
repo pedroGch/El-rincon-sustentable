@@ -8,11 +8,13 @@
 @section('title', 'Nosotros')
 
 @section('content')
-<h1>Nosotros</h1>
-
+<section class="mx-auto max-w-screen-xl">
+  <div class="flex justify-center">
+    <h2 class="text-principal my-4 text-4xl font-semibold">Nosotros</h2>
+  </div>
 <div>
   <div>
-    <img src="" alt="">
+    <img src="../public/img/nosotros.webp" alt="">
   </div>
   <div>
       <p>Desde 1980 nos enorgullece ser una tienda comprometida con la promoción de prácticas responsables y sostenibles que ayuden a preservar nuestro planeta.</p>
@@ -30,7 +32,7 @@
 <div>
   <div>
     <div>
-      <img src="" alt="">
+      <img src="../public/img/emp-3.webp" alt="">
     </div>
     <div>
       <p>Ernesto Arriaga</p>
@@ -39,7 +41,7 @@
   </div>
   <div>
     <div>
-      <img src="" alt="">
+      <img src="../public/img/emp-2.webp" alt="">
     </div>
     <div>
       <p>Micaela Arriaga</p>
@@ -48,7 +50,7 @@
   </div>
   <div>
     <div>
-      <img src="" alt="">
+      <img src="../public/img/emp-4.webp" alt="">
     </div>
     <div>
       <p>Federico Risso</p>
@@ -57,7 +59,7 @@
   </div>
   <div>
     <div>
-      <img src="" alt="">
+      <img src="../public/img/emp-1.webp" alt="">
     </div>
     <div>
       <p>Andres Barcala</p>
@@ -65,4 +67,5 @@
     </div>
   </div>
 </div>
+</section>
 @endsection
