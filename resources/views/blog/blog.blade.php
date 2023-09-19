@@ -10,8 +10,8 @@
 @section('content')
 <section class="mx-auto max-w-screen-xl">
   <div class="flex justify-center">
-    <h2 class="text-principal my-4 text-4xl font-semibold">Blog</h2>
-  </div> 
+    <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Blog</h2>
+  </div>
   <div class="mx-6 flex flex-row flex-wrap">
     <article class="card flex flex-col w-full lg:w-1/2 p-4">
       <div class="card-header">
@@ -74,7 +74,7 @@
       </div>
     </article>
   </div>
-  
+
 </section>
 @endsection
 

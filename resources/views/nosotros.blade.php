@@ -10,7 +10,7 @@
 @section('content')
 <section class="mx-auto max-w-screen-xl">
   <div class="flex justify-center">
-    <h2 class="text-principal my-4 text-4xl font-semibold">Nosotros</h2>
+    <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Nosotros</h2>
   </div>
 <div class="flex flex-wrap">
   <div class="flex-1 p-10">

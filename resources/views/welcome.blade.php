@@ -8,6 +8,6 @@
 @section('title', 'Inicio')
 
 @section('content')
-<h1>Bienvenidos al Rincón Sustentable</h1>
-<h2>Novedades</h2>
+<h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Bienvenidos al Rincón Sustentable</h2>
+
 @endsection
