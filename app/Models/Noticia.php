@@ -14,7 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $creador // FK de usuarios
  *
  */
-class Blog extends Model
+class Noticia extends Model
 {
   //use HasFactory;
 
