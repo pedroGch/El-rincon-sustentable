@@ -21,8 +21,7 @@
             <ul class="text-white flex flex-row">
                 <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/') ?>">Inicio</a></li>
                 <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/nosotros') ?>">Nosotros</a></li>
-                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Tienda</a></li>
-                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="#">Noticias</a></li>
+                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/tienda') ?>">Tienda</a></li>
                 <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/blog') ?>">Blog</a></li>
                 <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/contacto') ?>">Contacto</a></li>
             </ul>
