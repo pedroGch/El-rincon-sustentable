@@ -18,3 +18,4 @@ Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index']);
 Route::get('/nosotros', [\App\Http\Controllers\AboutController::class, 'index']);
 Route::get('/contacto', [\App\Http\Controllers\ContactoController::class, 'index']);
 Route::get('/tienda', [\App\Http\Controllers\ProductoController::class, 'index']);
+Route::get('/blog/{id}/leer_mas', [\App\Http\Controllers\BlogController::class, 'leerCompleto']);
