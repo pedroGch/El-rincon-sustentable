@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->strign('nombre_usuario', 256);
+            $table->string('nombre_usuario', 256);
             $table->string('rol', 256);
             $table->string('password', 256);
+            $table->string('codigo_postal', 256)->nullable();
             $table->timestamps();
         });
     }

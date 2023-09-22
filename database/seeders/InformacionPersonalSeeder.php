@@ -19,25 +19,29 @@ class InformacionPersonalSeeder extends Seeder
             'id' => 1,
             'nombre' => 'pedro_gch',
             'apellido' => 'gonzalez',
-            'email' => 'pedro.gonzalez@davinci.edu.ar'
+            'email' => 'pedro.gonzalez@davinci.edu.ar',
+            'codigo_postal' => ''
           ],
           [
             'id' => 2,
             'nombre' => 'ro_scotto',
             'apellido' => 'scotto',
-            'email' => 'rocio_scotto@davinci.edu.ar'
+            'email' => 'rocio_scotto@davinci.edu.ar',
+            'codigo_postal' => ''
           ],
           [
             'id' => 3,
             'nombre' => 'Ezequiel',
             'apellido' => 'valdiviezo',
-            'email' => 'jose.grillo@davinci.edu.ar'
+            'email' => 'jose.grillo@davinci.edu.ar',
+            'codigo_postal' => ''
           ],
           [
             'id' => 4,
             'nombre' => 'jose',
             'apellido' => 'grillo',
-            'email' => '@davinci.edu.ar'
+            'email' => 'jose.grillo@davinci.edu.ar',
+            'codigo_postal' => ''
           ],
         ]
       );
