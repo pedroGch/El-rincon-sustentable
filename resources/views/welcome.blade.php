@@ -59,7 +59,7 @@
           </button>
       </div>
     </section>
-    <section class="mx-auto max-w-screen-xl">
+    <section class="mb-4 mx-auto max-w-screen-xl">
       <div class="flex justify-center">
         <h2 class="text-principal my-6 mt-14 text-4xl font-semibold">Bienvenidos al Rincón Sustentable</h2>
     </div>
@@ -81,6 +81,15 @@
         </div>
       </div>
     </div>
+    </section>
+
+    <section class="mb-8 mx-auto w-full bg-principal drop-shadow-xl" >
+      <div class="mx-auto py-5 max-w-screen-xl" >
+        <p class="mt-12 pb-3 text-2xl text-center italic text-white">En nuestro blog, podrás encontrar información útil y consejos prácticos para ayudarte a reducir el desperdicio, ahorrar energía y crear un hogar más sostenible para disminuir tu impacto ambiental en la vida cotidiana. </p>
+          <p class="pb-8 text-2xl text-center italic text-white" >¡Vos también podés ser parte!</p>
+          <div class="flex justify-center" ><a href="<?= url('/blog') ?>" class=" my-4 py-3 mb-10 px-6 bg-white rounded text-principal font-semibold text-lg drop-shadow-xl">VER MÁS</a></div>
+      </div>
+
     </section>
 
 @endsection
