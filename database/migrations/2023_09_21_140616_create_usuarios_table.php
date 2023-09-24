@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('nombre_usuario', 256);
             $table->string('rol', 256);
             $table->string('password', 256);
-            $table->string('codigo_postal', 256)->nullable();
             $table->timestamps();
         });
     }
