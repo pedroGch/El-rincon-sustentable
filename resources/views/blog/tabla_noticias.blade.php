@@ -41,6 +41,11 @@
                 <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">eliminar</button>
               </form>
             </td>
+            <td>
+              <form action="{{ url('/blog/' . $noticia->id . '/leer_mas') }}" method="GET">
+                <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">Leer más</button>
+              </form>
+            </td>
           </tr>
         <?php
           endforeach
