@@ -20,6 +20,9 @@ Route::get('/contacto', [\App\Http\Controllers\ContactoController::class, 'index
 Route::get('/tienda', [\App\Http\Controllers\ProductoController::class, 'index']);
 Route::get('/producto/{id}', [\App\Http\Controllers\ProductoController::class, 'detalleProducto']);
 Route::get('/blog/{id}/leer_mas', [\App\Http\Controllers\BlogController::class, 'leerCompleto']);
+Route::get('/blog/gestor_noticias', [\App\Http\Controllers\BlogController::class, 'obtenerNoticias']);
+Route::get('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'editarNoticia']);
+Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia']);
 Route::get('/iniciar_sesion', [\App\Http\Controllers\SesionController::class, 'iniciar_sesion']);
 Route::get('/crear_cuenta', [\App\Http\Controllers\SesionController::class, 'crear_cuenta']);
 Route::post('/validar_usuario', [\App\Http\Controllers\SesionController::class, 'validar_usuario']);

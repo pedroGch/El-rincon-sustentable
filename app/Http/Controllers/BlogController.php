@@ -23,5 +23,27 @@ class BlogController extends Controller
     return view('blog.detalle', ['noticia' => Noticia::findOrFail($id)]);
   }
 
+  public function obtenerNoticias()
+  {
+    $noticias = Noticia::all();
+    return view('blog.tabla_noticias', ["noticias" => $noticias]);
+  }
+
+  public function borrarNoticia(int $id)
+  {
+    return null;
+  }
+
+  public function editarNoticia(int $id)
+  {
+    return null;
+  }
+
+  public function crearNoticia(Request $request)
+  {
+    return null;
+  }
+
+
   // acá vamos a ir agregando los métodos que necesitemos para renderizar las otras vistas
 }
