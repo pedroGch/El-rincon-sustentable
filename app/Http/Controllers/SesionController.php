@@ -22,6 +22,6 @@ class SesionController extends Controller
   }
   public function crear_cuenta()
   {
-    return view('welcome');
+    return view('crear_cuenta');
   }
 }
