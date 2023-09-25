@@ -31,7 +31,11 @@ class BlogController extends Controller
 
   public function borrarNoticia(int $id)
   {
-    return null;
+    $noticia = Noticia::findOrFail($id);
+    $noticia->delete();
+    return redirect('/blog/gestor_noticias')
+        ->with('status.message', 'El Articulo <b>' . e($noticia->titulo) . '</b> fue eliminada con éxito.');
+
   }
 
   public function editarNoticia(int $id)

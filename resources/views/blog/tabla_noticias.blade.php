@@ -21,35 +21,24 @@
         </tr>
       </thead>
       <tbody>
-        <?php
-          foreach ($noticias as $noticia):
-        ?>
+        @foreach ($noticias as $noticia)
           <tr>
             <td>{{$noticia->id}}</td>
-          </tr>
-          <tr>
             <td>{{$noticia->titulo}}</td>
-          </tr>
-          <tr>
             <td>
               <form action="{{ url('/blog/' . $noticia->id . '/editar') }}" method="POST">
                 <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">editar</button>
               </form>
-            </td>
-            <td>
               <form action="{{ url('/blog/' . $noticia->id . '/eliminar') }}" method="POST">
+                @csrf
                 <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">eliminar</button>
               </form>
-            </td>
-            <td>
               <form action="{{ url('/blog/' . $noticia->id . '/leer_mas') }}" method="GET">
                 <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">Leer más</button>
               </form>
             </td>
           </tr>
-        <?php
-          endforeach
-        ?>
+        @endforeach
       </tbody>
     </table>
   </div>
