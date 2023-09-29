@@ -11,7 +11,8 @@
     <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Crear Noticia</h2>
   </div>
   <div class="flex-1 my-4 mx-6 px-6">
-    <form action="#" method="POST" id="form-contacto" class="">
+    <form action="{{url('/blog/noticia/nueva')}}" method="POST" id="form-contacto" class="">
+      @csrf
       <label for="nombre" class="block font-bold my-2"> título </label>
       <input type="text" name="nombre" id="nombre" class="border border-gray-500 rounded p-2 w-full">
 
