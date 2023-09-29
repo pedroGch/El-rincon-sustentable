@@ -27,6 +27,6 @@ Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index']);
 Route::get('/blog/{id}/leer_mas', [\App\Http\Controllers\BlogController::class, 'leerCompleto']);
 Route::get('/blog/gestor_noticias', [\App\Http\Controllers\BlogController::class, 'obtenerNoticias']);
 Route::get('/blog/noticia/nueva', [\App\Http\Controllers\BlogController::class, 'formularioCrearNoticia']);
-//Route::post('/blog/noticia/nueva', [\App\Http\Controllers\BlogController::class, 'crearNoticia']);
+Route::post('/blog/noticia/nueva', [\App\Http\Controllers\BlogController::class, 'crearNoticia']);
 Route::get('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'editarNoticia']);
 Route::post('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia']);
