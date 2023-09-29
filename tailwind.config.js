@@ -14,8 +14,9 @@ module.exports = {
         'secundario' : '#97532c',
         'terciario': '#e5d620'
       },
-      backgroundImage:{
-
+      fontFamily:{
+        'sans' : ['Ubuntu'],
+        'lemonada' : ['Lemonada']
       }
     },
   },

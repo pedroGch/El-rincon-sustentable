@@ -61,7 +61,7 @@
     </section>
     <section class="mb-4 mx-auto max-w-screen-xl">
       <div class="flex justify-center">
-        <h2 class="text-principal my-6 mt-14 text-4xl font-semibold">Bienvenidos al Rincón Sustentable</h2>
+        <h2 class="text-principal my-6 mt-14 text-4xl font-semibold">Bienvenidos al <span class="font-lemonada">Rincón Sustentable</span></h2>
     </div>
 
     <div class="container">
