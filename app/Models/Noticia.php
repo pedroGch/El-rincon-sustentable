@@ -6,13 +6,28 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * App\Models\Noticia
+ *
  * @property integer $id
  * @property string $titulo
  * @property string $imagen
  * @property string $alt
  * @property string $contenido
  * @property int $creador // FK de usuarios
- *
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia whereAlt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia whereContenido($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia whereCreador($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia whereImagen($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia whereTitulo($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Noticia whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Noticia extends Model
 {
