@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var \App\Models\Noticia[]|\Illuminate\Database\Eloquent\Collection $noticias
+*/
+?>
 @extends('layouts.main')
 
 {{-- @section('title') Blog @endsection --}}
