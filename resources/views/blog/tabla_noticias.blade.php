@@ -11,6 +11,9 @@
   <div class="flex justify-center">
     <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Gestor de noticias</h2>
   </div>
+  <div class="flex justify-center">
+    <a href="<?= url('/blog/formCrearNoticia') ?>">Crear noticia</a>
+  </div>
   <div class="mx-6 flex flex-row flex-wrap">
     <table>
       <thead>

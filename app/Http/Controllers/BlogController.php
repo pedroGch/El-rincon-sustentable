@@ -8,12 +8,6 @@ class BlogController extends Controller
 {
   public function index()
   {
-    //vamos a usar el modelo de noticia para traer todas las noticias
-    //de la tabla, y poder listarlas en pantalla
-    //si queremos traer todos los registro de una tabla
-    //podemos usar el metodo all
-    //ese metodo retorna un array con todos los registros de la tabla
-    //convertidos a clases del modelo
     $noticias = Noticia::all();
     return view('blog.blog', ["noticias" => $noticias]);
   }
@@ -41,6 +35,11 @@ class BlogController extends Controller
   public function editarNoticia(int $id)
   {
     return null;
+  }
+
+  public function formularioCrearNoticia(Request $request)
+  {
+    return view('blog.formulario_alta_noticia');
   }
 
   public function crearNoticia(Request $request)
