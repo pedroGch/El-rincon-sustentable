@@ -13,7 +13,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $imagen
  * @property string $alt
  * @property string $contenido
- * @property int $creador // FK de usuarios
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|Noticia newModelQuery()
@@ -34,4 +33,16 @@ class Noticia extends Model
   //use HasFactory;
 
   protected $table = 'noticias';
+  protected $fillable = ['titulo','imagen','alt','contenido'];
+
+  public static $rules = [
+    'titulo' => 'required|max:255',
+    'contenido' => 'required'
+  ];
+
+  public static $errorMessages = [
+    'titulo.required'=> 'El título es requerido',
+    'titulo.max'=> 'El título no puede contener más de 255 carateres',
+    'contenido.required'=> 'La publicación debe tener un contenido',
+  ];
 }
