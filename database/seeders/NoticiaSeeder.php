@@ -25,7 +25,6 @@ class NoticiaSeeder extends Seeder
         Nuestros calefactores solares utilizan paneles solares para capturar la energía del sol y convertirla en calor, lo que significa que no se emiten gases de efecto invernadero durante su uso. Además, nuestros calefactores solares son altamente eficientes, lo que significa que necesitan menos energía para calentar tu hogar en comparación con los sistemas de calefacción tradicionales.
 
         Los calefactores solares también son una excelente opción para los hogares que desean independizarse de la red eléctrica y reducir su dependencia de los combustibles fósiles. En nuestra tienda online, ofrecemos una amplia variedad de calefactores solares para satisfacer las necesidades de cada hogar, desde calefactores portátiles hasta sistemas de calefacción central.',
-          'creador' => 1
         ],
         [
           'id' => 2,
@@ -39,7 +38,6 @@ class NoticiaSeeder extends Seeder
           El informe también destaca la necesidad de transitar hacia una economía más sostenible, con la utilización de fuentes de energía renovable y la implementación de prácticas de producción y consumo más responsables.
 
           En nuestra tienda online, ofrecemos una amplia variedad de productos sostenibles, como paneles solares, calefactores solares y productos para el compostaje, con el objetivo de ayudar a los clientes a reducir su huella de carbono y aportar a la lucha contra la crisis climática.',
-          'creador' => 2
 
         ],
         [
@@ -52,7 +50,6 @@ class NoticiaSeeder extends Seeder
           La pirólisis funciona calentando los desechos plásticos en ausencia de oxígeno, lo que los convierte en gas. Este gas se puede enfriar y condensar para producir una variedad de productos útiles. Esta tecnología es muy prometedora porque puede procesar una amplia gama de plásticos, incluidos los tipos difíciles de reciclar, como el PVC.
 
           En nuestra tienda online, fomentamos el uso de productos reciclados y el reciclaje en general. Ofrecemos una amplia gama de productos para el reciclaje en el hogar, como contenedores de reciclaje y herramientas para el compostaje.',
-          'creador' => 1
 
         ],
         [
@@ -65,7 +62,6 @@ class NoticiaSeeder extends Seeder
           En los últimos años, el costo de la energía solar ha disminuido significativamente, lo que ha hecho que sea más asequible para los hogares y las empresas. Además, las innovaciones tecnológicas en la industria solar han mejorado la eficiencia de los paneles solares, lo que significa que los hogares pueden obtener más energía de cada panel.
 
           En nuestra tienda online, ofrecemos una amplia gama de productos solares, desde paneles solares hasta cargadores y lámparas solares, todos diseñados para ayudarte a reducir tu huella de carbono. Al invertir en energía solar, no solo estás haciendo tu parte para cuidar el medio ambiente, sino que también estás ahorrando dinero a largo plazo en tu factura de energía.',
-          'creador' => 2
 
         ]
       ]
