@@ -37,10 +37,9 @@
               <form action="{{ url('/blog/' . $noticia->id . '/editar') }}" method="POST">
                 <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">editar</button>
               </form>
-              <form action="{{ url('/blog/' . $noticia->id . '/eliminar') }}" method="POST">
-                @csrf
-                <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">eliminar</button>
-              </form>
+
+                <button type="button" onclick="borrarNoticia({{$noticia->id}})" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">eliminar</button>
+
               <form action="{{ url('/blog/' . $noticia->id . '/leer_mas') }}" method="GET">
                 <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">Leer más</button>
               </form>
@@ -50,6 +49,30 @@
       </tbody>
     </table>
   </div>
-
 </section>
+
+<script>
+  function borrarNoticia(id) {
+
+    Swal.fire({
+    title: '¿Estas seguro que queres elminar la noticia?.',
+    text: "nombre de la noticia",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, ¡borrar!.',
+    cancelButtonText: 'Mejor no.'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`/blog/${id}/eliminar`,{
+          method:'POST',
+          body:{id: id}
+        })
+      }
+    })
+
+
+  }
+</script>
 @endsection

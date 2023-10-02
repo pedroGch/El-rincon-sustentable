@@ -10,7 +10,6 @@
 
     <title> @yield('title') :: El Rincón Sustentable</title>
 </head>
-
 <body>
     <div id="app" class="min-h-screen flex flex-col">
         <nav class="w-screen h-[85px] bg-principal drop-shadow-xl flex items-center" >
@@ -128,11 +127,6 @@
       type="text/javascript"
       src="./../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">
     </script>
-  <script>
-    import Swal from 'sweetalert2'
-
-    // CommonJS
-    const Swal = require('sweetalert2')
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
