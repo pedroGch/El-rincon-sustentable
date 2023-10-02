@@ -29,6 +29,11 @@
             </ul>
         </nav>
         <main class="container mx-auto flex-grow">
+            @if (\Session::has('status.message'))
+              <div>
+                {{\Session::get('status.message')}}
+              </div>
+            @endif
             <!-- espacio cedido a templates anexos -->
             @yield('content')
         </main>
@@ -123,6 +128,11 @@
       type="text/javascript"
       src="./../node_modules/tw-elements/dist/js/tw-elements.umd.min.js">
     </script>
-</body>
+  <script>
+    import Swal from 'sweetalert2'
 
+    // CommonJS
+    const Swal = require('sweetalert2')
+  </script>
+</body>
 </html>
