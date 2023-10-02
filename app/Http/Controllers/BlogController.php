@@ -37,14 +37,20 @@ class BlogController extends Controller
     return null;
   }
 
-  public function formularioCrearNoticia(Request $request)
+  public function formularioCrearNoticia()
   {
     return view('blog.formulario_alta_noticia');
   }
 
   public function crearNoticia(Request $request)
   {
-    return null;
+    //$data = $request->except(['_token']);
+    $request->validate(Noticia::$rules,Noticia::$errorMessages);
+
+    $data = $request->only(['titulo','imagen','alt','contenido']);
+    Noticia::create($data);
+    return redirect('/blog/gestor_noticias')
+      ->with('status.message', 'La noticia fue correctamente agregada');
   }
 
 
