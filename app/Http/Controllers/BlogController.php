@@ -28,7 +28,7 @@ class BlogController extends Controller
     $noticia = Noticia::findOrFail($id);
     $noticia->delete();
     return redirect('/blog/gestor_noticias')
-        ->with('status.message', 'El Articulo <b>' . e($noticia->titulo) . '</b> fue eliminada con éxito.');
+        ->with('status.message', 'El Articulo ' . e($noticia->titulo) . ' fue eliminada con éxito.');
 
   }
 
