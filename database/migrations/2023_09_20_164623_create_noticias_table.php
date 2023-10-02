@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('noticias', function (Blueprint $table) {
             $table->id();
             $table->string('titulo', 256);
-            $table->string('imagen', 256);
-            $table->string('alt', 256);
-            $table->text('contenido')->nullable();
-            $table->unsignedInteger('creador');
+            $table->string('imagen', 256)->nullable();
+            $table->string('alt', 256)->nullable();
+            $table->text('contenido');
             // created_at, updated_at
             $table->timestamps();
         });
