@@ -10,9 +10,9 @@
     </div>
 
     <section class="mx-auto max-w-screen-xl">
-        <div class="flex flex-wrap">
+        <div class="flex flex-row flex-wrap">
           @foreach ($productos as $producto)
-            <div class="flex-1 m-10">
+            <div class="flex flex-col w-full lg:w-1/4 md:w-1/2 p-4">
               <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                   <div class="relative overflow-hidden bg-cover bg-no-repeat" data-te-ripple-init
                       data-te-ripple-color="light">
