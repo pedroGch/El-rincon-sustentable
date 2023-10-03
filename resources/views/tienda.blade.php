@@ -28,7 +28,7 @@
                           {{$producto->nombre_prod}}
                       </h5>
                       <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                        {{$producto->descripcion}}
+                        {{$producto->descripcion_reducida()}}
                       </p>
                       <form action="{{ url('/producto/' . $producto->id ) }}" method="GET">
                         <button type="submit"
