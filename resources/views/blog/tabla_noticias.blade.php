@@ -65,10 +65,8 @@
     cancelButtonText: 'Mejor no.'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`/blog/${id}/eliminar`,{
-          method:'POST',
-          body:{id: id}
-        })
+        //fetch(`${id}/eliminar`)
+        fetch(`${id}/eliminar`,{method: 'POST', body: {id:id}})
       }
     })
 
