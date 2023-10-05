@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * @var \Illuminate\Support\ViewErrorBag $errors
 */
 ?>
 @extends('layouts.main')
