@@ -28,6 +28,7 @@ Route::get('/blog/{id}/leer_mas', [\App\Http\Controllers\BlogController::class, 
 Route::get('/blog/gestor_noticias', [\App\Http\Controllers\BlogController::class, 'obtenerNoticias']);
 Route::get('/blog/noticia/nueva', [\App\Http\Controllers\BlogController::class, 'formularioCrearNoticia']);
 Route::post('/blog/noticia/nueva', [\App\Http\Controllers\BlogController::class, 'crearNoticia']);
-Route::get('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'editarNoticia']);
+Route::get('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'formularioEditarNoticia']);
+Route::post('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'editarNoticia']);
 //Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia'])->whereNumber('id');
-Route::post('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia'])->whereNumber('id');
+Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia'])->whereNumber('id');
