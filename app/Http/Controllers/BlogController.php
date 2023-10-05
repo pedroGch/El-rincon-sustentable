@@ -32,9 +32,31 @@ class BlogController extends Controller
 
   }
 
-  public function editarNoticia(int $id)
+  public function formularioEditarNoticia(int $id)
   {
-    return null;
+    return view('blog.formulario_edit_noticia',['noticia' => Noticia::findOrFail($id)]);
+  }
+
+  public function editarNoticia(int $id, Request $request)
+  {
+    dd($request);
+    //buscamos la noticia que queremos editar
+    $noticia = Noticia::findOrFail($id);
+
+    //validamos con las reglas los datos del request
+    $request->validate(Noticia::$rules,Noticia::$errorMessages);
+
+    //preguntamos si se subio una imagen
+    if($request->hasFile('imagen')){
+      //guardamos la imagen en la carpeta public
+
+      dd("hola");
+      $request->file('imagen')->store('noticias');
+    }
+    //actualizamos los campos menos el de token
+    $noticia->update($request->except(['_token']));
+    return redirect('/blog/gestor_noticias')
+      ->with('status.message', 'La noticia fue correctamente editada');
   }
 
   public function formularioCrearNoticia()
