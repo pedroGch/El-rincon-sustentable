@@ -1,9 +1,17 @@
-
 Estudiantes: 
-  nombre y apellido: Pedro Gozalez Chavez.
-  Carrera: Diseño y programación web.
+  Carrera: Diseño y Programación Web.
   Materia: Portales y Comercio Electrónico.
   Cuatrimestre: 4to cuatrimestre.
-  Comisión: 
-  Profesor: Santiago Gallino.
+  Año: 2023
+  Turno: Noche (virtual)
+  Comisión: DWN4BV
+  Apellido y Nombre: Gonzalez Chavez, Pedro.
+                     Valdiviezo, Ezequiel Francisco.
+                     Scotto, Rocío Belén.
+  Docente: Gallino, Santiago.
   Carácter de entrega: 1er parcial.
+
+
+Aclaración: para el desarrollo de este parcial se decidió utilizar el framework de CSS Tailwind. Es por eso que, para visualizar correctamente los estilos, es necesario correr el comando 'npm run dev'.
+
+
