@@ -34,7 +34,7 @@
             <td>{{$noticia->id}}</td>
             <td>{{$noticia->titulo}}</td>
             <td>
-              <form action="{{ url('/blog/' . $noticia->id . '/editar') }}" method="POST">
+              <form action="{{ url('/blog/' . $noticia->id . '/editar') }}" method="GET">
                 <button type="submit" class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">editar</button>
               </form>
 
@@ -66,7 +66,10 @@
     }).then((result) => {
       if (result.isConfirmed) {
         //fetch(`${id}/eliminar`)
-        fetch(`${id}/eliminar`,{method: 'POST', body: {id:id}})
+        fetch(`${id}/eliminar`,{
+          method: 'get',
+          headers:{'X-Requested-With': 'XMLHttpRequest'} ,
+      })
       }
     })
 
