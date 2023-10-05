@@ -39,7 +39,7 @@ class BlogController extends Controller
 
   public function editarNoticia(int $id, Request $request)
   {
-    dd($request);
+
     //buscamos la noticia que queremos editar
     $noticia = Noticia::findOrFail($id);
 
@@ -49,8 +49,6 @@ class BlogController extends Controller
     //preguntamos si se subio una imagen
     if($request->hasFile('imagen')){
       //guardamos la imagen en la carpeta public
-
-      dd("hola");
       $request->file('imagen')->store('noticias');
     }
     //actualizamos los campos menos el de token
