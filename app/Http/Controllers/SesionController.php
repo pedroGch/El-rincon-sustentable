@@ -32,4 +32,9 @@ class SesionController extends Controller
   {
     return view('dashboard_admin');
   }
+
+  public function perfil_usuario()
+  {
+    return view('perfil_usuario');
+  }
 }

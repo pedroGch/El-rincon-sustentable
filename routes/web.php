@@ -32,6 +32,7 @@ Route::get('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'f
 Route::post('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'editarNoticia']);
 
 Route::get('/panel_admin', [\App\Http\Controllers\SesionController::class, 'dashboard_admin']);
+Route::get('/perfil_usuario', [\App\Http\Controllers\SesionController::class, 'perfil_usuario']);
 
 //Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia'])->whereNumber('id');
 Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia'])->whereNumber('id');
