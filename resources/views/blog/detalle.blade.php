@@ -1,4 +1,7 @@
-<?PHP
+<?php
+ /**
+  * @var \App\Models\Noticia $noticia
+ */
 ?>
 
 @extends('layouts.main')

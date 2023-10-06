@@ -1,3 +1,10 @@
+<?php
+  /**
+   * @var \App\Models\Producto[] | \Illuminate\Database\Eloquent\Collection $producto
+  */
+
+?>
+
 @extends('layouts.main')
 
 {{-- @section('title') Página Principal @endsection --}}

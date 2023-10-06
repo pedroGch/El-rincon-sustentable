@@ -1,3 +1,7 @@
+<?php
+  /** @var \App\Models\Producto $producto */
+?>
+
 @extends('layouts.main')
 
 {{-- @section('title') Página Principal @endsection --}}

@@ -1,4 +1,8 @@
 <?PHP
+/**
+ * @var \App\Models\Noticia[] | \Illuminate\Database\Eloquent\Collection $noticias
+ */
+
 ?>
 
 @extends('layouts.main')
