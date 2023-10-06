@@ -17,13 +17,13 @@ class ProductoSeeder extends Seeder
         [
           [
             'id' => 1,
-            'nombre_prod' => 'Estacion De Reciclado Separador',
+            'nombre_prod' => 'Estación De Reciclado Separador',
             'imagen_prod' => 'prod-37.webp',
             'alt' => 'Tachos de basuras gris con tapas de colores',
             'categoria' => 3,
             'descripcion' => 'La Estación de Reciclado Separador de Residuos X 3 Cestos de 30 litros es la solución perfecta para promover y facilitar la separación de residuos de manera eficiente y organizada. Este conjunto incluye tres cestos de 30 litros cada uno, diseñados específicamente para clasificar diferentes tipos de residuos.
 
-            Cada cesto tiene un color distintivo y una etiqueta identificativa para facilitar la separación correcta de los residuos. Puedes utilizar un cesto para papel y cartón, otro para plásticos y envases, y el tercer cesto para vidrio y metal. Esta disposición te permite mantener tus residuos organizados y listos para el reciclaje.
+            Cada cesto tiene un color distintivo y una etiqueta identificativa para facilitar la separación correcta de los residuos. Podes utilizar un cesto para papel y cartón, otro para plásticos y envases, y el tercer cesto para vidrio y metal. Esta disposición te permite mantener tus residuos organizados y listos para el reciclaje.
 
             Los cestos están fabricados con materiales resistentes y duraderos, lo que garantiza su larga vida útil. Cada cesto tiene una capacidad de 30 litros, lo que proporciona un amplio espacio para depositar los residuos sin necesidad de vaciarlos con frecuencia.',
             'stock' => 9,
@@ -37,7 +37,7 @@ class ProductoSeeder extends Seeder
             'categoria' => 3,
             'descripcion' => 'El Kit Cesto Separador de Residuos Ecobox es la solución perfecta para fomentar la separación de residuos de manera rápida y eficiente en cualquier entorno. Este kit incluye dos conjuntos de cestos, cada uno compuesto por dos tachos con capacidades de 18 y 24 litros respectivamente.
 
-            Cada conjunto de cestos está diseñado para separar los diferentes tipos de residuos de forma práctica y organizada. Los dos tachos de 18 litros están destinados a la separación de vidrio y metal, mientras que los dos tachos de 24 litros están diseñados para papel/cartón y plástico. Con estas opciones, puedes clasificar tus residuos de manera efectiva, facilitando el posterior proceso de reciclaje.
+            Cada conjunto de cestos está diseñado para separar los diferentes tipos de residuos de forma práctica y organizada. Los dos tachos de 18 litros están destinados a la separación de vidrio y metal, mientras que los dos tachos de 24 litros están diseñados para papel/cartón y plástico. Con estas opciones, podés clasificar tus residuos de manera efectiva, facilitando el posterior proceso de reciclaje.
 
             Los cestos de la Ecobox son fáciles de armar y tienen el tamaño ideal para adaptarse a diferentes espacios. Con medidas de 30x30x45 cm para los tachos de 18 litros y 30x40x45 cm para los tachos de 24 litros, estos cestos ofrecen una capacidad adecuada sin ocupar demasiado espacio.',
             'stock' => 16,

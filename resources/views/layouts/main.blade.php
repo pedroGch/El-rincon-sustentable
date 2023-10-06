@@ -23,8 +23,8 @@
                 <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/tienda') ?>">Tienda</a></li>
                 <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/blog') ?>">Blog</a></li>
                 <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/contacto') ?>">Contacto</a></li>
-                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/crear_cuenta') ?>">crear una cuenta</a></li>
-                <li class="mx-3 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/iniciar_sesion') ?>">inciar sesión</a></li>
+                <li class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/crear_cuenta') ?>">Crear cuenta</a></li>
+                <li class="mx-3 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out"><a href="<?= url('/iniciar_sesion') ?>">Iniciar sesión</a></li>
             </ul>
         </nav>
         <main class="container mx-auto flex-grow">
