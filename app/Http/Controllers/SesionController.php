@@ -10,18 +10,26 @@ class SesionController extends Controller
   {
     return view('iniciar_sesion');
   }
+
   public function validar_usuario(Request $request)
   {
     $usuarios = Usuario::all();
     dd($usuarios);
     return view('welcome');
   }
+
   public function cerrar_sesion()
   {
     return view('welcome');
   }
+
   public function crear_cuenta()
   {
     return view('crear_cuenta');
+  }
+
+  public function dashboard_admin()
+  {
+    return view('dashboard_admin');
   }
 }
