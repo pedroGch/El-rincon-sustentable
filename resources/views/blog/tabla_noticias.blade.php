@@ -7,7 +7,7 @@
 
 {{-- @section('title') Blog @endsection --}}
 
-@section('title', 'gestor de noticias')
+@section('title', 'Gestor de Noticias')
 
 @section('content')
 
@@ -55,7 +55,7 @@
   function borrarNoticia(id) {
 
     Swal.fire({
-    title: '¿Estas seguro que queres elminar la noticia?.',
+    title: '¿Estas seguro que queres eliminar la noticia?.',
     text: "nombre de la noticia",
     icon: 'warning',
     showCancelButton: true,
