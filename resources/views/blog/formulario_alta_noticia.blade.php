@@ -11,10 +11,6 @@
 
 @section('content')
     @if ($errors->any())
-        {{-- <div class="alert alert-danger">
-            <p>Hay errores en los datos ingresados. Por favor, revisalos y corregílos para poder cargar correctamente la noticia.</p>
-        </div> --}}
-
         <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-danger-100 px-6 py-5 text-base text-danger-700"
             role="alert">
             <span class="mr-2">
@@ -41,17 +37,17 @@
                 <input type="text" name="titulo" id="titulo"
                     class="border border-gray-500 rounded p-2 w-full @error('titulo') border-red-700 @enderror"
                     @error('titulo')
-        aria-invalid="true"
-        aria-describedby="error-titulo"
-      @enderror>
+                    aria-invalid="true"
+                    aria-describedby="error-titulo"
+                    @enderror>
                 @error('titulo')
                     <div class="mt-1 flex">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
-                          <path fill-rule="evenodd"
-                              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                              clip-rule="evenodd" />
-                      </svg>
-                      <p class="text-danger-700" id="error-titulo"> {{ $message }}</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-danger-700" id="error-titulo"> {{ $message }}</p>
                     </div>
                 @enderror
 
@@ -59,36 +55,37 @@
                 <textarea name="contenido" id="contenido" cols="30" rows="10"
                     class="border border-gray-500 rounded p-2 w-full @error('contenido') border-red-700 @enderror"
                     @error('contenido')
-        aria-invalid="true"
-        aria-describedby="error-contenido"
-      @enderror>
+                    aria-invalid="true"
+                    aria-describedby="error-contenido"
+                    @enderror>
       </textarea>
-                @error('contenido')<div class="mt-1 flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
-                      <path fill-rule="evenodd"
-                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                          clip-rule="evenodd" />
-                  </svg>
-                    <p class="text-danger-700" id="error-contenido"> {{ $message }}</p>
-                </div>
+                @error('contenido')
+                    <div class="mt-1 flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-danger-700" id="error-contenido"> {{ $message }}</p>
+                    </div>
                 @enderror
 
                 <label for="imagen" class="block font-bold my-2"> Imagen </label>
                 <input type="file" name="imagen" id="imagen"
                     class="border border-gray-500 rounded p-2 w-full @error('imagen') border-red-700 @enderror"
                     @error('imagen')
-        aria-invalid="true"
-        aria-describedby="error-imagen"
-      @enderror>
+                    aria-invalid="true"
+                    aria-describedby="error-imagen"
+                    @enderror>
                 @error('imagen')
-                <div class="mt-1 flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
-                      <path fill-rule="evenodd"
-                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                          clip-rule="evenodd" />
-                  </svg>
-                    <p class="text-danger-700" id="error-imagen"> {{ $message }}</p>
-                </div>
+                    <div class="mt-1 flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-danger-700" id="error-imagen"> {{ $message }}</p>
+                    </div>
                 @enderror
 
                 <label for="alt" class="block font-bold my-2"> Desripcíon de la imagen</label>
@@ -99,14 +96,14 @@
         aria-describedby="error-alt"
       @enderror>
                 @error('alt')
-                <div class="mt-1 flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
-                      <path fill-rule="evenodd"
-                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                          clip-rule="evenodd" />
-                  </svg>
-                    <p class="text-danger-700" id="error-alt"> {{ $message }}</p>
-                </div>
+                    <div class="mt-1 flex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <p class="text-danger-700" id="error-alt"> {{ $message }}</p>
+                    </div>
                 @enderror
 
                 <input type="submit"

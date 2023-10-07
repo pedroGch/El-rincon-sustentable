@@ -31,7 +31,7 @@
           <span class="fecha text-xs text-gray-400">abril 29, 2023</span>
         </div>
         <div class="card-body">
-          <p>{{$noticia->contenido}}</p>
+          <p>{{ $noticia->descripcion_reducida() }}</p>
         </div>
         <div class="card-footer">
           <form action="{{ url('/blog/' . $noticia->id . '/leer_mas') }}" method="GET">
