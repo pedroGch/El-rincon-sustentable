@@ -25,32 +25,32 @@
                 </div>
             </a>
         </div>
-        <div class="mx-6 flex flex-row flex-wrap">
+        <div class="mx-6 mb-8 mt-2 flex justify-center flex-row flex-wrap">
             <table>
-                <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>titulo</th>
-                        <th>acciones</th>
+                <thead class="border-2">
+                    <tr  >
+                        <th class="p-3">ID</th>
+                        <th class="p-3">Título</th>
+                        <th class="p-3">Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="border-2">
                     @foreach ($noticias as $noticia)
-                        <tr>
-                            <td>{{ $noticia->id }}</td>
-                            <td>{{ $noticia->titulo }}</td>
-                            <td>
+                        <tr class="border-2">
+                            <td class="p-3 border-2">{{ $noticia->id }}</td>
+                            <td class="p-3 border-2">{{ $noticia->titulo }}</td>
+                            <td class="p-3 border-2">
                                 <form action="{{ url('/blog/' . $noticia->id . '/editar') }}" method="GET">
                                     <button type="submit"
-                                        class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">editar</button>
+                                        class="w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-terciario hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-terciario focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-terciario active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">Editar</button>
                                 </form>
 
                                 <button type="button" onclick="borrarNoticia({{ $noticia->id }})"
-                                    class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">eliminar</button>
+                                    class="my-3 w-full inline-block rounded bg-danger px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-danger focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-danger active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">Eliminar</button>
 
                                 <form action="{{ url('/blog/' . $noticia->id . '/leer_mas') }}" method="GET">
                                     <button type="submit"
-                                        class="my-2 text-secundario font-semibold p-1 border border-secundario border-thin rounded-lg">Leer
+                                        class="w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-terciario hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-terciario focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-terciario active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">Leer
                                         más</button>
                                 </form>
                             </td>
@@ -69,7 +69,7 @@
                 text: "nombre de la noticia",
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
+                confirmButtonColor: '#459646',
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Sí, ¡borrar!.',
                 cancelButtonText: 'Mejor no.'
