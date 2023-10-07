@@ -53,7 +53,7 @@
                 aria-expanded="false"
                 data-te-ripple-init
                 data-te-ripple-color="light">
-                <img src="./../public/img/avatar/avatar-valdi.jpg" class="w-[40px] rounded-full shadow-lg"
+                <img src="{{  url('./../public/img/avatar/avatar-valdi.jpg')}}" class="w-[40px] rounded-full shadow-lg"
                 alt="Avatar" />
                 <span class="ml-2 w-2">
                   <svg
@@ -120,7 +120,7 @@
                         <h3 class="block mb-2 text-2xl font-bold ">Comisión - Cuatrimestre - Año:</h3>
                         <p class="text-xl">DWN4BV - 4to - 2023</p>
                     </div>
-                    <div class="mb-4"><img src="./../public/img/logo-davinci.png" class=""
+                    <div class="mb-4"><img src="{{  url('./../public/img/logo-davinci.png')}}" class=""
                             alt="logo Escuela Da Vinci" /></div>
                 </div>
 
@@ -131,7 +131,7 @@
                     <div class="flex">
 
                         <div id="avatar-pedro" class="text-center px-6 pt-8">
-                            <img src="./../public/img/avatar/avatar-pedro.jpg" class="mx-auto mb-4 w-32 rounded-lg"
+                            <img src="{{  url('./../public/img/avatar/avatar-pedro.jpg')}}" class="mx-auto mb-4 w-32 rounded-lg"
                                 alt="Avatar Pedro Gonzalez Chavez" />
                             <p class="mb-2 text-xl font-medium leading-tight">Pedro <br>Gonzalez Chavez</p>
                             <div>
@@ -149,7 +149,7 @@
                         </div>
 
                         <div id="avatar-rocio" class="text-center px-6 pt-8">
-                            <img src="./../public/img/avatar/avatar-rocio.jpg" class="mx-auto mb-4 w-32 rounded-lg"
+                            <img src="{{  url('./../public/img/avatar/avatar-rocio.jpg')}}" class="mx-auto mb-4 w-32 rounded-lg"
                                 alt="Avatar Rocío Scotto" />
                             <p class="mb-2 text-xl font-medium leading-tight">Rocío <br>Scotto</p>
                             <div>
@@ -167,7 +167,7 @@
                         </div>
 
                         <div id="avatar-valdi" class="text-center px-6 pt-8">
-                            <img src="./../public/img/avatar/avatar-valdi.jpg" class="mx-auto mb-4 w-32 rounded-lg"
+                            <img src="{{  url('./../public/img/avatar/avatar-valdi.jpg')}}" class="mx-auto mb-4 w-32 rounded-lg"
                                 alt="Avatar Ezequiel Valdiviezo" />
                             <p class="mb-2 text-xl font-medium leading-tight">Ezequiel <br>Valdiviezo</p>
                             <div>
