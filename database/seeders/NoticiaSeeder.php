@@ -18,7 +18,7 @@ class NoticiaSeeder extends Seeder
         [
           'id' => 1,
           'titulo' => 'La última tecnología en calefactores solares llega a nuestra tienda online',
-          'imagen' => 'calefactor-solar.jpeg',
+          'imagen' => 'calefactor-solar.jpg',
           'alt' => 'dos calefactores solares en una terraza',
           'contenido' => 'Los calefactores solares son una excelente alternativa para mantener tu hogar cálido y acogedor de manera sostenible y económica. En nuestra tienda online, ofrecemos la última tecnología en calefactores solares, diseñados para proporcionar calor eficiente y ecológico durante todo el año.
 
@@ -29,7 +29,7 @@ class NoticiaSeeder extends Seeder
         [
           'id' => 2,
           'titulo' => 'La crisis climática empeora: Informe de la ONU muestra que la temperatura global sigue aumentando',
-          'imagen' => 'cambio-climatico.webp',
+          'imagen' => 'cambio-climatico.jpg',
           'alt' => 'tierra resquebrajada por la sequía, de fondo, edificios de una ciudad',
           'contenido' => 'Un nuevo informe de la ONU muestra que la temperatura global sigue aumentando a un ritmo alarmante. Según los expertos, la crisis climática ya está teniendo graves consecuencias en todo el mundo, como el aumento del nivel del mar, eventos climáticos extremos y la pérdida de especies animales y vegetales.
 
@@ -55,7 +55,7 @@ class NoticiaSeeder extends Seeder
         [
           'id' => 4,
           'titulo' => 'Cada vez más hogares apuestan por la energía solar para reducir su huella de carbono',
-          'imagen' => 'energia-solar-1.jpeg',
+          'imagen' => 'energia-solar-1.jpg',
           'alt' => 'panel solar',
           'contenido' => 'El cambio hacia la energía solar está ganando impulso en todo el mundo, y cada vez más hogares están adoptando soluciones sostenibles para reducir su impacto ambiental. Según los expertos, la energía solar es una de las opciones más efectivas para reducir la huella de carbono, ya que no solo es una fuente de energía limpia, sino que también es renovable y cada vez más accesible.
 

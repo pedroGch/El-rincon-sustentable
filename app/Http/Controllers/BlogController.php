@@ -32,6 +32,27 @@ class BlogController extends Controller
 
   }
 
+  public function formularioCrearNoticia()
+  {
+    return view('blog.formulario_alta_noticia');
+  }
+
+  public function crearNoticia(Request $request)
+  {
+    //$data = $request->except(['_token']);
+    $request->validate(Noticia::$rules,Noticia::$errorMessages);
+
+    $data = $request->only(['titulo','imagen','alt','contenido']);
+
+    if($request->hasFile('imagen')){
+      $data['imagen'] = $request->file('imagen')->store('noticias');
+    }
+
+    Noticia::create($data);
+    return redirect('/blog/gestor_noticias')
+      ->with('status.message', 'La noticia fue correctamente agregada');
+  }
+
   public function formularioEditarNoticia(int $id)
   {
     return view('blog.formulario_edit_noticia',['noticia' => Noticia::findOrFail($id)]);
@@ -57,23 +78,6 @@ class BlogController extends Controller
       ->with('status.message', 'La noticia fue correctamente editada');
   }
 
-  public function formularioCrearNoticia()
-  {
-    return view('blog.formulario_alta_noticia');
-  }
-
-  public function crearNoticia(Request $request)
-  {
-    //$data = $request->except(['_token']);
-    $request->validate(Noticia::$rules,Noticia::$errorMessages);
-
-    $data = $request->only(['titulo','imagen','alt','contenido']);
-    Noticia::create($data);
-    return redirect('/blog/gestor_noticias')
-      ->with('status.message', 'La noticia fue correctamente agregada');
-  }
-
-  
 
 
   // acá vamos a ir agregando los métodos que necesitemos para renderizar las otras vistas

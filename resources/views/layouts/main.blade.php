@@ -96,7 +96,7 @@
                         </svg>
                     </span>
                     <div>
-                      {{!! \Session::get('status.message') !!}}
+                      {!! \Session::get('status.message') !!}
                   </div>
                 </div>
             @endif
