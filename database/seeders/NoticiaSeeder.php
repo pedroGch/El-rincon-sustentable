@@ -32,7 +32,7 @@ class NoticiaSeeder extends Seeder
           'imagen' => 'noticias/cambio-climatico.jpg',
           'alt' => 'tierra resquebrajada por la sequía, de fondo, edificios de una ciudad',
           'contenido' => 'Un nuevo informe de la ONU muestra que la temperatura global sigue aumentando a un ritmo alarmante. Según los expertos, la crisis climática ya está teniendo graves consecuencias en todo el mundo, como el aumento del nivel del mar, eventos climáticos extremos y la pérdida de especies animales y vegetales.
-
+          
           El informe destaca que la principal causa del aumento de la temperatura global es la emisión de gases de efecto invernadero, principalmente dióxido de carbono, generado por actividades humanas como la quema de combustibles fósiles. Los expertos advierten que si no se toman medidas urgentes para reducir estas emisiones, los efectos del cambio climático solo empeorarán.
 
           El informe también destaca la necesidad de transitar hacia una economía más sostenible, con la utilización de fuentes de energía renovable y la implementación de prácticas de producción y consumo más responsables.
