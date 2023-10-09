@@ -36,6 +36,7 @@
                 <label for="titulo" class="block font-bold my-2"> Título </label>
                 <input type="text" name="titulo" id="titulo"
                     class="border border-gray-500 rounded p-2 w-full @error('titulo') border-red-700 @enderror"
+                    value="{{ old('titulo') }}"
                     @error('titulo')
                     aria-invalid="true"
                     aria-describedby="error-titulo"
@@ -54,6 +55,7 @@
                 <label for="contenido" class="block font-bold my-2"> Contenido </label>
                 <textarea name="contenido" id="contenido" cols="30" rows="10"
                     class="border border-gray-500 rounded p-2 w-full @error('contenido') border-red-700 @enderror"
+                    value="{{ old('contenido') }}"
                     @error('contenido')
                     aria-invalid="true"
                     aria-describedby="error-contenido"
@@ -91,10 +93,11 @@
                 <label for="alt" class="block font-bold my-2"> Desripcíon de la imagen</label>
                 <input type="text" name="alt" id="alt"
                     class="border border-gray-500 rounded p-2 w-full @error('alt') border-red-700 @enderror"
+                    value="{{ old('alt') }}"
                     @error('alt')
-        aria-invalid="true"
-        aria-describedby="error-alt"
-      @enderror>
+                    aria-invalid="true"
+                    aria-describedby="error-alt"
+                    @enderror>
                 @error('alt')
                     <div class="mt-1 flex">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">

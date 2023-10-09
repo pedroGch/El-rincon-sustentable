@@ -35,9 +35,11 @@
             <form action="{{ url('/blog/' . $noticia->id . '/editar') }}" method="POST" id="form-contacto" class="">
                 @csrf
                 <label for="titulo" class="block font-bold my-2"> Título </label>
-                <input type="text" value="{{ old('titulo', $noticia->titulo) }}" name="titulo" id="titulo"
+                <input type="text" name="titulo" id="titulo"
                     class="border border-gray-500 rounded p-2 w-full @error('titulo') border-red-700 @enderror"
+                    value="{{ old('titulo', $noticia->titulo) }}"
                     @error('titulo')
+
                     aria-invalid="true"
                     aria-describedby="error-titulo"
                     @enderror>
@@ -59,8 +61,8 @@
                     aria-invalid="true"
                     aria-describedby="error-contenido"
                     @enderror>
-      {{ old('titulo', $noticia->contenido) }}
-      </textarea>
+                    {{ old('contenido', $noticia->contenido) }}
+                </textarea>
                 @error('contenido')
                     <div class="mt-1 flex">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
@@ -93,6 +95,7 @@
                 <label for="alt" class="block font-bold my-2"> Descripción de la imagen</label>
                 <input type="text" name="alt" id="alt"
                     class="border border-gray-500 rounded p-2 w-full @error('alt') border-red-700 @enderror"
+                    value="{{ old('alt', $noticia->alt) }}"
                     @error('alt')
                     aria-invalid="true"
                     aria-describedby="error-alt"
