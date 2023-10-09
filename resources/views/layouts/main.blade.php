@@ -85,7 +85,7 @@
         </nav>
         <main class="container mx-auto flex-grow">
             @if (\Session::has('status.message'))
-                
+
                 <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-success-100 px-6 py-5 text-base text-success-700"
                     role="alert">
                     <span class="mr-2">
@@ -96,7 +96,7 @@
                         </svg>
                     </span>
                     <div>
-                      {{ \Session::get('status.message') }}
+                      {{!! \Session::get('status.message') !!}}
                   </div>
                 </div>
             @endif
