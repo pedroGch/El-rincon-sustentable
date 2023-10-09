@@ -19,12 +19,12 @@
         </div>
         <div class="mx-6 flex flex-row flex-wrap">
             <?php
-      foreach ($noticias as $noticia):
-    ?>
+            foreach ($noticias as $noticia):
+            ?>
             <article class="card flex flex-col w-full lg:w-1/2 p-4">
                 <div class="card-header">
                     @if ($noticia->imagen !== null)
-                        <img src="{{ url('./storage/' . $noticia->imagen) }}" alt="{{ $noticia->alt }}">
+                        <img src="{{ asset('./storage/' . $noticia->imagen) }}" alt="{{ $noticia->alt }}">
                     @else
                         <p>Esta noticia no tiene imagen</p>
                     @endif
@@ -45,8 +45,8 @@
                 </div>
             </article>
             <?php
-      endforeach
-    ?>
+            endforeach
+            ?>
         </div>
 
     </section>

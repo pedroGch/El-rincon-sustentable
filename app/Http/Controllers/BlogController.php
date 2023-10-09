@@ -14,7 +14,10 @@ class BlogController extends Controller
 
   public function leerCompleto(int $id)
   {
-    return view('blog.detalle', ['noticia' => Noticia::findOrFail($id)]);
+    return view('blog.detalle', [
+      'noticia' => Noticia::findOrFail($id),
+      'noticias' => Noticia::all(),
+    ]);
   }
 
   public function obtenerNoticias()
