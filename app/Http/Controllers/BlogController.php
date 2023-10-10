@@ -6,12 +6,21 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
+  /**
+   * Muestra la lista de noticias
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
   public function index()
   {
     $noticias = Noticia::all();
     return view('blog.blog', ["noticias" => $noticias]);
   }
 
+  /**
+   * Muestra el detalle de una noticia
+   * @param int $id
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
   public function leerCompleto(int $id)
   {
     return view('blog.detalle', [
@@ -20,12 +29,21 @@ class BlogController extends Controller
     ]);
   }
 
+  /**
+   * Muestra el gestor de noticias
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
   public function obtenerNoticias()
   {
     $noticias = Noticia::all();
     return view('blog.tabla_noticias', ["noticias" => $noticias]);
   }
 
+  /**
+   * Borra una noticia
+   * @param int $id
+   * @return \Illuminate\Http\RedirectResponse
+   */
   public function borrarNoticia(int $id)
   {
     $noticia = Noticia::findOrFail($id);
@@ -35,11 +53,20 @@ class BlogController extends Controller
 
   }
 
+  /**
+   * Muestra el formulario para crear una noticia
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
   public function formularioCrearNoticia()
   {
     return view('blog.formulario_alta_noticia');
   }
 
+  /**
+   * Crea una noticia
+   * @param Request $request
+   * @return \Illuminate\Http\RedirectResponse
+   */
   public function crearNoticia(Request $request)
   {
     //$data = $request->except(['_token']);
@@ -56,11 +83,23 @@ class BlogController extends Controller
       ->with('status.message', 'La noticia fue correctamente agregada');
   }
 
+  /**
+   * Muestra el formulario para editar una noticia
+   * @param int $id
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
   public function formularioEditarNoticia(int $id)
   {
     return view('blog.formulario_edit_noticia',['noticia' => Noticia::findOrFail($id)]);
   }
 
+
+  /**
+   * Edita una noticia
+   * @param int $id
+   * @param Request $request
+   * @return \Illuminate\Http\RedirectResponse
+   */
   public function editarNoticia(int $id, Request $request)
   {
 
@@ -70,13 +109,15 @@ class BlogController extends Controller
     //validamos con las reglas los datos del request
     $request->validate(Noticia::$rules,Noticia::$errorMessages);
 
+
     //preguntamos si se subio una imagen
     if($request->hasFile('imagen')){
-      //guardamos la imagen en la carpeta public
-      $request->file('imagen')->store('noticias');
+      $data['imagen'] = $request->file('imagen')->store('noticias'); //guardamos la imagen
     }
+
     //actualizamos los campos menos el de token
-    $noticia->update($request->except(['_token']));
+    $noticia->update($data, $request->except(['_token']));
+    // $noticia->update($request->except(['_token']));
     return redirect('/blog/gestor_noticias')
       ->with('status.message', 'La noticia fue correctamente editada');
   }

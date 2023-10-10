@@ -31,7 +31,7 @@
             <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Crear Noticia</h2>
         </div>
         <div class="flex-1 my-4 mx-6 px-6">
-            <form action="{{ url('/blog/noticia/nueva') }}" method="POST" id="form-contacto" class=""  enctype="multipart/form-data">
+            <form action="{{ url('/blog/noticia/nueva') }}" method="POST" id="form-alta" class=""  enctype="multipart/form-data">
                 @csrf
                 <label for="titulo" class="block font-bold my-2"> Título </label>
                 <input type="text" name="titulo" id="titulo"
@@ -90,7 +90,7 @@
                     </div>
                 @enderror
 
-                <label for="alt" class="block font-bold my-2"> Desripcíon de la imagen</label>
+                <label for="alt" class="block font-bold my-2"> Descripcíon de la imagen</label>
                 <input type="text" name="alt" id="alt"
                     class="border border-gray-500 rounded p-2 w-full @error('alt') border-red-700 @enderror"
                     value="{{ old('alt') }}"
