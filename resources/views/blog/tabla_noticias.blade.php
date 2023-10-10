@@ -66,13 +66,13 @@
 
             Swal.fire({
                 title: '¿Estas seguro que queres eliminar la noticia?.',
-                text: "nombre de la noticia",
+                text: "{{ $noticia->titulo }}",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#459646',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Sí, ¡borrar!.',
-                cancelButtonText: 'Mejor no.'
+                confirmButtonText: 'Sí, borrar!',
+                cancelButtonText: 'Mejor no'
             }).then((result) => {
                 if (result.isConfirmed) {
                     //fetch(`${id}/eliminar`)
