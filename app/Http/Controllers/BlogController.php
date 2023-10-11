@@ -48,8 +48,8 @@ class BlogController extends Controller
   {
     $noticia = Noticia::findOrFail($id);
     $noticia->delete();
-    return redirect('/blog/gestor_noticias')
-        ->with('status.message', 'El Articulo ' . e($noticia->titulo) . ' fue eliminada con éxito.');
+    return redirect('/blog/gestor_noticias')->with('status.message', 'La noticia ' . e($noticia->titulo) . ' fue eliminada con éxito.');
+
 
   }
 
@@ -71,13 +71,10 @@ class BlogController extends Controller
   {
     //$data = $request->except(['_token']);
     $request->validate(Noticia::$rules,Noticia::$errorMessages);
-
     $data = $request->only(['titulo','imagen','alt','contenido']);
-
     if($request->hasFile('imagen')){
       $data['imagen'] = $request->file('imagen')->store('noticias');
     }
-
     Noticia::create($data);
     return redirect('/blog/gestor_noticias')
       ->with('status.message', 'La noticia fue correctamente agregada');
@@ -102,19 +99,15 @@ class BlogController extends Controller
    */
   public function editarNoticia(int $id, Request $request)
   {
-
     //buscamos la noticia que queremos editar
     $noticia = Noticia::findOrFail($id);
-
     //validamos con las reglas los datos del request
     $request->validate(Noticia::$rules,Noticia::$errorMessages);
-
 
     //preguntamos si se subio una imagen
     if($request->hasFile('imagen')){
       $data['imagen'] = $request->file('imagen')->store('noticias'); //guardamos la imagen
     }
-
     //actualizamos los campos menos el de token
     $noticia->update($data, $request->except(['_token']));
     // $noticia->update($request->except(['_token']));
