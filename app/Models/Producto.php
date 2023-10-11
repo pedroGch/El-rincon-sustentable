@@ -57,4 +57,13 @@ class Producto extends Model
 
         return $resultado;
     }
+
+    /**
+     * Esta función devuelve el precio formateado
+     * @return string
+     */
+    public function precio_formateado(): string
+    {
+        return "$" . number_format($this->precio, 0, ",", ".");
+    }
 }

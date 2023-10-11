@@ -47,7 +47,7 @@
                         </li>
                         <li
                           class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">
-                          ${{$producto->precio}}
+                          {{$producto->precio_formateado($producto->precio)}}
                         </li>
                       </ul>
                       <form action="{{ url('/producto/' . $producto->id ) }}" method="GET">

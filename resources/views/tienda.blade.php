@@ -25,7 +25,7 @@
                       data-te-ripple-color="light">
                       <div class="h-72  mx-auto">
                       <img class="rounded-t-lg mx-auto" src="{{ asset("img/productos/{$producto->imagen_prod}") }}" alt="<?=$producto->alt?>" />
-                      <a href="#!"></div>
+                      <a href="{{ url('/producto/' . $producto->id ) }}"></div>
                           <div
                               class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
                           </div>
@@ -38,6 +38,8 @@
                       <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                         {{$producto->descripcion_reducida()}}
                       </p>
+                      <p class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">
+                        <strong> {{$producto->precio_formateado($producto->precio)}}</strong></p>
                       <form action="{{ url('/producto/' . $producto->id ) }}" method="GET">
                         <button type="submit"
                             class="w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-terciario hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-terciario focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-terciario active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
