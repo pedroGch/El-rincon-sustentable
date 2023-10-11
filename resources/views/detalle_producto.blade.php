@@ -39,7 +39,7 @@
                       <ul class="w-full">
                         <li
                           class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">
-                          Categoria: {{$producto->categoria}}
+                          Categoria: {{$producto->categoria->nombre_cat}}
                         </li>
                         <li
                           class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">
