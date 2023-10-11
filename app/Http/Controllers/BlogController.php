@@ -123,6 +123,14 @@ class BlogController extends Controller
   }
 
 
-
-  // acá vamos a ir agregando los métodos que necesitemos para renderizar las otras vistas
+  /**
+ * Muestra el panel de administración enviando las noticias
+ * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+ */
+  public function accederDesdePanelAdmin()
+  {
+    return view('dashboard_admin', [
+      'noticias' => Noticia::all(),
+    ] );
+  }
 }

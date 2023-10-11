@@ -31,7 +31,9 @@ Route::post('/blog/noticia/nueva', [\App\Http\Controllers\BlogController::class,
 Route::get('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'formularioEditarNoticia']);
 Route::post('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, 'editarNoticia']);
 
+//RUTAS RELACIONADAS AL PANEL DE ADMINISTRACIÓN
 Route::get('/panel_admin', [\App\Http\Controllers\SesionController::class, 'dashboard_admin']);
+Route::get('/panel_admin', [\App\Http\Controllers\BlogController::class, 'accederDesdePanelAdmin']);
 Route::get('/perfil_usuario', [\App\Http\Controllers\SesionController::class, 'perfil_usuario']);
 
 //Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia'])->whereNumber('id');
