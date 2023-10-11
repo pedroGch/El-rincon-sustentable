@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class ProductoController extends Controller
 {
   public function index(){
-    $productos = Producto::all();
+    // $productos = Producto::all();
+    $productos = Producto::with('categoria')->get();
+    
     return view('tienda', ["productos" => $productos]);
   }
 

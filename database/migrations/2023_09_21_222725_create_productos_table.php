@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre_prod', 256);
             $table->string('imagen_prod', 256);
             $table->string('alt', 256);
-            $table->unsignedInteger('categoria'); //FK
+            $table->unsignedInteger('categoria_id'); //FK
             $table->text('descripcion')->nullable();
             $table->unsignedInteger('stock');
             $table->unsignedInteger('precio');

@@ -20,7 +20,7 @@ class ProductoSeeder extends Seeder
             'nombre_prod' => 'Estación De Reciclado Separador',
             'imagen_prod' => 'prod-37.webp',
             'alt' => 'Tachos de basuras gris con tapas de colores',
-            'categoria' => 3,
+            'categoria_id' => 3,
             'descripcion' => 'La Estación de Reciclado Separador de Residuos X 3 Cestos de 30 litros es la solución perfecta para promover y facilitar la separación de residuos de manera eficiente y organizada. Este conjunto incluye tres cestos de 30 litros cada uno, diseñados específicamente para clasificar diferentes tipos de residuos.
 
             Cada cesto tiene un color distintivo y una etiqueta identificativa para facilitar la separación correcta de los residuos. Podes utilizar un cesto para papel y cartón, otro para plásticos y envases, y el tercer cesto para vidrio y metal. Esta disposición te permite mantener tus residuos organizados y listos para el reciclaje.
@@ -34,7 +34,7 @@ class ProductoSeeder extends Seeder
             'nombre_prod' => 'Kit Cesto Separador De Residuos',
             'imagen_prod' => 'prod-36.webp',
             'alt' => 'Cestos marrones claritos, separadores de residuos',
-            'categoria' => 3,
+            'categoria_id' => 3,
             'descripcion' => 'El Kit Cesto Separador de Residuos Ecobox es la solución perfecta para fomentar la separación de residuos de manera rápida y eficiente en cualquier entorno. Este kit incluye dos conjuntos de cestos, cada uno compuesto por dos tachos con capacidades de 18 y 24 litros respectivamente.
 
             Cada conjunto de cestos está diseñado para separar los diferentes tipos de residuos de forma práctica y organizada. Los dos tachos de 18 litros están destinados a la separación de vidrio y metal, mientras que los dos tachos de 24 litros están diseñados para papel/cartón y plástico. Con estas opciones, podés clasificar tus residuos de manera efectiva, facilitando el posterior proceso de reciclaje.
@@ -48,7 +48,7 @@ class ProductoSeeder extends Seeder
             'nombre_prod' => 'Compostera Eco Balcón Kompost',
             'imagen_prod' => 'prod-40.webp',
             'alt' => 'Compostera blanca, con un diseño en el medio de la compotera',
-            'categoria' => 2,
+            'categoria_id' => 2,
             'descripcion' => 'La Compostera Eco Balcón Kompost® es la elección perfecta para aquellos que desean realizar compostaje en espacios reducidos, como balcones o terrazas. Con un diseño compacto y una capacidad de 40 litros, esta compostera te permite convertir tus residuos orgánicos en compost de alta calidad, ¡y lo mejor es que está hecha de plástico reciclado!
 
             Fabricada con polipropileno de alta resistencia, esta compostera presenta bordes gruesos y paredes con nervaduras para garantizar durabilidad y resistencia a golpes y cambios de temperatura. La tapa es removible y se coloca en el nivel superior, lo que facilita el acceso y la adición de residuos.
@@ -62,7 +62,7 @@ class ProductoSeeder extends Seeder
             'nombre_prod' => 'Compostera Urbana Balcón Lombrices Compost 40 L',
             'imagen_prod' => 'prod-8.webp',
             'alt' => 'Compostera negra con un diseño en el medio',
-            'categoria' => 2,
+            'categoria_id' => 2,
             'descripcion' => 'Compostera urbana 60 L | Ideal para quienes están empezando el proceso de compostaje domiciliario y para hogares con poco consumo de frutas y verduras.
 
             Realizada con plástico recuperado, pensada para que los orgánicos vuelvan a la tierra en forma de compost. Mejorá tu vínculo con los desechos, cuidá la salud de nuestro planeta.
@@ -79,7 +79,7 @@ class ProductoSeeder extends Seeder
             'nombre_prod' => 'Kit De Bombeo Solar Completo 16000 Litros/h',
             'imagen_prod' => 'prod-18.webp',
             'alt' => 'Kit de bombeo solar completo 16000 litros/h',
-            'categoria' => 1,
+            'categoria_id' => 1,
             'descripcion' => '¡Agua limpia y renovable en cualquier lugar con nuestro sistema de bombeo solar!
 
             Este sistema de bombeo solar es perfecto para obtener agua limpia y renovable en lugares donde no hay acceso a la red eléctrica. El sistema utiliza paneles solares para generar energía, lo que lo hace completamente independiente y autosuficiente. Es fácil de instalar y se adapta a cualquier tipo de terreno.
@@ -95,7 +95,7 @@ class ProductoSeeder extends Seeder
             'nombre_prod' => 'Panel Solar Cargador Portátil',
             'imagen_prod' => 'prod-4-5.webp',
             'alt' => 'Panel solar negro y naranja, con cargador portátil',
-            'categoria' => 1,
+            'categoria_id' => 1,
             'descripcion' => 'PANEL SOLAR CARGADOR PORTATIL WIBAG 12/5v 120Watts
             WiBag 120W
             Panel Solar Plegable
@@ -109,7 +109,7 @@ class ProductoSeeder extends Seeder
             'nombre_prod' => 'Tapa Tapones Para Botella',
             'imagen_prod' => 'prod-33.webp',
             'alt' => 'Tapa tapones par botellas con dieños animados y minimalistas',
-            'categoria' => 4,
+            'categoria_id' => 4,
             'descripcion' => 'Las Tapas para Botella Diseños Pasteles es un set encantador que le da un toque divertido y colorido a tus botellas. Consta de 6 unidades con diseños de motivos pasteles, como cupcakes, helados y donas, que agregan un toque de alegría y estilo a tus bebidas.
 
             Cada tapa tapón está fabricada con materiales duraderos y de alta calidad, lo que garantiza su resistencia y durabilidad a largo plazo. Estas tapas están diseñadas para adaptarse a una amplia variedad de botellas estándar, como botellas de agua, botellas de refrescos o botellas de jugo.
@@ -123,7 +123,7 @@ class ProductoSeeder extends Seeder
             'nombre_prod' => 'Botella Reutilizable Kompost® 750 Ml | Zero Waste',
             'imagen_prod' => 'prod-9.webp',
             'alt' => 'Botella reutilizable gris, con fondo de pileta',
-            'categoria' => 4,
+            'categoria_id' => 4,
             'descripcion' => 'Botella Reutilizable Kompost® 750 Ml | Zero Waste
             Posee una capacidad de 750 cc
             Tapa con rosca

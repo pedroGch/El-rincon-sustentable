@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $nombre_prod
  * @property string $imagen_prod
  * @property string $alt
- * @property int $categoria
+ * @property int $categoria_id
  * @property string $descripcion
  * @property int $stock
  * @property int $precio
@@ -65,5 +65,20 @@ class Producto extends Model
     public function precio_formateado(): string
     {
         return "$" . number_format($this->precio, 0, ",", ".");
+    }
+
+
+
+    /* RELACIONES */
+
+    /**
+     * Creamos la relación entre la tabla productos y la tabla categorias
+     * (Relación uno a muchos inversa)
+     * Esta función devuelve el objeto de la clase Categoria al que pertenece el producto
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'categoria_id', 'id');
     }
 }

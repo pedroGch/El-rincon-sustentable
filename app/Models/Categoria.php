@@ -27,4 +27,6 @@ class Categoria extends Model
 {
    //use HasFactory;
    protected $table = 'categorias';
+
+   protected $primaryKey = 'id';
 }
