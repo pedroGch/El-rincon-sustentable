@@ -67,9 +67,8 @@ class Producto extends Model
   public function precio(): Attribute
   {
     return Attribute::make(
-      function ($value) {
-        return $value / 100;
-      }
+      get: fn ($value) => $value / 100,
+      set: fn ($value) => $value * 100
     );
   }
 
