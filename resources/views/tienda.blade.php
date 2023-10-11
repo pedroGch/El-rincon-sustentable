@@ -46,7 +46,7 @@
                             </p>
                             <p
                                 class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">
-                                <strong> {{ $producto->precio_formateado($producto->precio) }}</strong>
+                                <strong> {{ $producto->precio_formateado($producto->precio)}}</strong>
                             </p>
                             <form action="{{ url('/producto/' . $producto->id) }}" method="GET">
                                 <button type="submit"
