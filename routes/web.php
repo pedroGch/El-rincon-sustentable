@@ -21,6 +21,7 @@ Route::get('/producto/{id}', [\App\Http\Controllers\ProductoController::class, '
 Route::get('/iniciar_sesion', [\App\Http\Controllers\SesionController::class, 'iniciar_sesion']);
 Route::get('/crear_cuenta', [\App\Http\Controllers\SesionController::class, 'crear_cuenta']);
 Route::post('/validar_usuario', [\App\Http\Controllers\SesionController::class, 'validar_usuario']);
+Route::post('/contacto', [\App\Http\Controllers\ContactoController::class, 'validar_contacto']);
 
 //RUTAS RELACIONADAS AL BLOG DE NOTICIAS
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'index']);
