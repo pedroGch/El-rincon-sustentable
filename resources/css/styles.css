@@ -8,3 +8,12 @@
   font-family: Lemonada;
   src: url('../fonts/Lemonada-VariableFont_wght.ttf');
 }
+
+
+svg:hover {
+  fill: #e5d620;
+}
+
+nav button {
+  box-shadow: none!important;
+}
