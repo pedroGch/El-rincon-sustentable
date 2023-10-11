@@ -24,7 +24,7 @@ class Contacto extends Model
     'nombre.max'=> 'El nombre no puede contener más de 255 carateres',
     'email.required'=> 'El email es requerido',
     'email.max'=> 'El email no puede contener más de 255 carateres',
-    'email.required'=> 'El asunto es requerido',
+    'asunto.required'=> 'El asunto es requerido',
     'asunto.max'=> 'El asunto no puede contener más de 255 carateres',
     'mensaje.required'=> 'El mensaje es requerido',
     'mensaje.max'=> 'El mensaje no puede contener más de 255 carateres',
