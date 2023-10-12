@@ -40,6 +40,7 @@
                         class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out">
                         <a href="<?= url('/contacto') ?>">Contacto</a>
                     </li>
+                    @if (!auth()->check())
                     <li
                         class="mx-6 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out">
                         <a href="<?= url('/crear_cuenta') ?>">Crear cuenta</a>
@@ -48,9 +49,10 @@
                         class="mx-3 h-[30px] text-lg hover:border-b-[5px] hover:border-yellow-500 transition duration-300 ease-in-out">
                         <a href="<?= url('/iniciar_sesion') ?>">Iniciar sesión</a>
                     </li>
+                    @endif
                 </ul>
             </div>
-
+            @if (auth()->check())
             <div class="relative me-10" data-te-dropdown-ref>
                 <button
                     class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
@@ -78,11 +80,16 @@
                     <hr
                         class="my-2 h-0 border border-t-0 border-solid border-neutral-700 opacity-25 dark:border-neutral-200" />
                     <li>
-                        <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                            href="#" data-te-dropdown-item-ref>Cerrar sesión</a>
+                      <form action="<?= url('/cerrar_sesion'); ?>" method="post">
+                        @csrf
+                        <button type="submit" class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600">
+                          Cerrar sesión
+                        </button>
+                      </form>
                     </li>
                 </ul>
             </div>
+            @endif
         </nav>
         <main class="container mx-auto flex-grow">
             @if (\Session::has('status.message'))
