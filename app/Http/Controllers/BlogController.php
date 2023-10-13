@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Noticia;
 use Illuminate\Http\Request;
 
@@ -49,8 +50,6 @@ class BlogController extends Controller
     $noticia = Noticia::findOrFail($id);
     $noticia->delete();
     return redirect('/blog/gestor_noticias')->with('status.message', 'La noticia ' . e($noticia->titulo) . ' fue eliminada con éxito.');
-
-
   }
 
   /**
@@ -70,9 +69,9 @@ class BlogController extends Controller
   public function crearNoticia(Request $request)
   {
     //$data = $request->except(['_token']);
-    $request->validate(Noticia::$rules,Noticia::$errorMessages);
-    $data = $request->only(['titulo','imagen','alt','contenido']);
-    if($request->hasFile('imagen')){
+    $request->validate(Noticia::$rules, Noticia::$errorMessages);
+    $data = $request->only(['titulo', 'imagen', 'alt', 'contenido']);
+    if ($request->hasFile('imagen')) {
       $data['imagen'] = $request->file('imagen')->store('noticias');
     }
     Noticia::create($data);
@@ -87,7 +86,7 @@ class BlogController extends Controller
    */
   public function formularioEditarNoticia(int $id)
   {
-    return view('blog.formulario_edit_noticia',['noticia' => Noticia::findOrFail($id)]);
+    return view('blog.formulario_edit_noticia', ['noticia' => Noticia::findOrFail($id)]);
   }
 
 
@@ -102,10 +101,10 @@ class BlogController extends Controller
     //buscamos la noticia que queremos editar
     $noticia = Noticia::findOrFail($id);
     //validamos con las reglas los datos del request
-    $request->validate(Noticia::$rules,Noticia::$errorMessages);
+    $request->validate(Noticia::$rules, Noticia::$errorMessages);
 
     //preguntamos si se subio una imagen
-    if($request->hasFile('imagen')){
+    if ($request->hasFile('imagen')) {
       $data['imagen'] = $request->file('imagen')->store('noticias'); //guardamos la imagen
     }
     //actualizamos los campos menos el de token
@@ -117,13 +116,13 @@ class BlogController extends Controller
 
 
   /**
- * Muestra el panel de administración enviando las noticias
- * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
- */
+   * Muestra el panel de administración enviando las noticias
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
   public function dashboardAdmin()
   {
     return view('dashboard_admin', [
       'noticias' => Noticia::all(),
-    ] );
+    ]);
   }
 }

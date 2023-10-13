@@ -15,15 +15,15 @@
         <div class="flex flex-col flex-wrap">
             <div class="mt-10">
                 <div class="mb-5">
-                    <h3 class="text-2xl font-semibold">¡Bienvenid@ <?= Auth::user()->name; ?> al tu Panel!</h3>
+                    <h3 class="text-2xl font-semibold">¡Bienvenid@ <?= Auth::user()->name ?> al tu Panel!</h3>
                 </div>
             </div>
         </div>
         <div class="flex flex-wrap">
             <div class="mb-5">
                 <h3 class="py-3"">Tus datos personales:</h3>
-                <p><b>Nombre:</b>  <?= Auth::user()->name; ?></p>
-                <p><b>Email:</b>  <?= Auth::user()->email; ?></p>
+                <p><b>Nombre:</b> <?= Auth::user()->name ?></p>
+                <p><b>Email:</b> <?= Auth::user()->email ?></p>
 
             </div>
         </div>

@@ -12,9 +12,10 @@ class ContactoController extends Controller
     return view('contacto');
   }
 
-  public function validar_contacto(Request $request){
+  public function validar_contacto(Request $request)
+  {
 
-    $request->validate(Contacto::$rules,Contacto::$errorMessages);
+    $request->validate(Contacto::$rules, Contacto::$errorMessages);
 
     // $data = $request->only(['nombre','email','asunto','mensaje']);
 

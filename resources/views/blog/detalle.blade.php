@@ -39,18 +39,19 @@
             @foreach ($noticias as $cadaNoticia)
                 <div class="card m-5">
                     <a href="{{ url('/blog/' . $cadaNoticia->id . '/leer_mas') }}">
-                      <div>
-                          @if ($cadaNoticia->imagen !== null)
-                              <img src="{{ asset('./storage/' . $cadaNoticia->imagen) }}" alt="{{ $cadaNoticia->alt }}" class="object-cover	w-90 h-50">
-                          @else
-                              <p>Esta noticia no tiene imagen</p>
-                          @endif
-                      </div>
+                        <div>
+                            @if ($cadaNoticia->imagen !== null)
+                                <img src="{{ asset('./storage/' . $cadaNoticia->imagen) }}" alt="{{ $cadaNoticia->alt }}"
+                                    class="object-cover	w-90 h-50">
+                            @else
+                                <p>Esta noticia no tiene imagen</p>
+                            @endif
+                        </div>
                     </a>
                     <div class="card-title my-1">
-                      <h3 class="title font-bold text-principal">{{ $cadaNoticia->titulo }}</h3>
-                      <span class="fecha text-xs text-gray-400">abril 29, 2023</span>
-                  </div>
+                        <h3 class="title font-bold text-principal">{{ $cadaNoticia->titulo }}</h3>
+                        <span class="fecha text-xs text-gray-400">abril 29, 2023</span>
+                    </div>
                 </div>
             @endforeach
         </div>

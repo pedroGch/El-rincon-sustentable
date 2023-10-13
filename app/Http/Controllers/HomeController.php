@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index()
-    {
-        return view('welcome');
-    }
+  public function index()
+  {
+    return view('welcome');
+  }
 
-    // acá vamos a ir agregando los métodos que necesitemos para renderizar las otras vistas
+  // acá vamos a ir agregando los métodos que necesitemos para renderizar las otras vistas
 }
