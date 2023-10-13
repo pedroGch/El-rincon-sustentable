@@ -82,6 +82,7 @@
                             'X-Requested-With': 'XMLHttpRequest'
                         },
                     })
+                    location.reload();
                 }
             })
 
