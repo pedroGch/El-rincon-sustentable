@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,4 +48,16 @@ class SesionController extends Controller
   {
     return view('perfil_usuario');
   }
+
+
+  /**
+ * Muestra el panel de administración enviando el usuario logueado
+ * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+ */
+public function dashboardAdmin()
+{
+  return view('dashboard_admin', [
+    '$user' => Auth::user(),
+  ] );
+}
 }
