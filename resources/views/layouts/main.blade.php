@@ -60,7 +60,7 @@
                     data-te-ripple-init data-te-ripple-color="light">
                     {{-- <img src="{{ url('./../public/img/avatar/avatar-valdi.jpg') }}"
                         class="w-[40px] rounded-full shadow-lg" alt="Avatar" /> --}}
-                        <p>Nombre Usuario</p>
+                        <p><?= Auth::user()->name; ?></p>
                     <span class="ml-2 w-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
                             <path fill-rule="evenodd"

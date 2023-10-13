@@ -16,10 +16,10 @@
     </div>
 
     <section class="mx-auto max-w-screen-xl">
-        <div class="flex flex-wrap justify-center">
+        <div class="flex flex-col justify-center">
             <div class="mt-10">
-                <div class="mb-5 flex">
-                    <h3 class="text-2xl font-semibold">¡Bienvenid@ NOMBRE-ADMINISTRADOR al Panel de Administración!
+                <div class="mb-5 flex justify-center">
+                    <h3 class="text-xl font-semibold">¡Bienvenid@ <?= Auth::user()->name; ?> al Panel de Administración!
                     </h3>
                 </div>
             </div>
