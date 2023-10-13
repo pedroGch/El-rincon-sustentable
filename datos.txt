@@ -12,6 +12,13 @@ Estudiantes:
   Carácter de entrega: 1er parcial.
 
 
-Aclaración: para el desarrollo de este parcial se decidió utilizar el framework de CSS Tailwind. Es por eso que, para visualizar correctamente los estilos, es necesario correr el comando 'npm run dev'.
+Instalación del Proyecto:
+
+* correr el comando 'composer i'
+
+* correr el comando 'npm i'
+
+* correr el comando 'npm run db:seeder'
 
 
+Aclaración: este último comando corre las migraciones, los seeders y por último ejecuta el servidor para visualizar correctamente los estilos ya que se decidió utilizar el framework de CSS Tailwind.
