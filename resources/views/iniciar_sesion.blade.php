@@ -10,7 +10,7 @@
             <h2 class="text-principal my-4 mt-10 text-4xl font-semibold ">Iniciar Sesión</h2>
         </div>
 
-        <section class="mx-6 flex justify-center p-4 ">
+        <section class="mb-10 lg:mx-6 flex justify-center p-4 ">
             <form action="{{ url('/validar_usuario') }}" method="POST"
                 class="block  rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                 @csrf
