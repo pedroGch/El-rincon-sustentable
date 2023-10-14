@@ -10,13 +10,13 @@
             <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Contacto</h2>
         </div>
 
-        <div class="row flex my-4 justify-between ">
+        <div class="row lg:flex my-4 justify-between ">
 
-            <div class="flex-1 my-4">
+            <div class="lg:flex-1 my-4">
                 <img src="../public/img/envelope.jpg" alt="ilustración de un sobre postal color verde" class="block m-auto">
             </div>
 
-            <div class="flex-1 my-4">
+            <div class="lg:flex-1 my-4">
                 @if ($errors->any())
                     <div>
                         <p class="text-danger-700">Hay errores en los datos ingresados. Corregir por favor los errores
@@ -72,9 +72,9 @@
                             class="border border-gray-500 rounded p-2 w-full @error('asunto') border-red-700 @enderror"
                             value="{{ old('asunto') }}"
                             @error('asunto')
-            aria-invalid="true"
-            aria-describedby="error-asunto"
-            @enderror>
+                            aria-invalid="true"
+                            aria-describedby="error-asunto"
+                            @enderror>
                         @error('asunto')
                             <div class="mt-1 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
