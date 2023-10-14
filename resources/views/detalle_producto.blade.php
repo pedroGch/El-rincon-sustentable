@@ -10,14 +10,14 @@
 
 @section('content')
     <div class="flex justify-center">
-        <h2 class="text-principal my-4 mt-10 text-4xl font-semibold ">Detalles del producto</h2>
+        <h2 class="text-principal my-4 mt-10 text-4xl font-semibold ">Detalle del producto</h2>
     </div>
 
     <section class="mx-auto max-w-screen-xl">
         <div class="flex flex-wrap">
-            <div class="flex-1">
+            <div class="lg:flex-1">
                 <div
-                    class=" block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                    class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                     <div class="relative overflow-hidden bg-cover bg-no-repeat" data-te-ripple-init
                         data-te-ripple-color="light">
                         <img class="rounded-t-lg  m-auto" src="{{ asset("img/productos/{$producto->imagen_prod}") }}"
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-1">
+            <div class="lg:flex-1">
                 <div class="p-6">
                     <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         {{ $producto->nombre_prod }}
@@ -52,7 +52,7 @@
                             {{ $producto->precio_formateado($producto->precio) }}
                         </li>
                     </ul>
-                    <form action="{{ url('/producto/' . $producto->id) }}" method="GET">
+                    <form action="{{ url('/producto/' . $producto->id) }}" method="GET" class="mb-5">
                         <button type="submit"
                             class="mt-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-terciario hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-terciario focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-terciario active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                             data-te-ripple-init data-te-ripple-color="light">
