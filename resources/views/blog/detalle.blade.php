@@ -16,9 +16,9 @@
 
     <section class="mx-auto max-w-screen-xl">
         <div class="flex justify-center">
-            <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">{{ $noticia->titulo }}</h2>
+            <h2 class="text-principal my-4 mt-10 text-xl md:text-4xl font-semibold">{{ $noticia->titulo }}</h2>
         </div>
-        <article class="mx-6 grid grid-cols-2 w-full p-4">
+        <article class="lg:mx-6 lg:grid lg:grid-cols-2 w-full lg:p-4">
             <div class="card-header m-4">
                 @if ($noticia->imagen !== null)
                     <img src="{{ asset('./storage/' . $noticia->imagen) }}" alt="{{ $noticia->alt }}">
@@ -26,7 +26,7 @@
                     <p>Esta noticia no tiene imagen</p>
                 @endif
 
-                <span class=" fecha text-s my-1 text-gray-400">abril 29, 2023</span>
+                <span class="fecha text-s my-1 text-gray-400">abril 29, 2023</span>
             </div>
             <div class="card-body m-4">
                 <p>{!! nl2br($noticia->contenido) !!}</p>
@@ -34,8 +34,8 @@
         </article>
     </section>
     <section>
-        <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Seguir leyendo</h2>
-        <div class="flex mb-8">
+        <h2 class="text-principal my-4 mt-10 text-xl md:text-4xl font-semibold">Seguir leyendo</h2>
+        <div class="lg:flex mb-8">
             @foreach ($noticias as $cadaNoticia)
                 <div class="card m-5">
                     <a href="{{ url('/blog/' . $cadaNoticia->id . '/leer_mas') }}">
