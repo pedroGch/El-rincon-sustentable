@@ -30,7 +30,7 @@
         <div class="flex justify-center">
             <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Crear Noticia</h2>
         </div>
-        <div class="flex-1 my-4 mx-6 px-6">
+        <div class="flex-1 my-4 lg:mx-6 lg:px-6">
             <form action="{{ url('/blog/noticia/nueva') }}" method="POST" id="form-alta" class=""
                 enctype="multipart/form-data">
                 @csrf
