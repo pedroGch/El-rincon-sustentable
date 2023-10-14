@@ -11,14 +11,14 @@
 
 @section('content')
     <div class="flex justify-center">
-        <h2 class="text-principal my-4 mt-10 text-4xl font-semibold ">Panel de Administración</h2>
+        <h2 class="text-center text-principal my-4 mt-10 text-4xl font-semibold ">Panel de Administración</h2>
     </div>
 
     <section class="mx-auto max-w-screen-xl">
         <div class="flex flex-col justify-center">
             <div class="mt-10">
                 <div class="mb-5 flex justify-center">
-                    <h3 class="text-xl font-semibold">¡Bienvenid@ <?= Auth::user()->name ?> al Panel de Administración!
+                    <h3 class="text-center text-xl font-semibold">¡Bienvenid@ <?= Auth::user()->name ?> al Panel de Administración!
                     </h3>
                 </div>
             </div>
@@ -41,7 +41,7 @@
         </div>
         <div class="mb-8 flex flex-wrap justify-center">
             <div>
-                <p class="">Actualmente tenés {{ $noticias->count() }} noticias cargadas en el Blog.</p>
+                <p class="text-center">Actualmente tenés {{ $noticias->count() }} noticias cargadas en el Blog.</p>
             </div>
 
         </div>
