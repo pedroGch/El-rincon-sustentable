@@ -7,11 +7,19 @@ use Illuminate\Http\Request;
 
 class ContactoController extends Controller
 {
+  /**
+   * Retorna la vista de la página de contacto
+   * @return \Illuminate\View\View
+   */
   public function index()
   {
     return view('contacto');
   }
 
+  /*
+   * Valida los datos del formulario de contacto
+   * @return \Illuminate\View\View
+   */
   public function validar_contacto(Request $request)
   {
 

@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
+    /**
+     * Realiza el proceso de login de un usuario y redirecciona a la pantalla
+     * @return \Illuminate\View\View
+     */
+     */
     public function processLogin(Request $request)
     {
       $credentials = $request->only(['email', 'password']);
@@ -13,8 +18,8 @@ class AuthController extends Controller
         return redirect('/iniciar-sasion'); //redireccionar a la pantalla de logueo
       }
 
-      $user = (Auth::user()->rol_fk == 1) ? '/admin/dashboard' : '/pelis/listado';
-    
+      $user = (Auth::user()->rol_fk == 1) ? '/admin/dashboard' : '/admin/dashboard';
+
       return redirect('peliculas/listado')->with('status.message', 'sesión iniciada con éxito'. Auth::user->nombre());
     }
 

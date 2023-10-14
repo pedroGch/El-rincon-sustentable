@@ -8,11 +8,20 @@ use Illuminate\Support\Facades\Auth;
 
 class SesionController extends Controller
 {
+  /**
+   * Retorna la vista de la página de inicio de sesión
+   * @return \Illuminate\View\View
+   */
   public function iniciar_sesion()
   {
     return view('iniciar_sesion');
   }
 
+  /**
+   * Valida los datos del formulario de inicio de sesión y loguea al usuario
+   * @param Request $request
+   * @return \Illuminate\View\View
+   */
   public function validar_usuario(Request $request)
   {
     $credentials = $request->only(['email', 'password']);
@@ -26,6 +35,11 @@ class SesionController extends Controller
     return redirect($url)->with('status.message', 'Hola ' . Auth::user()->name . ', iniciaste sesión con éxito');
   }
 
+  /**
+   * Cierra la sesión del usuario
+   * @param Request $request
+   * @return \Illuminate\View\View
+   */
   public function cerrar_sesion(Request $request)
   {
     Auth::logout();
@@ -35,16 +49,28 @@ class SesionController extends Controller
     return view('welcome')->with('status.message', 'Sesión cerrada correctamente');
   }
 
+  /**
+   * Retorna la vista de la página de creación de cuenta
+   * @return \Illuminate\View\View
+   */
   public function crear_cuenta()
   {
     return view('crear_cuenta');
   }
 
+  /**
+   * Retorna la vista de la página del dashboard del administrador
+   * @return \Illuminate\View\View
+   */
   public function dashboard_admin()
   {
     return view('dashboard_admin');
   }
 
+  /**
+   * Retorna la vista de la página del perfil del usuario
+   * @return \Illuminate\View\View
+   */
   public function perfil_usuario()
   {
     return view('perfil_usuario');
