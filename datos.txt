@@ -14,11 +14,21 @@ Estudiantes:
 
 Instalación del Proyecto:
 
-* correr el comando 'composer i'
+* Ejecutar el comando 'composer i'
 
-* correr el comando 'npm i'
+* Ejecutar el comando 'npm i'
 
-* correr el comando 'npm run db:seeder'
+* Ejecutar el comando 'php artisan storage:link'
 
+* Ejecutar el comando 'npm run db:seeder'
 
 Aclaración: este último comando corre las migraciones, los seeders y por último ejecuta el servidor para visualizar correctamente los estilos ya que se decidió utilizar el framework de CSS Tailwind.
+
+
+Por último, en el archivo '.env' es necesario modificar la línea 
+
+'FILESYSTEM_DISK=local'
+
+por:
+
+'FILESYSTEM_DISK=public'
