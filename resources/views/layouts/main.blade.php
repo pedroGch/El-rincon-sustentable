@@ -338,7 +338,7 @@ data-te-navbar-ref>
         </footer>
     </div>
 
-    <script type="text/javascript" src="./../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script type="text/javascript" src="{{ url('./../node_modules/tw-elements/dist/js/tw-elements.umd.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
