@@ -90,11 +90,10 @@
                         <label for="mensaje" class="block font-bold my-2"> Mensaje </label>
                         <textarea name="mensaje" id="mensaje" cols="30" rows="10"
                             class="border border-gray-500 rounded p-2 w-full  @error('mensaje') border-red-700 @enderror"
-                            value="{{ old('mensaje') }}"
                             @error('mensaje')
-            aria-invalid="true"
-            aria-describedby="error-mensaje"
-            @enderror></textarea>
+                            aria-invalid="true"
+                            aria-describedby="error-mensaje"
+                             @enderror>{{ old('mensaje') }}</textarea>
                         @error('mensaje')
                             <div class="mt-1 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">

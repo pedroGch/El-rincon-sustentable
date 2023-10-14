@@ -56,11 +56,10 @@
                 <label for="contenido" class="block font-bold my-2"> Contenido </label>
                 <textarea name="contenido" id="contenido" cols="30" rows="10"
                     class="border border-gray-500 rounded p-2 w-full @error('contenido') border-red-700 @enderror"
-                    value="{{ old('contenido') }}"
                     @error('contenido')
                     aria-invalid="true"
                     aria-describedby="error-contenido"
-                    @enderror>
+                    @enderror> {{ old('contenido') }}
       </textarea>
                 @error('contenido')
                     <div class="mt-1 flex">
