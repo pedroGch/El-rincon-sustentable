@@ -116,6 +116,7 @@
         </main>
         <footer class="w-screen py-6 h-[360px] bg-secundario drop-shadow-xl text-white">
             <div class="flex mx-auto max-w-screen-xl">
+              <h2 class="hidden">Datos:</h2>
                 <div class="flex-1">
                     <div class="mb-4">
                         <h3 class="block mb-2 text-2xl font-bold ">Materia:</h3>
