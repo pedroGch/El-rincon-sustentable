@@ -61,7 +61,7 @@
     </section>
     <section class="mb-4 mx-auto max-w-screen-xl">
         <div class="flex justify-center">
-            <h2 class="text-principal my-6 mt-14 text-4xl font-semibold">Bienvenidos al <span class="font-lemonada">Rincón
+            <h2 class="text-xl  text-center text-principal my-6 mt-14 md:text-4xl font-semibold">Bienvenidos al <span class="font-lemonada">Rincón
                     Sustentable</span></h2>
         </div>
 
@@ -69,7 +69,7 @@
 
             <div class="flex flex-wrap my-4 justify-between ">
 
-                <div class="flex-1 my-4 ms-7">
+                <div class="lg:flex-1 my-4 ms-7">
                     <p class="mb-3 p-2 text-lg">Nos alegra que hayas decidido visitar nuestra página y explorar los
                         artículos que ofrecemos para el cuidado del medio ambiente.</p>
 
@@ -84,7 +84,7 @@
                         eficientes y amigables con el medio ambiente.</p>
                 </div>
 
-                <div class="flex-1 my-4">
+                <div class="lg:flex-1 my-4">
                     <img src="../public/img/medio-ambiente.jpg" alt="manos sosteniendo un brote de una planta"
                         class="block m-auto">
                 </div>
@@ -94,7 +94,7 @@
 
     <section class="mb-8 mx-auto w-full bg-principal drop-shadow-xl">
         <div class="mx-auto py-5 max-w-screen-xl">
-            <p class="mt-12 pb-3 text-2xl text-center italic text-white">En nuestro blog, podrás encontrar información útil
+            <p class="p-3 mt-12 pb-3 lg:text-2xl text-center italic text-white">En nuestro blog, podrás encontrar información útil
                 y consejos prácticos para ayudarte a reducir el desperdicio, ahorrar energía y crear un hogar más sostenible
                 para disminuir tu impacto ambiental en la vida cotidiana. </p>
             <p class="pb-8 text-2xl text-center italic text-white">¡Vos también podés ser parte!</p>
@@ -109,13 +109,13 @@
         <div class="container">
 
             <div class="flex flex-wrap my-4 justify-between ">
-                <div class="flex-1 my-4">
+                <div class="lg:flex-1 my-4">
                     <img src="../public/img/ecologia.jpg" alt="manos sosteniendo un brote de una planta"
                         class="block m-auto">
                 </div>
 
-                <div class="flex-1 my-4 ms-7 ">
-                    <p class="mb-3 pt-12 pe-16 text-2xl text-principal font-semibold">Te ofrecemos un servicio de atención
+                <div class="lg:flex-1 my-4 ms-7 ">
+                    <p class="mb-3 pt-12 pe-16 lg:text-2xl text-principal font-semibold">Te ofrecemos un servicio de atención
                         al cliente dedicado y dispuesto a brindarte asesoramiento personalizado. Estamos aquí para responder
                         tus preguntas, ofrecerte información detallada sobre nuestros productos y ayudarte a encontrar la
                         mejor solución sostenible para tus necesidades.</p>
