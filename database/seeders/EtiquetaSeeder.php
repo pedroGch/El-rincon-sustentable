@@ -13,7 +13,7 @@ class EtiquetaSeeder extends Seeder
      */
     public function run(): void
     {
-      DB::table('etiquetas')->insert(
+      DB::table('etiquetas')->insert([
         [
           'etiqueta_id' => 1,
           'nombre' => 'en promoción',
@@ -38,6 +38,6 @@ class EtiquetaSeeder extends Seeder
           'created_at' => now(),
           'updated_at' => now(),
         ],
-      );
+      ]);
     }
 }

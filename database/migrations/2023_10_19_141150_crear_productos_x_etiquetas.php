@@ -17,10 +17,10 @@ return new class extends Migration
         $table->foreign('etiqueta_id')->references('etiqueta_id')->on('etiquetas');
 
         //creamos las referencias (de la forma corta) a la tabla productos
-        $table->foreignId('id')->constrained('productos', 'id');
+        $table->foreignId('producto_id')->constrained('productos', 'id');
 
         //aclaramos que la clave primaria es la combinacion de las claves primarias de producto y etiqueta
-        $table->primary(['id', 'etiqueta_id']);
+        $table->primary(['producto_id', 'etiqueta_id']);
 
         $table->timestamps();
       });

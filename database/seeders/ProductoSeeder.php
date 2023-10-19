@@ -135,73 +135,73 @@ class ProductoSeeder extends Seeder
         ]
         );
 
-        DB::table('productos_x_etquitas')->insert(
+        DB::table('productos_x_etquitas')->insert([
           [
-            'id' => 1,
+            'producto_id' => 1,
             'etiqueta_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 2,
+            'producto_id' => 2,
             'etiqueta_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 3,
+            'producto_id' => 3,
             'etiqueta_id' => 4,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 4,
+            'producto_id' => 4,
             'etiqueta_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 4,
+            'producto_id' => 4,
             'etiqueta_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 5,
+            'producto_id' => 5,
             'etiqueta_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 6,
+            'producto_id' => 6,
             'etiqueta_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 7,
+            'producto_id' => 7,
             'etiqueta_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 8,
+            'producto_id' => 8,
             'etiqueta_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 8,
+            'producto_id' => 8,
             'etiqueta_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
           ],
           [
-            'id' => 8,
+            'producto_id' => 8,
             'etiqueta_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
           ],
-        );
+        ]);
     }
 }
