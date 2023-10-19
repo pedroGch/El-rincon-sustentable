@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -43,5 +44,21 @@ class ProductoController extends Controller
     $producto->etiquetas()->attach($request->input('etiquetas') ?? []);
 
     return view('detalle_producto', ["producto" => $producto]);
+  }
+
+  public function bajaDeProducto($id)
+  {
+    //buscamos el producto a eliminar
+    $producto = Producto::findoOrFail($id);
+    //rompemos la relacion
+    $producto->deteach();
+    //eliminamos el producto
+    $producto->delete();
+    //si tenia una magen cargada la borramos de la carpeta storage
+    if ($producto->img && Storage::has($producto->img)){
+      Storage::delete($producto->img);
+    }
+    //retornamos a una vista
+    return view('detalle_producto');
   }
 }
