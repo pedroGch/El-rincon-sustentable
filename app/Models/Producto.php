@@ -93,4 +93,16 @@ class Producto extends Model
   {
     return $this->belongsTo(Categoria::class, 'categoria_id', 'id');
   }
+
+  public function etiquetas()
+  {
+    return $this->belongsToMany(
+      Etiqueta::class,
+      'productos_x_etquitas',
+      'producto_id',
+      'etiqueta_id',
+      'id',
+      'etiqueta_id'
+    );
+  }
 }
