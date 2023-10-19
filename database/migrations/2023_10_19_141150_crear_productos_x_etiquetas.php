@@ -14,7 +14,7 @@ return new class extends Migration
       Schema::create('productos_x_etquitas', function (Blueprint $table) {
         //creamos las referencias a la tabla etiquetas
         $table->unsignedTinyInteger('etiqueta_id');
-        $table->foreign('etiqueta_id')->references('tequita_id')->on('etiquetas');
+        $table->foreign('etiqueta_id')->references('etiqueta_id')->on('etiquetas');
 
         //creamos las referencias (de la forma corta) a la tabla productos
         $table->foreignId('id')->constrained('productos', 'id');
