@@ -45,6 +45,15 @@
                         </li>
                         <li
                             class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">
+                            Etiquetas:
+                            @forelse ( $producto->etiquetas as $etiqueta)
+                              <span class="bg-blue-500 text-white font-semibold rounded-full py-1 px-3 text-xs">{{$etiqueta->nombre}}</span>
+                            @empty
+                              <span>Este producto no posee etiquetas</span>
+                            @endforelse
+                        </li>
+                        <li
+                            class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">
                             Stock: {{ $producto->stock }}
                         </li>
                         <li
