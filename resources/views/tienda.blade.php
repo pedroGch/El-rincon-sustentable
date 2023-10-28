@@ -1,6 +1,8 @@
 <?php
+use Illuminate\Pagination\LengthAwarePaginator;
+
 /**
- * @var \App\Models\Producto[] | \Illuminate\Database\Eloquent\Collection $producto
+ * @var \App\Models\Producto[] | \Illuminate\Database\Eloquent\Collection|LengthAwarePaginator $producto
  */
 ?>
 
@@ -59,6 +61,11 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+        <div class="mb-5">
+
+          {{ $productos->links() }}
+
         </div>
     </section>
 @endsection

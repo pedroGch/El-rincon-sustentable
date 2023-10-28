@@ -13,7 +13,8 @@ class BlogController extends Controller
    */
   public function index()
   {
-    $noticias = Noticia::all();
+    //$noticias = Noticia::all();
+    $noticias = Noticia::paginate(2);
     return view('blog.blog', ["noticias" => $noticias]);
   }
 

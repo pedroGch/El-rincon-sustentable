@@ -1,6 +1,8 @@
 <?php
+use Illuminate\Pagination\LengthAwarePaginator;
+
 /**
- * @var \App\Models\Noticia[] | \Illuminate\Database\Eloquent\Collection $noticias
+ * @var \App\Models\Noticia[] | \Illuminate\Database\Eloquent\Collection|LengthAwarePaginator $noticias
  */
 ?>
 
@@ -49,6 +51,8 @@
             endforeach
             ?>
         </div>
-
+        <div class="mb-5">
+          {{ $noticias->links() }}
+        </div>
     </section>
 @endsection
