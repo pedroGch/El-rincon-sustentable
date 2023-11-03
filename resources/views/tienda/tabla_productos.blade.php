@@ -32,6 +32,7 @@
                     <tr>
                         <th class="p-3">ID</th>
                         <th class="p-3">Título</th>
+                        <th class="p-3">Categoría</th>
                         <th class="p-3">Acciones</th>
                     </tr>
                 </thead>
@@ -40,6 +41,7 @@
                         <tr class="border-2">
                             <td class="p-3 border-2">{{ $producto->id }}</td>
                             <td class="text-sm p-3 border-2">{{ $producto->nombre_prod }}</td>
+                            <td class="text-sm p-3 border-2">{{ $producto->categoria->nombre_cat }}</td>
                             <td class="p-3 border-2">
                                 <form action="{{ url('/tienda/' . $producto->id . '/editar') }}" method="GET">
                                     <button type="submit"

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Categoria;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -73,6 +74,14 @@ class ProductoController extends Controller
     return view('tienda.tabla_productos', ["productos" => $productos]);
   }
 
-
+/**
+   * Muestra el formulario para crear un producto
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
+  public function formularioCrearProducto()
+  {
+    $categorias = Categoria::all();
+    return view('tienda.formulario_alta_producto', ["categorias" => $categorias]);
+  }
 
 }
