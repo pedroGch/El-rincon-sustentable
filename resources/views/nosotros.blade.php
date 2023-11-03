@@ -11,7 +11,7 @@
         </div>
         <div class="flex flex-wrap">
             <div class="py-3 lg:flex-1 lg:p-10">
-                <img src="../public/img/nosotros.webp" alt="">
+                <img src="img/nosotros.webp" alt="">
             </div>
             <div class="lg:flex-1 lg:p-10 lg:text-xl m-auto">
                 <p>Desde 1980 nos enorgullece ser una tienda comprometida con la promoción de prácticas responsables y
@@ -35,7 +35,7 @@
         <div class="flex justify-center lg:justify-between flex-wrap mb-20 text-center">
             <div class="my-3">
                 <div>
-                    <img class="rounded-full" src="../public/img/emp-3.webp" alt="foto de Ernesto Arriaga, integrante del staff de la empresa">
+                    <img class="rounded-full" src="img/emp-3.webp" alt="foto de Ernesto Arriaga, integrante del staff de la empresa">
                 </div>
                 <div>
                     <p class="text-xl font-semibold mt-4">Ernesto Arriaga</p>
@@ -44,7 +44,7 @@
             </div>
             <div class="my-3">
                 <div>
-                    <img class="rounded-full" src="../public/img/emp-2.webp" alt="foto de Micaela Arriaga, integrante del staff de la empresa">
+                    <img class="rounded-full" src="img/emp-2.webp" alt="foto de Micaela Arriaga, integrante del staff de la empresa">
                 </div>
                 <div>
                     <p class="text-xl font-semibold mt-4">Micaela Arriaga</p>
@@ -53,7 +53,7 @@
             </div>
             <div class="my-3">
                 <div>
-                    <img class="rounded-full" src="../public/img/emp-4.webp" alt="foto de Federico Risso, integrante del staff de la empresa">
+                    <img class="rounded-full" src="img/emp-4.webp" alt="foto de Federico Risso, integrante del staff de la empresa">
                 </div>
                 <div>
                     <p class="text-xl font-semibold mt-4">Federico Risso</p>
@@ -62,7 +62,7 @@
             </div>
             <div class="my-3">
                 <div>
-                    <img class="rounded-full" src="../public/img/emp-1.webp" alt="foto de >Andres Barcala, integrante del staff de la empresa">
+                    <img class="rounded-full" src="img/emp-1.webp" alt="foto de >Andres Barcala, integrante del staff de la empresa">
                 </div>
                 <div>
                     <p class="text-xl font-semibold mt-4">Andres Barcala</p>

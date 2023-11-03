@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="lg:flex-1 my-4">
-                    <img src="../public/img/medio-ambiente.jpg" alt="manos sosteniendo un brote de una planta"
+                    <img src="img/medio-ambiente.jpg" alt="manos sosteniendo un brote de una planta"
                         class="block m-auto">
                 </div>
             </div>
@@ -110,7 +110,7 @@
 
             <div class="flex flex-wrap my-4 justify-between ">
                 <div class="lg:flex-1 my-4">
-                    <img src="../public/img/ecologia.jpg" alt="manos sosteniendo un brote de una planta"
+                    <img src="img/ecologia.jpg" alt="manos sosteniendo un brote de una planta"
                         class="block m-auto">
                 </div>
 

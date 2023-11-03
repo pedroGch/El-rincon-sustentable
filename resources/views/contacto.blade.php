@@ -13,7 +13,7 @@
         <div class="row lg:flex my-4 justify-between ">
 
             <div class="lg:flex-1 my-4">
-                <img src="../public/img/envelope.jpg" alt="ilustración de un sobre postal color verde" class="block m-auto">
+                <img src="img/envelope.jpg" alt="ilustración de un sobre postal color verde" class="block m-auto">
             </div>
 
             <div class="lg:flex-1 my-4">

@@ -16,25 +16,25 @@ class EtiquetaSeeder extends Seeder
       DB::table('etiquetas')->insert([
         [
           'etiqueta_id' => 1,
-          'nombre' => 'en promoción',
+          'nombre' => 'En promoción',
           'created_at' => now(),
           'updated_at' => now(),
         ],
         [
           'etiqueta_id' => 2,
-          'nombre' => 'sin stock',
+          'nombre' => 'Sin stock',
           'created_at' => now(),
           'updated_at' => now(),
         ],
         [
           'etiqueta_id' => 3,
-          'nombre' => 'importado',
+          'nombre' => 'Importado',
           'created_at' => now(),
           'updated_at' => now(),
         ],
         [
           'etiqueta_id' => 4,
-          'nombre' => 'novedad',
+          'nombre' => 'Novedad',
           'created_at' => now(),
           'updated_at' => now(),
         ],

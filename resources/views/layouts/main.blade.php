@@ -32,7 +32,7 @@ data-te-navbar-ref>
                           class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                           type="button" id="dropdownMenuButton1d" data-te-dropdown-toggle-ref aria-expanded="false"
                           data-te-ripple-init data-te-ripple-color="light">
-                          {{-- <img src="{{ url('./../public/img/avatar/avatar-valdi.jpg') }}"
+                          {{-- <img src="{{ url('img/avatar/avatar-valdi.jpg') }}"
                           class="w-[40px] rounded-full shadow-lg" alt="Avatar" /> --}}
                           <?= Auth::user()->name ?>
                           <span class="ml-2 w-2">
@@ -194,7 +194,7 @@ data-te-navbar-ref>
                           class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                           type="button" id="dropdownMenuButton1d" data-te-dropdown-toggle-ref aria-expanded="false"
                           data-te-ripple-init data-te-ripple-color="light">
-                          {{-- <img src="{{ url('./../public/img/avatar/avatar-valdi.jpg') }}"
+                          {{-- <img src="{{ url('img/avatar/avatar-valdi.jpg') }}"
                           class="w-[40px] rounded-full shadow-lg" alt="Avatar" /> --}}
                           <?= Auth::user()->name ?>
                           <span class="ml-2 w-2">
@@ -270,13 +270,13 @@ data-te-navbar-ref>
                             <p class="lg:text-xl">DWN4BV - 4to - 2023</p>
                         </div>
                         <div class="hidden lg:flex align-middle justify-center lg:justify-normal lg:mb-4"><img
-                                src="{{ url('./../public/img/logo-davinci.png') }}" alt="logo Escuela Da Vinci" /></div>
+                                src="{{ url('img/logo-davinci.png') }}" alt="logo Escuela Da Vinci" /></div>
                     </div>
                     <div id="container-team" class="lg:flex-1 p-4">
                         <h3 class="block lg:text-2xl font-bold ">Alumnos:</h3>
                         <div class="flex flex-wrap pb-2 justify-center">
                             <div id="avatar-pedro" class="text-center px-6 pt-8">
-                                <img src="{{ url('./../public/img/avatar/avatar-pedro.jpg') }}"
+                                <img src="{{ url('img/avatar/avatar-pedro.jpg') }}"
                                     class="mx-auto mb-4 w-32 rounded-lg" alt="Avatar Pedro Gonzalez Chavez" />
                                 <p class="mb-2 text-xl font-medium leading-tight">Pedro <br>Gonzalez Chavez</p>
                                 <div>
@@ -293,7 +293,7 @@ data-te-navbar-ref>
                                 </div>
                             </div>
                             <div id="avatar-rocio" class="text-center px-6 pt-8">
-                                <img src="{{ url('./../public/img/avatar/avatar-rocio.jpg') }}"
+                                <img src="{{ url('img/avatar/avatar-rocio.jpg') }}"
                                     class="mx-auto mb-4 w-32 rounded-lg" alt="Avatar Rocío Scotto" />
                                 <p class="mb-2 text-xl font-medium leading-tight">Rocío <br>Scotto</p>
                                 <div>
@@ -310,7 +310,7 @@ data-te-navbar-ref>
                                 </div>
                             </div>
                             <div id="avatar-valdi" class="text-center px-6 pt-8">
-                                <img src="{{ url('./../public/img/avatar/avatar-valdi.jpg') }}"
+                                <img src="{{ url('img/avatar/avatar-valdi.jpg') }}"
                                     class="mx-auto mb-4 w-32 rounded-lg" alt="Avatar Ezequiel Valdiviezo" />
                                 <p class="mb-2 text-xl font-medium leading-tight">Ezequiel <br>Valdiviezo</p>
                                 <div>
@@ -332,7 +332,7 @@ data-te-navbar-ref>
             </div>
             <div class="sm:hidden">
                 <div class="flex align-middle justify-center lg:justify-normal lg:mb-4"><img
-                        src="{{ url('./../public/img/logo-davinci.png') }}" alt="logo Escuela Da Vinci" /></div>
+                        src="{{ url('img/logo-davinci.png') }}" alt="logo Escuela Da Vinci" /></div>
             </div>
 
         </footer>
