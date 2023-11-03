@@ -33,19 +33,29 @@ class ProductoController extends Controller
   }
 
   /**
-   * Retorna la vista de la página del detalle de un producto
+   * Crea un nuevo producto
+   * @param Request $request
    * @return \Illuminate\View\View
    */
   public function altaDeProducto(Request $request)
   {
-    $data = 'algo que todavia no se que es';
+    //validamos los datos
+    $request->validate(Producto::$rules, Producto::$errorMessages);
+    $data = $request->only('nombre_prod', 'categoria_id', 'descripcion', 'stock', 'precio', 'alt');
+
+    //si viene una imagen en el request
+    if ($request->hasFile('imagen_prod')) {
+      //guardamos la imagen en la carpeta storage
+      $data['imagen_prod'] = $request->file('imagen_prod')->store('productos');
+    }
 
     $producto = Producto::create($data);
-    //aca decimos que agregamos la relacion de etiquitas, si es que vino en el request
+    //aca decimos que agregamos la relacion de etiquetas, si es que vino en el request
     //de lo contrario mandamos un array vacio
     $producto->etiquetas()->attach($request->input('etiquetas') ?? []);
 
-    return view('detalle_producto', ["producto" => $producto]);
+    return redirect('/tienda/gestor_productos')
+      ->with('status.message', 'El producto fue correctamente agregado');
   }
 
   public function bajaDeProducto($id)

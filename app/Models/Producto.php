@@ -39,6 +39,29 @@ class Producto extends Model
   //use HasFactory;
 
   protected $table = 'productos';
+  protected $fillable = ['nombre_prod', 'imagen_prod', 'alt', 'categoria_id', 'descripcion', 'stock', 'precio'];
+
+  public static $rules = [
+    'nombre_prod' => 'required|max:255',
+    'categoria_id' => 'required',
+    'descripcion' => 'required',
+    'stock' => 'required|numeric',
+    'precio' => 'required|numeric',
+  ];
+
+  public static $errorMessages = [
+    'nombre_prod.required' => 'El nombre del producto es requerido',
+    'nombre_prod.max' => 'El nombre del producto no puede contener más de 255 carateres',
+    'categoria_id.required' => 'La categoría es requerida',
+    'descripcion.required' => 'La descripción es requerida',
+    'stock.required' => 'El stock es requerido',
+    'stock.numeric' => 'El stock debe ser un número',
+    'precio.required' => 'El precio es requerido',
+    'precio.numeric' => 'El precio debe ser un número',
+  ];
+
+
+
 
   /**
    * Esta función devuelve las primeras x palabras de un párrafo

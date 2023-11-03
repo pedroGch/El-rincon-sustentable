@@ -49,3 +49,4 @@ Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 
 // RUTAS RELACIONADAS A LA ADMINISTRACIÓN DE PRODUCTOS
 Route::get('/tienda/gestor_productos', [\App\Http\Controllers\ProductoController::class, 'obtenerProductos'])->middleware(['auth']);
 Route::get('/tienda/producto/nuevo', [\App\Http\Controllers\ProductoController::class, 'formularioCrearProducto'])->middleware(['auth']);
+Route::post('/tienda/producto/nuevo', [\App\Http\Controllers\ProductoController::class, 'altaDeProducto'])->middleware(['auth']);

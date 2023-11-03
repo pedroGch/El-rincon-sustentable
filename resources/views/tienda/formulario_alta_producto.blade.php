@@ -96,7 +96,7 @@
 
                   <div class="me-4">
                     <label for="categoria_id" class="form-label block font-bold my-2"> Categoría</label>
-                    <select name="categoria_id" id="categoria_id" class="form-control border border-gray-500 rounded " data-te-select-init>
+                    <select name="categoria_id" id="categoria_id" class="form-control border border-gray-500 rounded" data-te-select-init>
                       @foreach($categorias as $categoria)
                         <option
                           value="{{ $categoria->id }}"> {{ $categoria->nombre_cat }}
@@ -144,22 +144,22 @@
                   </div>
                 </div>
 
-                <label for="alt_imagen_prod" class="mt-3 block font-bold my-2"> Descripción de la imagen</label>
-                <input type="text" name="alt_imagen_prod" id="alt_imagen_prod"
-                    class="border border-gray-500 rounded p-2 w-full @error('alt_imagen_prod') border-red-700 @enderror"
-                    value="{{ old('alt_imagen_prod') }}"
-                    @error('alt_imagen_prod')
+                <label for="alt" class="mt-3 block font-bold my-2"> Descripción de la imagen</label>
+                <input type="text" name="alt" id="alt"
+                    class="border border-gray-500 rounded p-2 w-full @error('alt') border-red-700 @enderror"
+                    value="{{ old('alt') }}"
+                    @error('alt')
                     aria-invalid="true"
-                    aria-describedby="error-alt_imagen_prod"
+                    aria-describedby="error-alt"
                     @enderror>
-                @error('alt_imagen_prod')
+                @error('alt')
                     <div class="mt-1 flex">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
                             <path fill-rule="evenodd"
                                 d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
                                 clip-rule="evenodd" />
                         </svg>
-                        <p class="text-danger-700" id="error-alt_imagen_prod"> {{ $message }}</p>
+                        <p class="text-danger-700" id="error-alt"> {{ $message }}</p>
                     </div>
                 @enderror
 
