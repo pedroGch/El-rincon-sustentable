@@ -62,4 +62,17 @@ class ProductoController extends Controller
     //retornamos a una vista
     return view('detalle_producto');
   }
+
+   /**
+   * Muestra el gestor de productos
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
+  public function obtenerProductos()
+  {
+    $productos = Producto::all();
+    return view('tienda.tabla_productos', ["productos" => $productos]);
+  }
+
+
+
 }

@@ -45,3 +45,6 @@ Route::post('/blog/{id}/editar', [\App\Http\Controllers\BlogController::class, '
 Route::get('/panel_admin', [\App\Http\Controllers\BlogController::class, 'dashboardAdmin'])->middleware(['auth']);
 Route::get('/perfil_usuario', [\App\Http\Controllers\SesionController::class, 'perfil_usuario'])->middleware(['auth']);
 Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 'borrarNoticia'])->whereNumber('id');
+
+// RUTAS RELACIONADAS A LA ADMINISTRACIÓN DE PRODUCTOS
+Route::get('/tienda/gestor_productos', [\App\Http\Controllers\ProductoController::class, 'obtenerProductos'])->middleware(['auth']);
