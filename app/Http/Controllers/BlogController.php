@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Noticia;
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class BlogController extends Controller
 {
@@ -51,6 +52,10 @@ class BlogController extends Controller
   {
     $noticia = Noticia::findOrFail($id);
     $noticia->delete();
+    //si tenia una magen cargada la borramos de la carpeta storage
+    if ($noticia->imagen && Storage::has($noticia->imagen)){
+      Storage::delete($noticia->imagen);
+    }
     return redirect('/blog/gestor_noticias')->with('status.message', 'La noticia ' . e($noticia->titulo) . ' fue eliminada con éxito.');
   }
 

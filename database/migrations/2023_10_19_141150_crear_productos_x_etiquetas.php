@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-      Schema::create('productos_x_etquitas', function (Blueprint $table) {
+      Schema::create('productos_x_etiquetas', function (Blueprint $table) {
         //creamos las referencias a la tabla etiquetas
         $table->unsignedTinyInteger('etiqueta_id');
         $table->foreign('etiqueta_id')->references('etiqueta_id')->on('etiquetas');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-      Schema::dropIfExists('productos_x_etquitas');
+      Schema::dropIfExists('productos_x_etiquetas');
     }
 };

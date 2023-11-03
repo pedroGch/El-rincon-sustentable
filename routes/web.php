@@ -52,6 +52,4 @@ Route::get('/tienda/producto/nuevo', [\App\Http\Controllers\ProductoController::
 Route::post('/tienda/producto/nuevo', [\App\Http\Controllers\ProductoController::class, 'altaDeProducto'])->middleware(['auth']);
 Route::get('/tienda/{id}/editar', [\App\Http\Controllers\ProductoController::class, 'formularioEditarProducto'])->middleware(['auth']);
 Route::post('/tienda/{id}/editar', [\App\Http\Controllers\ProductoController::class, 'editarProducto'])->middleware(['auth']);
-
-
-// tienda.formulario_editar_producto
+Route::get('/tienda/{id}/eliminar', [\App\Http\Controllers\ProductoController::class, 'bajaDeProducto'])->whereNumber('id');

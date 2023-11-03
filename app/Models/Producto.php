@@ -127,7 +127,7 @@ class Producto extends Model
   {
     return $this->belongsToMany(
       Etiqueta::class,
-      'productos_x_etquitas',
+      'productos_x_etiquetas',
       'producto_id',
       'etiqueta_id',
       'id',

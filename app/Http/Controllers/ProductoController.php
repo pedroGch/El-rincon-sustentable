@@ -96,15 +96,15 @@ class ProductoController extends Controller
     //buscamos el producto a eliminar
     $producto = Producto::findoOrFail($id);
     //rompemos la relacion
-    $producto->deteach();
+    $producto->detach();
     //eliminamos el producto
     $producto->delete();
     //si tenia una magen cargada la borramos de la carpeta storage
-    if ($producto->img && Storage::has($producto->img)){
-      Storage::delete($producto->img);
+    if ($producto->imagen_prod && Storage::has($producto->imagen_prod)){
+      Storage::delete($producto->imagen_prod);
     }
-    //retornamos a una vista
-    return view('detalle_producto');
+    return redirect('/tienda/gestor_productos')
+      ->with('status.message', 'El producto fue correctamente eliminado.');
   }
 
    /**

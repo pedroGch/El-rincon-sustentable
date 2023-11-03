@@ -135,7 +135,7 @@ class ProductoSeeder extends Seeder
         ]
         );
 
-        DB::table('productos_x_etquitas')->insert([
+        DB::table('productos_x_etiquetas')->insert([
           [
             'producto_id' => 1,
             'etiqueta_id' => 1,
