@@ -345,12 +345,19 @@ data-te-navbar-ref>
 </html>
 
 <script>
-
   // Initialization for ES Users
   import {
+    Carousel,
     Collapse,
+    Dropdown,
+    Select,
     initTE,
   } from "tw-elements";
 
-  initTE({ Collapse });
+  initTE({
+    Carousel,
+    Collapse,
+    Dropdown,
+    Select
+  });
 </script>
