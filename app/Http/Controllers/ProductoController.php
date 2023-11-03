@@ -113,7 +113,7 @@ class ProductoController extends Controller
    */
   public function obtenerProductos()
   {
-    $productos = Producto::all();
+    $productos = Producto::with(['categoria', 'etiquetas'])->get();
     return view('tienda.tabla_productos', ["productos" => $productos]);
   }
 

@@ -33,6 +33,7 @@
                         <th class="p-3">ID</th>
                         <th class="p-3">Título</th>
                         <th class="p-3">Categoría</th>
+                        <th class="p-3">Etiquetas</th>
                         <th class="p-3">Acciones</th>
                     </tr>
                 </thead>
@@ -42,6 +43,13 @@
                             <td class="p-3 border-2">{{ $producto->id }}</td>
                             <td class="text-sm p-3 border-2">{{ $producto->nombre_prod }}</td>
                             <td class="text-sm p-3 border-2">{{ $producto->categoria->nombre_cat }}</td>
+                            <td class="text-sm p-3 border-2">
+                              @forelse ( $producto->etiquetas as $etiqueta)
+                              <div class="p-1"><span class="bg-blue-500 text-white font-semibold rounded-full py-1 px-3 text-xs">{{$etiqueta->nombre}}</span></div>
+                            @empty
+                              <span>Este producto no posee etiquetas</span>
+                            @endforelse
+                            </td>
                             <td class="p-3 border-2">
                                 <form action="{{ url('/tienda/' . $producto->id . '/editar') }}" method="GET">
                                     <button type="submit"

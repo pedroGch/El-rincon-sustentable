@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\Producto
@@ -118,20 +120,26 @@ class Producto extends Model
    * Esta función devuelve el objeto de la clase Categoria al que pertenece el producto
    * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
    */
-  public function categoria()
+  public function categoria() :BelongsTo
   {
     return $this->belongsTo(Categoria::class, 'categoria_id', 'id');
   }
 
-  public function etiquetas()
+  /**
+   * Creamos la relación entre la tabla productos y la tabla etiquetas
+   * (Relación muchos a muchos)
+   * Esta función devuelve un array de objetos de la clase Etiqueta
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+   */
+  public function etiquetas() :BelongsToMany
   {
     return $this->belongsToMany(
-      Etiqueta::class,
-      'productos_x_etiquetas',
-      'producto_id',
-      'etiqueta_id',
-      'id',
-      'etiqueta_id'
+      Etiqueta::class, //FQN del Modelo que representa la tabla pivot
+      'productos_x_etiquetas', // "table" nombre de la tabla pivot
+      'producto_id', // "foreignPivotKey" (este Modelo en la pivot)
+      'etiqueta_id', // "relatedPivotKey" Modelo con el que se relaciona
+      'id', // "parentKey" este Modelo
+      'etiqueta_id' // "relatedKey" Modelo con el que se relaciona
     );
   }
 }

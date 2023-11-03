@@ -134,7 +134,7 @@ class ProductoSeeder extends Seeder
           ],
         ]
         );
-
+        // Seeder de relación muchos a muchos entre productos y etiquetas
         DB::table('productos_x_etiquetas')->insert([
           [
             'producto_id' => 1,
