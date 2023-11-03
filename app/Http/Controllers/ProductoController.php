@@ -41,11 +41,12 @@ class ProductoController extends Controller
   {
     //validamos los datos
     $request->validate(Producto::$rules, Producto::$errorMessages);
-    $data = $request->only('nombre_prod', 'categoria_id', 'descripcion', 'stock', 'precio', 'alt');
+    $data = $request->only('nombre_prod', 'categoria_id', 'descripcion', 'stock', 'precio', 'alt', 'imagen_prod');
 
     //si viene una imagen en el request
     if ($request->hasFile('imagen_prod')) {
       //guardamos la imagen en la carpeta storage
+      $request->validate(Producto::$ruleAlt, Producto::$errorMessages);
       $data['imagen_prod'] = $request->file('imagen_prod')->store('productos');
     }
 

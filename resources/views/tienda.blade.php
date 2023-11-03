@@ -29,9 +29,11 @@ use Illuminate\Pagination\LengthAwarePaginator;
                             <p class="ms-2 text-principal uppercase"> {{ $producto->categoria->nombre_cat }}</p>
                             <hr>
                             <div class="h-72  mx-auto">
-                                <img class="rounded-t-lg mx-auto"
-                                    src="{{ asset("img/productos/{$producto->imagen_prod}") }}"
-                                    alt="<?= $producto->alt ?>" />
+                              @if ($producto->imagen_prod !== null)
+                                <img src="{{ asset('./storage/' . $producto->imagen_prod) }}" alt="{{ $producto->alt }}">
+                              @else
+                                <p>Este producto no tiene imagen</p>
+                              @endif
                                 <a href="{{ url('/producto/' . $producto->id) }}"></a>
                             </div>
                             <div

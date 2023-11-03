@@ -49,6 +49,10 @@ class Producto extends Model
     'precio' => 'required|numeric',
   ];
 
+  public static $ruleAlt = [
+    'alt' => 'required|max:255',
+  ];
+
   public static $errorMessages = [
     'nombre_prod.required' => 'El nombre del producto es requerido',
     'nombre_prod.max' => 'El nombre del producto no puede contener más de 255 carateres',
@@ -58,6 +62,8 @@ class Producto extends Model
     'stock.numeric' => 'El stock debe ser un número',
     'precio.required' => 'El precio es requerido',
     'precio.numeric' => 'El precio debe ser un número',
+    'alt.required' => 'El texto alternativo es requerido',
+    'alt.max' => 'El texto alternativo no puede contener más de 255 carateres',
   ];
 
 

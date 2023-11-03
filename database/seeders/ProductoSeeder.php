@@ -18,7 +18,7 @@ class ProductoSeeder extends Seeder
           [
             'id' => 1,
             'nombre_prod' => 'Estación De Reciclado Separador',
-            'imagen_prod' => 'prod-37.webp',
+            'imagen_prod' => 'productos/prod-37.webp',
             'alt' => 'Tachos de basuras gris con tapas de colores',
             'categoria_id' => 3,
             'descripcion' => 'La Estación de Reciclado Separador de Residuos X 3 Cestos de 30 litros es la solución perfecta para promover y facilitar la separación de residuos de manera eficiente y organizada. Este conjunto incluye tres cestos de 30 litros cada uno, diseñados específicamente para clasificar diferentes tipos de residuos.
@@ -32,7 +32,7 @@ class ProductoSeeder extends Seeder
           [
             'id' => 2,
             'nombre_prod' => 'Kit Cesto Separador De Residuos',
-            'imagen_prod' => 'prod-36.webp',
+            'imagen_prod' => 'productos/prod-36.webp',
             'alt' => 'Cestos marrones claritos, separadores de residuos',
             'categoria_id' => 3,
             'descripcion' => 'El Kit Cesto Separador de Residuos Ecobox es la solución perfecta para fomentar la separación de residuos de manera rápida y eficiente en cualquier entorno. Este kit incluye dos conjuntos de cestos, cada uno compuesto por dos tachos con capacidades de 18 y 24 litros respectivamente.
@@ -46,7 +46,7 @@ class ProductoSeeder extends Seeder
           [
             'id' => 3,
             'nombre_prod' => 'Compostera Eco Balcón Kompost',
-            'imagen_prod' => 'prod-40.webp',
+            'imagen_prod' => 'productos/prod-40.webp',
             'alt' => 'Compostera blanca, con un diseño en el medio de la compotera',
             'categoria_id' => 2,
             'descripcion' => 'La Compostera Eco Balcón Kompost® es la elección perfecta para aquellos que desean realizar compostaje en espacios reducidos, como balcones o terrazas. Con un diseño compacto y una capacidad de 40 litros, esta compostera te permite convertir tus residuos orgánicos en compost de alta calidad, ¡y lo mejor es que está hecha de plástico reciclado!
@@ -60,7 +60,7 @@ class ProductoSeeder extends Seeder
           [
             'id' => 4,
             'nombre_prod' => 'Compostera Urbana Balcón Lombrices Compost 40 L',
-            'imagen_prod' => 'prod-8.webp',
+            'imagen_prod' => 'productos/prod-8.webp',
             'alt' => 'Compostera negra con un diseño en el medio',
             'categoria_id' => 2,
             'descripcion' => 'Compostera urbana 60 L | Ideal para quienes están empezando el proceso de compostaje domiciliario y para hogares con poco consumo de frutas y verduras.
@@ -77,7 +77,7 @@ class ProductoSeeder extends Seeder
           [
             'id' => 5,
             'nombre_prod' => 'Kit De Bombeo Solar Completo 16000 Litros/h',
-            'imagen_prod' => 'prod-18.webp',
+            'imagen_prod' => 'productos/prod-18.webp',
             'alt' => 'Kit de bombeo solar completo 16000 litros/h',
             'categoria_id' => 1,
             'descripcion' => '¡Agua limpia y renovable en cualquier lugar con nuestro sistema de bombeo solar!
@@ -93,7 +93,7 @@ class ProductoSeeder extends Seeder
           [
             'id' => 6,
             'nombre_prod' => 'Panel Solar Cargador Portátil',
-            'imagen_prod' => 'prod-4-5.webp',
+            'imagen_prod' => 'productos/prod-4-5.webp',
             'alt' => 'Panel solar negro y naranja, con cargador portátil',
             'categoria_id' => 1,
             'descripcion' => 'PANEL SOLAR CARGADOR PORTATIL WIBAG 12/5v 120Watts
@@ -107,7 +107,7 @@ class ProductoSeeder extends Seeder
           [
             'id' => 7,
             'nombre_prod' => 'Tapa Tapones Para Botella',
-            'imagen_prod' => 'prod-33.webp',
+            'imagen_prod' => 'productos/prod-33.webp',
             'alt' => 'Tapa tapones par botellas con dieños animados y minimalistas',
             'categoria_id' => 4,
             'descripcion' => 'Las Tapas para Botella Diseños Pasteles es un set encantador que le da un toque divertido y colorido a tus botellas. Consta de 6 unidades con diseños de motivos pasteles, como cupcakes, helados y donas, que agregan un toque de alegría y estilo a tus bebidas.
@@ -121,7 +121,7 @@ class ProductoSeeder extends Seeder
           [
             'id' => 8,
             'nombre_prod' => 'Botella Reutilizable Kompost® 750 Ml | Zero Waste',
-            'imagen_prod' => 'prod-9.webp',
+            'imagen_prod' => 'productos/prod-9.webp',
             'alt' => 'Botella reutilizable gris, con fondo de pileta',
             'categoria_id' => 4,
             'descripcion' => 'Botella Reutilizable Kompost® 750 Ml | Zero Waste

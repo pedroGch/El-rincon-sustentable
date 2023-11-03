@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre_prod', 256);
-            $table->string('imagen_prod', 256);
-            $table->string('alt', 256);
+            $table->string('imagen_prod', 256)->nullable();
+            $table->string('alt', 256)->nullable();
             $table->unsignedInteger('categoria_id'); //FK
             $table->text('descripcion')->nullable();
             $table->unsignedInteger('stock');
