@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Noticia;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -124,6 +125,7 @@ class BlogController extends Controller
   {
     return view('dashboard_admin', [
       'noticias' => Noticia::all(),
+      'productos' => Producto::all(),
     ]);
   }
 }
