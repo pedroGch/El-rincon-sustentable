@@ -59,6 +59,38 @@ class ProductoController extends Controller
       ->with('status.message', 'El producto fue correctamente agregado');
   }
 
+
+  /**
+   * Edita un producto
+   * @param int $id
+   * @param Request $request
+   * @return \Illuminate\Http\RedirectResponse
+   */
+  public function editarProducto(int $id, Request $request)
+  {
+    //buscamos el producto que queremos editar
+    $producto = Producto::findOrFail($id);
+    //validamos con las reglas los datos del request
+    $request->validate(Producto::$rules, Producto::$errorMessages);
+    $data = $request->only('nombre_prod', 'categoria_id', 'descripcion', 'stock', 'precio', 'alt', 'imagen_prod');
+
+    //preguntamos si se subio una imagen
+    if ($request->hasFile('imagen_prod')) {
+      $request->validate(Producto::$ruleAlt, Producto::$errorMessages);
+      $data['imagen_prod'] = $request->file('imagen_prod')->store('productos'); //guardamos la imagen
+    } else{
+      // si no se subio una imagen, guardamos la que ya tenia
+      $data['imagen_prod'] = $producto->imagen_prod;
+    }
+    //actualizamos los campos menos el de token
+    $producto->update($data, $request->except(['_token']));
+
+    return redirect('/tienda/gestor_productos')
+      ->with('status.message', 'El producto fue correctamente editado');
+  }
+
+
+
   public function bajaDeProducto($id)
   {
     //buscamos el producto a eliminar
@@ -85,7 +117,7 @@ class ProductoController extends Controller
     return view('tienda.tabla_productos', ["productos" => $productos]);
   }
 
-/**
+  /**
    * Muestra el formulario para crear un producto
    * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
    */
@@ -95,4 +127,14 @@ class ProductoController extends Controller
     return view('tienda.formulario_alta_producto', ["categorias" => $categorias]);
   }
 
+  /**
+   * Muestra el formulario para editar una noticia
+   * @param int $id
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
+  public function formularioEditarProducto(int $id)
+  {
+    $categorias = Categoria::all();
+    return view('tienda.formulario_editar_producto', ['producto' => Producto::findOrFail($id), "categorias" => $categorias]);
+  }
 }

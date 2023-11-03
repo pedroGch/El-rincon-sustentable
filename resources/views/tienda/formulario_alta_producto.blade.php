@@ -31,7 +31,7 @@
             <h2 class="text-principal my-4 mt-10 text-4xl font-semibold">Crear producto</h2>
         </div>
         <div class="flex-1 my-4 lg:mx-6 lg:px-6">
-            <form action="{{ url('/tienda/producto/nuevo') }}" method="POST" id="form-alt_imagen_proda-prod" class=""
+            <form action="{{ url('/tienda/producto/nuevo') }}" method="POST" id="form-alta-prod" class=""
                 enctype="multipart/form-data">
                 @csrf
                 <label for="nombre_prod" class="block font-bold my-2"> Nombre producto </label>

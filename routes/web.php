@@ -50,3 +50,8 @@ Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 
 Route::get('/tienda/gestor_productos', [\App\Http\Controllers\ProductoController::class, 'obtenerProductos'])->middleware(['auth']);
 Route::get('/tienda/producto/nuevo', [\App\Http\Controllers\ProductoController::class, 'formularioCrearProducto'])->middleware(['auth']);
 Route::post('/tienda/producto/nuevo', [\App\Http\Controllers\ProductoController::class, 'altaDeProducto'])->middleware(['auth']);
+Route::get('/tienda/{id}/editar', [\App\Http\Controllers\ProductoController::class, 'formularioEditarProducto'])->middleware(['auth']);
+Route::post('/tienda/{id}/editar', [\App\Http\Controllers\ProductoController::class, 'editarProducto'])->middleware(['auth']);
+
+
+// tienda.formulario_editar_producto

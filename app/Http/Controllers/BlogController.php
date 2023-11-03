@@ -104,10 +104,13 @@ class BlogController extends Controller
     $noticia = Noticia::findOrFail($id);
     //validamos con las reglas los datos del request
     $request->validate(Noticia::$rules, Noticia::$errorMessages);
-
+    $data = $request->only(['titulo', 'imagen', 'alt', 'contenido']);
     //preguntamos si se subio una imagen
     if ($request->hasFile('imagen')) {
       $data['imagen'] = $request->file('imagen')->store('noticias'); //guardamos la imagen
+    } else{
+      // si no se subio una imagen, guardamos la que ya tenia
+      $data['imagen'] = $noticia->imagen;
     }
     //actualizamos los campos menos el de token
     $noticia->update($data, $request->except(['_token']));
