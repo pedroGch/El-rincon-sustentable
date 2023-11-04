@@ -35,9 +35,9 @@
             </div>
             <div class="lg:flex-1">
                 <div class="p-6">
-                    <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                    <h3 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         {{ $producto->nombre_prod }}
-                    </h5>
+                    </h3>
                     <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                         {!! nl2br($producto->descripcion) !!}
                     </p>
