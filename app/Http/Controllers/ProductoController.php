@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Models\Etiqueta;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -49,9 +50,10 @@ class ProductoController extends Controller
       $request->validate(Producto::$ruleAlt, Producto::$errorMessages);
       $data['imagen_prod'] = $request->file('imagen_prod')->store('productos');
     }
-
+    /** @var Movie */
     $producto = Producto::create($data);
-    //aca decimos que agregamos la relacion de etiquetas, si es que vino en el request
+
+    //agregamos la relacion de etiquetas, si es que vino en el request
     //de lo contrario mandamos un array vacio
     $producto->etiquetas()->attach($request->input('etiquetas') ?? []);
 
@@ -123,8 +125,10 @@ class ProductoController extends Controller
    */
   public function formularioCrearProducto()
   {
-    $categorias = Categoria::all();
-    return view('tienda.formulario_alta_producto', ["categorias" => $categorias]);
+    return view('tienda.formulario_alta_producto', [
+      'categorias' => Categoria::all(),
+      'etiquetas' => Etiqueta::all()
+    ]);
   }
 
   /**

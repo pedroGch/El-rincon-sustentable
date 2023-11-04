@@ -38,6 +38,18 @@ class EtiquetaSeeder extends Seeder
           'created_at' => now(),
           'updated_at' => now(),
         ],
+        [
+          'etiqueta_id' => 5,
+          'nombre' => 'Más vendido',
+          'created_at' => now(),
+          'updated_at' => now(),
+        ],
+        [
+          'etiqueta_id' => 6,
+          'nombre' => 'Edición limitada',
+          'created_at' => now(),
+          'updated_at' => now(),
+        ],
       ]);
     }
 }
