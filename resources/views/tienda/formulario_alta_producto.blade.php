@@ -169,7 +169,12 @@
                   <div class="mt-3 flex justify-between">
                     @foreach($etiquetas as $etiqueta)
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="{{ $etiqueta->etiqueta_id }}" name="etiquetas[]">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value="{{ $etiqueta->etiqueta_id }}"
+                        name="etiquetas[]"
+                        @checked(collect(old('etiquetas', []))->contains($etiqueta->etiqueta_id))>
                       <label class="form-check-label" for="flexCheckDefault">
                         {{ $etiqueta->nombre }}
                       </label>

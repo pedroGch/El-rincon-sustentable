@@ -74,7 +74,7 @@ class ProductoController extends Controller
     $producto = Producto::findOrFail($id);
     //validamos con las reglas los datos del request
     $request->validate(Producto::$rules, Producto::$errorMessages);
-    $data = $request->only('nombre_prod', 'categoria_id', 'descripcion', 'stock', 'precio', 'alt', 'imagen_prod');
+    $data = $request->only('nombre_prod', 'categoria_id', 'descripcion', 'stock', 'precio', 'alt', 'imagen_prod', 'etiquetas');
 
     //preguntamos si se subio una imagen
     if ($request->hasFile('imagen_prod')) {
@@ -84,6 +84,9 @@ class ProductoController extends Controller
       // si no se subio una imagen, guardamos la que ya tenia
       $data['imagen_prod'] = $producto->imagen_prod;
     }
+    //etiquetas, el request trae un array de las que tienen que quedar
+    $producto->etiquetas()->sync($data['etiquetas'] ?? []);
+
     //actualizamos los campos menos el de token
     $producto->update($data, $request->except(['_token']));
 
@@ -92,13 +95,17 @@ class ProductoController extends Controller
   }
 
 
-
+  /**
+   * Elimina un producto
+   * @param int $id
+   * @return \Illuminate\Http\RedirectResponse
+   */
   public function bajaDeProducto($id)
   {
     //buscamos el producto a eliminar
     $producto = Producto::findoOrFail($id);
-    //rompemos la relacion
-    $producto->detach();
+    //rompemos la relacion con las etiquetas
+    $producto->etiquetas()->detach();
     //eliminamos el producto
     $producto->delete();
     //si tenia una magen cargada la borramos de la carpeta storage
@@ -109,6 +116,7 @@ class ProductoController extends Controller
       ->with('status.message', 'El producto fue correctamente eliminado.');
   }
 
+
    /**
    * Muestra el gestor de productos
    * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -118,6 +126,7 @@ class ProductoController extends Controller
     $productos = Producto::with(['categoria', 'etiquetas'])->get();
     return view('tienda.tabla_productos', ["productos" => $productos]);
   }
+
 
   /**
    * Muestra el formulario para crear un producto
@@ -131,6 +140,7 @@ class ProductoController extends Controller
     ]);
   }
 
+
   /**
    * Muestra el formulario para editar una noticia
    * @param int $id
@@ -138,7 +148,11 @@ class ProductoController extends Controller
    */
   public function formularioEditarProducto(int $id)
   {
-    $categorias = Categoria::all();
-    return view('tienda.formulario_editar_producto', ['producto' => Producto::findOrFail($id), "categorias" => $categorias]);
+    return view('tienda.formulario_editar_producto', [
+      'producto' => Producto::findOrFail($id),
+       'categorias' => Categoria::all(),
+       'etiquetas' => Etiqueta::all()
+      ]
+    );
   }
 }

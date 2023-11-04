@@ -3,6 +3,7 @@
  * @var \Illuminate\Support\ViewErrorBag $errors
  * @var Producto $producto
  * @var \App\Models\Categoria[]|\Illuminate\Database\Eloquent\Collection $categorias
+ * @var \App\Models\Etiqueta[]|\Illuminate\Database\Eloquent\Collection $etiquetas
  */
 ?>
 @extends('layouts.main')
@@ -168,6 +169,25 @@
                     <p class="text-danger-700" id="error-alt"> {{ $message }}</p>
                 </div>
             @enderror
+
+            <fieldset class="mt-4">
+              <legend class="font-bold"> Etiquetas</legend>
+              <div class="mt-3 flex justify-between">
+                @foreach($etiquetas as $etiqueta)
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value="{{ $etiqueta->etiqueta_id }}"
+                    name="etiquetas[]"
+                    @checked(in_array($etiqueta->etiqueta_id, old('etiquetas', $producto->etiquetas->pluck('etiqueta_id')->all() )))>
+                  <label class="form-check-label" for="flexCheckDefault">
+                    {{ $etiqueta->nombre }}
+                  </label>
+                </div>
+                @endforeach
+              </div>
+            </fieldset>
 
             <input type="submit"
                 class="my-7 ps-9 pe-9 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-terciario hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-terciario focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-terciario active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
