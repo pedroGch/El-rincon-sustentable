@@ -103,7 +103,7 @@ class ProductoController extends Controller
   public function bajaDeProducto($id)
   {
     //buscamos el producto a eliminar
-    $producto = Producto::findoOrFail($id);
+    $producto = Producto::findOrFail($id);
     //rompemos la relacion con las etiquetas
     $producto->etiquetas()->detach();
     //eliminamos el producto
