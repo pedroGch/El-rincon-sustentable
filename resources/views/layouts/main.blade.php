@@ -256,7 +256,7 @@ data-te-navbar-ref>
             <!-- espacio cedido a templates anexos -->
             @yield('content')
         </main>
-        <footer class="w-screen lg:py-6 lg:h-[360px] bg-secundario drop-shadow-xl text-white">
+        <footer class="lg:py-6 lg:h-[360px] bg-secundario drop-shadow-xl text-white">
             <div>
                 <div class="lg:flex mx-auto max-w-screen-xl">
                     <h2 class="hidden">Datos:</h2>
