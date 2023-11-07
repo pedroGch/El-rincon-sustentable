@@ -110,7 +110,7 @@
 
             <div class="flex flex-wrap my-4 justify-between ">
                 <div class="lg:flex-1 my-4">
-                    <img src="img/ecologia.jpg" alt="manos sosteniendo un brote de una planta"
+                    <img src="img/ecologia.jpg" alt="Pilares de la ecologia: social, ambiental y económico"
                         class="block m-auto">
                 </div>
 
