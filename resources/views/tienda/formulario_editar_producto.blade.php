@@ -169,7 +169,9 @@
                     <p class="text-danger-700" id="error-alt"> {{ $message }}</p>
                 </div>
             @enderror
-
+            <div class="w-ful flex justify-center my-3">
+              <img src="{{ asset('./storage/' . $producto->imagen_prod) }}" alt="{{ $producto->alt }}">
+            </div>
             <fieldset class="mt-4">
               <legend class="font-bold"> Etiquetas</legend>
               <div class="mt-3 flex justify-around">
