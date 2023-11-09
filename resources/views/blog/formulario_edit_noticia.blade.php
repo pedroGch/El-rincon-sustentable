@@ -62,7 +62,7 @@
                     aria-invalid="true"
                     aria-describedby="error-contenido"
                     @enderror>
-                    {{ old('contenido', $noticia->contenido) }}
+                    {{ trim(old('contenido', $noticia->contenido)) }}
                 </textarea>
                 @error('contenido')
                     <div class="mt-1 flex">
