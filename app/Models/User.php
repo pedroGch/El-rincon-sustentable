@@ -13,9 +13,11 @@ use Laravel\Sanctum\HasApiTokens;
  *
  * @property int $id
  * @property string $name
+ * @property string $surname
  * @property string $email
  * @property \Illuminate\Support\Carbon|null $email_verified_at
  * @property mixed $password
+ * @property string $rol
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -48,8 +50,10 @@ class User extends Authenticatable
    */
   protected $fillable = [
     'name',
+    'surname',
     'email',
     'password',
+    'rol',
   ];
 
   /**
@@ -71,4 +75,7 @@ class User extends Authenticatable
     'email_verified_at' => 'datetime',
     'password' => 'hashed',
   ];
+
+
+
 }

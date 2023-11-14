@@ -73,7 +73,12 @@ class SesionController extends Controller
    */
   public function perfil_usuario()
   {
-    return view('perfil_usuario');
+    $user = User::findOrFail(Auth::user()->id);
+    //dd($user);
+    return view('perfil_usuario', [
+      'user'=> Auth::user(),
+      'user_db' => $user,
+    ]);
   }
 
 

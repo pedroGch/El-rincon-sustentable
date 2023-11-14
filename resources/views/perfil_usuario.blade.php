@@ -1,5 +1,8 @@
 <?php
-/** @var \App\Models\Usuario $usuario */
+/**
+ * @var \App\Models\User $user_db
+ */
+
 ?>
 
 @extends('layouts.main')
@@ -23,6 +26,7 @@
             <div class="mb-5">
                 <h3 class="py-3"">Tus datos personales:</h3>
                 <p><b>Nombre:</b> <?= Auth::user()->name ?></p>
+                <p><b>Apellido:</b> <?= $user_db->surname ?> </p>
                 <p><b>Email:</b> <?= Auth::user()->email ?></p>
 
             </div>
