@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Noticia;
 use App\Models\Producto;
+use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -134,6 +136,8 @@ class BlogController extends Controller
     return view('dashboard_admin', [
       'noticias' => Noticia::all(),
       'productos' => Producto::all(),
+      'usuarios' => User::where('id', '!=', Auth::user()->id)->get(),
     ]);
   }
 }
+

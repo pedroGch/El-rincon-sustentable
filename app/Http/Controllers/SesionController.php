@@ -91,8 +91,11 @@ class SesionController extends Controller
    */
   public function dashboardAdmin()
   {
+    $usuarios = User::where('id', '!=', Auth::user()->id)->get();
+    
     return view('dashboard_admin', [
-      '$user' => Auth::user(),
+      'user' => Auth::user(),
+      'usuarios' => $usuarios,
     ]);
   }
 }

@@ -1,6 +1,7 @@
 <?php
 /**
  * @var \App\Models\Usuario $usuario
+ * @var \App\Models\Usuario[] | \Illuminate\Database\Eloquent\Collection $usuarios
  * @var \App\Models\Noticia[] | \Illuminate\Database\Eloquent\Collection $noticias
  * @var \App\Models\Producto[] | \Illuminate\Database\Eloquent\Collection $productos
  */
@@ -63,6 +64,23 @@
                 </div>
             </div>
           </div>
+        </div>
+        <div>
+            <div class="flex flex-wrap justify-center">
+                <div class="mb-5">
+                    <a href="#">
+                        <div class="mb-5 w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
+                            data-te-ripple-init data-te-ripple-color="light">
+                            <p>Ver usuarios y compras</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="mb-8 flex flex-wrap justify-center">
+                <div>
+                    <p class="text-center">Actualmente tenés {{ $usuarios->count() }} usuarios registrados en el sitio.</p>
+                </div>
+            </div>
         </div>
     </section>
 @endsection
