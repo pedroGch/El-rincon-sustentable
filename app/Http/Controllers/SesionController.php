@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compra;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -74,10 +75,12 @@ class SesionController extends Controller
   public function perfil_usuario()
   {
     $user = User::findOrFail(Auth::user()->id);
-    //dd($user);
+    $compras = Compra::where('usuario_id', Auth::user()->id)->with(['productos'])->get();
+    //dd($compras);
     return view('perfil_usuario', [
       'user'=> Auth::user(),
       'user_db' => $user,
+      'compras' => $compras,
     ]);
   }
 

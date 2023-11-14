@@ -38,10 +38,25 @@
 
 
         </div>
-        <div class="flex flex-wrap">
+        <div class="">
             <div class="mb-5">
                 <h3 class="text-2xl font-semibold">Compras realizadas</h3>
             </div>
+
+            @forelse ($compras as $compra)
+                <div class="mb-5">
+                    <p><b>Fecha de compra:</b> {{ $compra->fecha_compra }}</p>
+                    <p><b>Productos:</b></p>
+                    <ul>
+                    @foreach ($compra->productos as $producto)
+                        <li>{{ $producto->nombre_prod }}</li>
+                    @endforeach
+                  </ul>
+                </div>
+
+            @empty
+
+            @endforelse
 
         </div>
     </section>

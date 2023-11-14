@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Categoria;
+use App\Models\Compra;
 use App\Models\Etiqueta;
 use App\Models\Producto;
 use Illuminate\Http\Request;
