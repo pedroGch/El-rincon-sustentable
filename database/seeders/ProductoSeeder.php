@@ -203,5 +203,58 @@ class ProductoSeeder extends Seeder
             'updated_at' => now(),
           ],
         ]);
+
+         // Seeder de relación muchos a muchos entre productos y compras
+         DB::table('productos_x_compra')->insert([
+          [
+            'producto_id' => 1,
+            'compra_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'producto_id' => 2,
+            'compra_id' => 1,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'producto_id' => 3,
+            'compra_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'producto_id' => 4,
+            'compra_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'producto_id' => 5,
+            'compra_id' => 3,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'producto_id' => 6,
+            'compra_id' => 3,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'producto_id' => 7,
+            'compra_id' => 3,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+          [
+            'producto_id' => 8,
+            'compra_id' => 3,
+            'created_at' => now(),
+            'updated_at' => now(),
+          ],
+
+        ]);
     }
 }

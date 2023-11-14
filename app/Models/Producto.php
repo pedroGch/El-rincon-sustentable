@@ -142,4 +142,23 @@ class Producto extends Model
       'etiqueta_id' // "relatedKey" Modelo con el que se relaciona
     );
   }
+
+
+  /**
+   * Creamos la relación entre la tabla productos y la tabla compras
+   * (Relación muchos a muchos)
+   * Esta función devuelve un array de objetos de la clase Compra
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+   */
+  public function compras() :BelongsToMany
+  {
+    return $this->belongsToMany(
+      Compra::class, //FQN del Modelo que representa la tabla pivot
+      'productos_x_compra', // "table" nombre de la tabla pivot
+      'producto_id', // "foreignPivotKey" (este Modelo en la pivot)
+      'compra_id', // "relatedPivotKey" Modelo con el que se relaciona
+      'id', // "parentKey" este Modelo
+      'compra_id' // "relatedKey" Modelo con el que se relaciona
+    );
+  }
 }

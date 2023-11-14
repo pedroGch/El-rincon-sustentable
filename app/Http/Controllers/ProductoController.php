@@ -56,6 +56,7 @@ class ProductoController extends Controller
     //agregamos la relacion de etiquetas, si es que vino en el request
     //de lo contrario mandamos un array vacio
     $producto->etiquetas()->attach($request->input('etiquetas') ?? []);
+    $producto->compras()->attach($request->input('compras') ?? []);
 
     return redirect('/tienda/gestor_productos')
       ->with('status.message', 'El producto fue correctamente agregado');
