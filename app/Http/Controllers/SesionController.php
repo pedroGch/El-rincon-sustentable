@@ -92,9 +92,23 @@ class SesionController extends Controller
   public function dashboardAdmin()
   {
     $usuarios = User::where('id', '!=', Auth::user()->id)->get();
-    
+
     return view('dashboard_admin', [
       'user' => Auth::user(),
+      'usuarios' => $usuarios,
+    ]);
+  }
+
+
+  /**
+   * Muestra la vista de listado de usuarios y sus compras
+   * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+   */
+  public function listadoUsuarios()
+  {
+    $usuarios = User::where('id', '!=', Auth::user()->id)->get();
+
+    return view('tabla_compras_usuarios', [
       'usuarios' => $usuarios,
     ]);
   }

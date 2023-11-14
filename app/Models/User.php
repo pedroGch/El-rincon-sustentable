@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -76,6 +77,21 @@ class User extends Authenticatable
     'password' => 'hashed',
   ];
 
+  /* RELACIONES */
 
+  /**
+   * Creamos la relacion entre la tabla usuarios y la tabla compras
+   * (Relación uno a muchos)
+   * Esta función devuelve un array de objetos de la clase Compra
+   * @return \Illuminate\Database\Eloquent\Relations\HasMany
+   */
+  public function compras(): HasMany
+  {
+    return $this->hasMany(
+      Compra::class, //FQN del Modelo que representa la tabla pivot
+      'usuario_id', // "foreignPivotKey" (este Modelo en la pivot)
+      'id', // "parentKey" este Modelo
+    );
+  }
 
 }

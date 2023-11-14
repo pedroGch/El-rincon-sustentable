@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Compra extends Model
@@ -13,6 +14,20 @@ class Compra extends Model
 
     protected $primaryKey = 'compra_id';
 
+
+
+    /* RELACIONES */
+
+    /**
+     * Creamos la relación entre la tabla compras y la tabla usuarios
+     * (Relación uno a muchos inversa)
+     * Esta función devuelve el objeto de la clase Usuario al que pertenece la compra
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function usuario() :BelongsTo
+    {
+      return $this->belongsTo(User::class, 'usuario_id', 'id');
+    }
 
 
     /**
