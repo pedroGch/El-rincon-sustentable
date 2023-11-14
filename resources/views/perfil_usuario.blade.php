@@ -31,13 +31,7 @@
 
             </div>
         </div>
-        <div class="flex flex-wrap">
-            <div class="mb-5">
-                <h3 class="text-2xl font-semibold">Tu lista de deseados</h3>
-            </div>
-
-
-        </div>
+       
         <div class="">
             <div class="mb-5">
                 <h3 class="text-2xl font-semibold">Compras realizadas</h3>
@@ -48,6 +42,7 @@
                     <p><b>Fecha de compra:</b> {{ $compra->fecha_compra }}</p>
                     <p><b>Productos:</b></p>
                     <ul>
+
                     @foreach ($compra->productos as $producto)
                         <li>{{ $producto->nombre_prod }}</li>
                     @endforeach
@@ -55,7 +50,7 @@
                 </div>
 
             @empty
-
+                <p>No hay compras realizadas</p>
             @endforelse
 
         </div>
