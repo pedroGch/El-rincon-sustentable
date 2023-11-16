@@ -19,8 +19,7 @@
             <div class="lg:flex-1 my-4">
                 @if ($errors->any())
                     <div>
-                        <p class="text-danger-700">Hay errores en los datos ingresados. Corregir por favor los errores
-                            indicados.</p>
+                        <p class="text-danger-700">Hay errores en los datos ingresados. Corregir por favor los errores indicados.</p>
                     </div>
                 @endif
                 <form action="{{ url('/contacto') }}" method="post" id="form-contacto" class=""
@@ -32,10 +31,10 @@
                             class="border border-gray-500 rounded p-2 w-full @error('nombre') border-red-700 @enderror"
                             value="{{ old('nombre') }}"
                             @error('nombre')
-            aria-invalid="true"
-            aria-describedby="error-nombre"
-            @enderror>
-                        @error('nombre')
+                            aria-invalid="true"
+                            aria-describedby="error-nombre"
+                            @enderror>
+                            @error('nombre')
                             <div class="mt-1 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
                                     <path fill-rule="evenodd"

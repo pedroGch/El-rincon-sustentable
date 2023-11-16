@@ -63,7 +63,6 @@ class User extends Authenticatable
     'surname' => 'required|max:255',
     'email' => 'required|email|max:255',
     'password' => 'required|max:255',
-    'rol' => 'required|max:255',
   ];
 
   public static $errorMessages = [
@@ -76,8 +75,6 @@ class User extends Authenticatable
     'email.max' => 'El email no puede contener más de 255 carateres',
     'password.required' => 'La contraseña es requerida',
     'password.max' => 'La contraseña no puede contener más de 255 carateres',
-    'rol.required' => 'El rol es requerido',
-    'rol.max' => 'El rol no puede contener más de 255 carateres',
   ];
 
   /**
