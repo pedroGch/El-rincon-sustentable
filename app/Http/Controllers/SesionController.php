@@ -106,7 +106,7 @@ class SesionController extends Controller
    */
   public function listadoUsuarios()
   {
-    $usuarios = User::where('id', '!=', Auth::user()->id)->get();
+    $usuarios = User::with(['compras', 'compras.productos'])->where('id', '!=', Auth::user()->id)->get();
 
     return view('tabla_compras_usuarios', [
       'usuarios' => $usuarios,
