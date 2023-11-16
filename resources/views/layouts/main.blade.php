@@ -186,34 +186,25 @@ data-te-navbar-ref>
 </div>
 </nav>
         <main class="container mx-auto flex-grow">
-            @if ((\Session::has('status.message')) == "email y/o contraseña incorrecta")
-                <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-red-100 px-6 py-5 text-base text-red-700"
-                    role="alert">
-                    <span class="mr-2">
+            @if (\Session::has('status.message'))
+              <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-{{ \Session::get('status.type', 'success') }}-100 px-6 py-5 text-base text-{{ \Session::get('status.type', 'success') }}-700"
+                  role="alert">
+                  <span class="mr-2">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd"></path>
+                          <path fill-rule="evenodd"
+                              d="{{ \Session::get('status.svg', 'M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z') }}"
+                              clip-rule="evenodd" />
                       </svg>
-                    </span>
-                    <div>
-                        {!! \Session::get('status.message') !!}
-                    </div>
-                </div>
-            @else
-              @if (\Session::has('status.message'))
-                  <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-success-100 px-6 py-5 text-base text-success-700"
-                      role="alert">
-                      <span class="mr-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-                              <path fill-rule="evenodd"
-                                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
-                                  clip-rule="evenodd" />
-                          </svg>
-                      </span>
-                      <div>
-                          {!! \Session::get('status.message') !!}
-                      </div>
+
+                     {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-red-500">
+                        <path fill-rule="evenodd" d="M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z" clip-rule="evenodd" />
+                    </svg> --}}
+
+                  </span>
+                  <div>
+                      {!! \Session::get('status.message') !!}
                   </div>
-              @endif
+              </div>
             @endif
             <!-- espacio cedido a templates anexos -->
             @yield('content')

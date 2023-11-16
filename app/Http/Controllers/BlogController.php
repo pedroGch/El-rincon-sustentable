@@ -52,13 +52,23 @@ class BlogController extends Controller
    */
   public function borrarNoticia(int $id)
   {
-    $noticia = Noticia::findOrFail($id);
-    $noticia->delete();
-    //si tenia una magen cargada la borramos de la carpeta storage
-    if ($noticia->imagen && Storage::has($noticia->imagen)){
-      Storage::delete($noticia->imagen);
+    try
+    {
+      $noticia = Noticia::findOrFail($id);
+      $noticia->delete();
+      //si tenia una magen cargada la borramos de la carpeta storage
+      if ($noticia->imagen && Storage::has($noticia->imagen)){
+        Storage::delete($noticia->imagen);
+      }
+      return redirect('/blog/gestor_noticias')->with('status.message', 'La noticia ' . e($noticia->titulo) . ' fue eliminada con éxito.');
+    } catch (\Exception $e) {
+      return redirect()
+        ->back()
+        ->with('status.message', 'Error al intentar eliminar la noticia')
+        ->with('status.type', 'danger')
+        ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
+        ->withInput();
     }
-    return redirect('/blog/gestor_noticias')->with('status.message', 'La noticia ' . e($noticia->titulo) . ' fue eliminada con éxito.');
   }
 
   /**
@@ -77,15 +87,24 @@ class BlogController extends Controller
    */
   public function crearNoticia(Request $request)
   {
-    //$data = $request->except(['_token']);
-    $request->validate(Noticia::$rules, Noticia::$errorMessages);
-    $data = $request->only(['titulo', 'imagen', 'alt', 'contenido']);
-    if ($request->hasFile('imagen')) {
-      $data['imagen'] = $request->file('imagen')->store('noticias');
+    try {
+      //$data = $request->except(['_token']);
+      $request->validate(Noticia::$rules, Noticia::$errorMessages);
+      $data = $request->only(['titulo', 'imagen', 'alt', 'contenido']);
+      if ($request->hasFile('imagen')) {
+        $data['imagen'] = $request->file('imagen')->store('noticias');
+      }
+      Noticia::create($data);
+      return redirect('/blog/gestor_noticias')
+        ->with('status.message', 'La noticia fue correctamente agregada');
+    } catch (\Exception $e) {
+      return redirect()
+        ->back()
+        ->with('status.message', 'Error al intentar agregar la noticia')
+        ->with('status.type', 'danger')
+        ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
+        ->withInput();
     }
-    Noticia::create($data);
-    return redirect('/blog/gestor_noticias')
-      ->with('status.message', 'La noticia fue correctamente agregada');
   }
 
   /**
@@ -107,23 +126,32 @@ class BlogController extends Controller
    */
   public function editarNoticia(int $id, Request $request)
   {
-    //buscamos la noticia que queremos editar
-    $noticia = Noticia::findOrFail($id);
-    //validamos con las reglas los datos del request
-    $request->validate(Noticia::$rules, Noticia::$errorMessages);
-    $data = $request->only(['titulo', 'imagen', 'alt', 'contenido']);
-    //preguntamos si se subio una imagen
-    if ($request->hasFile('imagen')) {
-      $data['imagen'] = $request->file('imagen')->store('noticias'); //guardamos la imagen
-    } else{
-      // si no se subio una imagen, guardamos la que ya tenia
-      $data['imagen'] = $noticia->imagen;
+    try {
+      //buscamos la noticia que queremos editar
+      $noticia = Noticia::findOrFail($id);
+      //validamos con las reglas los datos del request
+      $request->validate(Noticia::$rules, Noticia::$errorMessages);
+      $data = $request->only(['titulo', 'imagen', 'alt', 'contenido']);
+      //preguntamos si se subio una imagen
+      if ($request->hasFile('imagen')) {
+        $data['imagen'] = $request->file('imagen')->store('noticias'); //guardamos la imagen
+      } else{
+        // si no se subio una imagen, guardamos la que ya tenia
+        $data['imagen'] = $noticia->imagen;
+      }
+      //actualizamos los campos menos el de token
+      $noticia->update($data, $request->except(['_token']));
+      // $noticia->update($request->except(['_token']));
+      return redirect('/blog/gestor_noticias')
+        ->with('status.message', 'La noticia fue correctamente editada');
+    } catch (\Exception $e) {
+      return redirect()
+        ->back()
+        ->with('status.message', 'Error al intentar editar la noticia')
+        ->with('status.type', 'danger')
+        ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
+        ->withInput();
     }
-    //actualizamos los campos menos el de token
-    $noticia->update($data, $request->except(['_token']));
-    // $noticia->update($request->except(['_token']));
-    return redirect('/blog/gestor_noticias')
-      ->with('status.message', 'La noticia fue correctamente editada');
   }
 
 
