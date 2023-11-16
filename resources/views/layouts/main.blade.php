@@ -6,9 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
-      rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
     @vite('resources/css/styles.css')
     @vite('resources/js/app.js')
 
@@ -19,196 +17,186 @@
     <div id="app" class="min-h-screen flex flex-col">
 
         <!-- Main navigation container -->
-<nav
-class="relative flex w-full flex-nowrap items-center justify-between  bg-principal py-2 text-white shadow-lg lg:flex-wrap lg:justify-start lg:py-4"
-data-te-navbar-ref>
-<div class="flex w-full flex-wrap items-center justify-between px-3">
-  <div class="flex items-center">
-    <div class="mx-6 p-1 bg-white w-[80px]  shadow-lg">
-      <img src="{{ asset('img/logo.png') }}" alt="logo del rincon sustentable" class=" w-screen my-2  ">
-      <h1 class="text-[0px]">El Rincón Sustentable</h1>
-  </div>
-  <div class="flex justify-center align-middle">
-    <div class="sm:hidden">
-      @if (auth()->check())
-                  <div class="relative me-10" data-te-dropdown-ref>
-                      <button
-                          class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                          type="button" id="dropdownMenuButton1d" data-te-dropdown-toggle-ref aria-expanded="false"
-                          data-te-ripple-init data-te-ripple-color="light">
-                          {{-- <img src="{{ url('img/avatar/avatar-valdi.jpg') }}"
+        <nav class="relative flex w-full flex-nowrap items-center justify-between  bg-principal py-2 text-white shadow-lg lg:flex-wrap lg:justify-start lg:py-4"
+            data-te-navbar-ref>
+            <div class="flex w-full flex-wrap items-center justify-between px-3">
+                <div class="flex items-center">
+                    <div class="mx-6 p-1 bg-white w-[80px]  shadow-lg">
+                        <img src="{{ asset('img/logo.png') }}" alt="logo del rincon sustentable"
+                            class=" w-screen my-2  ">
+                        <h1 class="text-[0px]">El Rincón Sustentable</h1>
+                    </div>
+                    <div class="flex justify-center align-middle">
+                        <div class="sm:hidden">
+                            @if (auth()->check())
+                                <div class="relative me-10" data-te-dropdown-ref>
+                                    <button
+                                        class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                                        type="button" id="dropdownMenuButton1d" data-te-dropdown-toggle-ref
+                                        aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                                        {{-- <img src="{{ url('img/avatar/avatar-valdi.jpg') }}"
                           class="w-[40px] rounded-full shadow-lg" alt="Avatar" /> --}}
-                          <?= Auth::user()->name ?>
-                          <span class="ml-2 w-2">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                  class="h-5 w-5">
-                                  <path fill-rule="evenodd"
-                                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                      clip-rule="evenodd" />
-                              </svg>
-                          </span>
-                      </button>
-                      <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-                          aria-labelledby="dropdownMenuButton1d" data-te-dropdown-menu-ref>
-                          <li>
-                              <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                  href="<?= url('/panel_admin') ?>" data-te-dropdown-item-ref>Mi Perfil</a>
-                          </li>
-                          <li>
-                              <hr
-                                  class="my-2 h-0 border border-t-0 border-solid border-neutral-700 opacity-25 dark:border-neutral-200" />
-                          </li>
-                          <li>
-                              <form action="<?= url('/cerrar_sesion') ?>" method="post">
-                                  @csrf
-                                  <button type="submit"
-                                      class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600">
-                                      Cerrar sesión
-                                  </button>
-                              </form>
-                          </li>
-                      </ul>
-                  </div>
-              @endif
-    </div>
-  </div>
-  </div>
-  <!-- Hamburger button for mobile view -->
-  <button
-    class="block border-0 bg-transparent px-2  text-white hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0  lg:hidden"
-    type="button"
-    data-te-collapse-init
-    data-te-target="#navbarSupportedContent14"
-    aria-controls="navbarSupportedContent14"
-    aria-expanded="false"
-    aria-label="Toggle navigation">
-    <!-- Hamburger icon -->
-    <span class="[&>svg]:w-7">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        class="h-7 w-7">
-        <path
-          fill-rule="evenodd"
-          d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-          clip-rule="evenodd" />
-      </svg>
-    </span>
-  </button>
+                                        <?= Auth::user()->name ?>
+                                        <span class="ml-2 w-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" class="h-5 w-5">
+                                                <path fill-rule="evenodd"
+                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                                        aria-labelledby="dropdownMenuButton1d" data-te-dropdown-menu-ref>
+                                        <li>
+                                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                                                href="<?= url('/panel_admin') ?>" data-te-dropdown-item-ref>Mi
+                                                Perfil</a>
+                                        </li>
+                                        <li>
+                                            <hr
+                                                class="my-2 h-0 border border-t-0 border-solid border-neutral-700 opacity-25 dark:border-neutral-200" />
+                                        </li>
+                                        <li>
+                                            <form action="<?= url('/cerrar_sesion') ?>" method="post">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600">
+                                                    Cerrar sesión
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+                <!-- Hamburger button for mobile view -->
+                <button
+                    class="block border-0 bg-transparent px-2  text-white hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0  lg:hidden"
+                    type="button" data-te-collapse-init data-te-target="#navbarSupportedContent14"
+                    aria-controls="navbarSupportedContent14" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Hamburger icon -->
+                    <span class="[&>svg]:w-7">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+                            <path fill-rule="evenodd"
+                                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                </button>
 
-  <!-- Collapsible navbar container -->
-  <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
-    id="navbarSupportedContent14" data-te-collapse-item>
-    <!-- Left links -->
-    <ul class="list-style-none mr-auto flex flex-col pl-0 lg:mt-1 lg:flex-row" data-te-navbar-nav-ref>
+                <!-- Collapsible navbar container -->
+                <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+                    id="navbarSupportedContent14" data-te-collapse-item>
+                    <!-- Left links -->
+                    <ul class="list-style-none mr-auto flex flex-col pl-0 lg:mt-1 lg:flex-row" data-te-navbar-nav-ref>
 
-      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
-        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/') ?>" data-te-nav-link-ref> Inicio </a>
-      </li>
-      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
-        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/nosotros') ?>" data-te-nav-link-ref> Nosotros </a>
-      </li>
-      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
-        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/tienda') ?>" data-te-nav-link-ref> Tienda </a>
-      </li>
-      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
-        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/blog') ?>" data-te-nav-link-ref> Blog </a>
-      </li>
-      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
-        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/contacto') ?>" data-te-nav-link-ref> Contacto </a>
-      </li>
+                        <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+                            <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/') ?>"
+                                data-te-nav-link-ref> Inicio </a>
+                        </li>
+                        <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+                            <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/nosotros') ?>"
+                                data-te-nav-link-ref> Nosotros </a>
+                        </li>
+                        <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+                            <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/tienda') ?>"
+                                data-te-nav-link-ref> Tienda </a>
+                        </li>
+                        <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+                            <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/blog') ?>"
+                                data-te-nav-link-ref> Blog </a>
+                        </li>
+                        <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+                            <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/contacto') ?>"
+                                data-te-nav-link-ref> Contacto </a>
+                        </li>
 
-      @if (!auth()->check())
-      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
-        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/crear_cuenta') ?>" data-te-nav-link-ref> Crear cuenta </a>
-      </li>
-      <li
-        class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-        data-te-nav-item-ref>
-        <a
-          class="active lg:px-2  text-white"
-          aria-current="page"
-          href="<?= url('/iniciar_sesion') ?>"
-          data-te-nav-link-ref
-          >Iniciar sesión</a
-        >
-      </li>
-      @endif
+                        @if (!auth()->check())
+                            <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+                                <a class="active lg:px-2  text-white" aria-current="page"
+                                    href="<?= url('/crear_cuenta') ?>" data-te-nav-link-ref> Crear cuenta </a>
+                            </li>
+                            <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+                                <a class="active lg:px-2  text-white" aria-current="page"
+                                    href="<?= url('/iniciar_sesion') ?>" data-te-nav-link-ref>Iniciar sesión</a>
+                            </li>
+                        @endif
 
-    </ul>
+                    </ul>
 
-    <!-- Boton usuario logueado -->
-    <div class="hidden lg:block">
-      @if (auth()->check())
-                  <div class="relative me-10" data-te-dropdown-ref>
-                      <button
-                          class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                          type="button" id="dropdownMenuButton1d" data-te-dropdown-toggle-ref aria-expanded="false"
-                          data-te-ripple-init data-te-ripple-color="light">
-                          {{-- <img src="{{ url('img/avatar/avatar-valdi.jpg') }}"
+                    <div>
+                      <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-white hover:text-stone-950 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                          href="<?= url('/panel_admin') ?>" data-te-dropdown-item-ref>Panel Admin</a>
+                     </div>
+                    <div>
+                        <!-- Boton usuario logueado -->
+                        <div class="hidden lg:block">
+                            @if (auth()->check())
+                                <div class="relative me-10" data-te-dropdown-ref>
+                                    <button
+                                        class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                                        type="button" id="dropdownMenuButton1d" data-te-dropdown-toggle-ref
+                                        aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
+                                        {{-- <img src="{{ url('img/avatar/avatar-valdi.jpg') }}"
                           class="w-[40px] rounded-full shadow-lg" alt="Avatar" /> --}}
-                          <?= Auth::user()->name ?>
-                          <span class="ml-2 w-2">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                  class="h-5 w-5">
-                                  <path fill-rule="evenodd"
-                                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                                      clip-rule="evenodd" />
-                              </svg>
-                          </span>
-                      </button>
-                      <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-                          aria-labelledby="dropdownMenuButton1d" data-te-dropdown-menu-ref>
-                          <li>
-                              <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                  href="<?= url('/perfil_usuario') ?>" data-te-dropdown-item-ref>Mi Perfil</a>
-                          </li>
-                          <li>
-                              <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                                  href="<?= url('/panel_admin') ?>" data-te-dropdown-item-ref>Panel Admin</a>
-                          </li>
-                          <li>
-                              <hr
-                                  class="my-2 h-0 border border-t-0 border-solid border-neutral-700 opacity-25 dark:border-neutral-200" />
-                          </li>
-                          <li>
-                              <form action="<?= url('/cerrar_sesion') ?>" method="post">
-                                  @csrf
-                                  <button type="submit"
-                                      class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600">
-                                      Cerrar sesión
-                                  </button>
-                              </form>
-                          </li>
-                      </ul>
-                  </div>
-              @endif
-    </div>
+                                        <?= Auth::user()->name ?>
+                                        <span class="ml-2 w-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" class="h-5 w-5">
+                                                <path fill-rule="evenodd"
+                                                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <ul class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
+                                        aria-labelledby="dropdownMenuButton1d" data-te-dropdown-menu-ref>
+                                        <li>
+                                            <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
+                                                href="<?= url('/perfil_usuario') ?>" data-te-dropdown-item-ref>Mi
+                                                Perfil</a>
+                                        </li>
+                                        <li>
+                                            <hr
+                                                class="my-2 h-0 border border-t-0 border-solid border-neutral-700 opacity-25 dark:border-neutral-200" />
+                                        </li>
+                                        <li>
+                                            <form action="<?= url('/cerrar_sesion') ?>" method="post">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600">
+                                                    Cerrar sesión
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                              </div>
+                        @endif
+                    </div>
 
-  </div>
-</div>
-</nav>
+                </div>
+            </div>
+        </nav>
         <main class="container mx-auto flex-grow">
             @if (\Session::has('status.message'))
-              <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-{{ \Session::get('status.type', 'success') }}-100 px-6 py-5 text-base text-{{ \Session::get('status.type', 'success') }}-700"
-                  role="alert">
-                  <span class="mr-2">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5">
-                          <path fill-rule="evenodd"
-                              d="{{ \Session::get('status.svg', 'M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z') }}"
-                              clip-rule="evenodd" />
-                      </svg>
-
-                     {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-red-500">
-                        <path fill-rule="evenodd" d="M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z" clip-rule="evenodd" />
-                    </svg> --}}
-
-                  </span>
-                  <div>
-                      {!! \Session::get('status.message') !!}
-                  </div>
-              </div>
+                <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-{{ \Session::get('status.type', 'success') }}-100 px-6 py-5 text-base text-{{ \Session::get('status.type', 'success') }}-700"
+                    role="alert">
+                    <span class="mr-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="h-5 w-5">
+                            <path fill-rule="evenodd"
+                                d="{{ \Session::get('status.svg', 'M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z') }}"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                    <div>
+                        {!! \Session::get('status.message') !!}
+                    </div>
+                </div>
             @endif
             <!-- espacio cedido a templates anexos -->
             @yield('content')
