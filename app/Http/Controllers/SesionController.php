@@ -75,6 +75,10 @@ class SesionController extends Controller
 
       User::create($data);
 
+      $credentials = $request->only(['email', 'password']);
+
+      Auth::attempt($credentials);
+
       return redirect('/iniciar_sesion')->with('status.message', 'Cuenta creada con éxito');
     } catch (\Exception $e) {
       return redirect('/crear_cuenta')->with('status.message', 'Error al crear la cuenta: ' . $e->getMessage())
