@@ -78,6 +78,8 @@ class SesionController extends Controller
       return redirect('/iniciar_sesion')->with('status.message', 'Cuenta creada con éxito');
     } catch (\Exception $e) {
       return redirect('/crear_cuenta')->with('status.message', 'Error al crear la cuenta: ' . $e->getMessage())
+        ->with('status.type', 'danger')
+        ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
         ->withInput();
     }
   }
