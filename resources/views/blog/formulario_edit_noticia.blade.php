@@ -61,9 +61,7 @@
                     @error('contenido')
                     aria-invalid="true"
                     aria-describedby="error-contenido"
-                    @enderror>
-                    {{ trim(old('contenido', $noticia->contenido)) }}
-                </textarea>
+                    @enderror>{{ trim(old('contenido', $noticia->contenido)) }}</textarea>
                 @error('contenido')
                     <div class="mt-1 flex">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
