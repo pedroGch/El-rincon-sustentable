@@ -54,10 +54,33 @@ class SesionController extends Controller
    * Retorna la vista de la página de creación de cuenta
    * @return \Illuminate\View\View
    */
-  public function crear_cuenta()
+  public function crear_cuenta_form()
   {
     return view('crear_cuenta');
   }
+
+  /**
+   * Crea una nueva cuenta de usuario
+   * @param Request $request
+   * @return \Illuminate\View\View
+   */
+  public function crear_cuenta_action(Request $request)
+  {
+    try {
+      $request->validate(User::$rules, User::$errorMessages);
+
+      $data = $request->only(['name', 'surname', 'email', 'password']);
+
+      User::create($data);
+
+      return redirect('/iniciar_sesion')->with('status.message', 'Cuenta creada con éxito');
+    } catch (\Exception $e) {
+      return redirect('/crear_cuenta')->with('status.message', 'Error al crear la cuenta: ' . $e->getMessage())
+        ->withInput();
+    }
+  }
+
+
 
   /**
    * Retorna la vista de la página del dashboard del administrador

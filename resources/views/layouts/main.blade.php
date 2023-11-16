@@ -98,83 +98,31 @@ data-te-navbar-ref>
   </button>
 
   <!-- Collapsible navbar container -->
-  <div
-    class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
-    id="navbarSupportedContent14"
-    data-te-collapse-item>
+  <div class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
+    id="navbarSupportedContent14" data-te-collapse-item>
     <!-- Left links -->
-    <ul
-      class="list-style-none mr-auto flex flex-col pl-0 lg:mt-1 lg:flex-row"
-      data-te-navbar-nav-ref>
+    <ul class="list-style-none mr-auto flex flex-col pl-0 lg:mt-1 lg:flex-row" data-te-navbar-nav-ref>
 
-      <li
-        class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-        data-te-nav-item-ref>
-        <a
-          class="active lg:px-2  text-white"
-          aria-current="page"
-          href="<?= url('/') ?>"
-          data-te-nav-link-ref
-          >Inicio</a
-        >
+      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/') ?>" data-te-nav-link-ref> Inicio </a>
       </li>
-      <li
-        class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-        data-te-nav-item-ref>
-        <a
-          class="active lg:px-2  text-white"
-          aria-current="page"
-          href="<?= url('/nosotros') ?>"
-          data-te-nav-link-ref
-          >Nosotros</a
-        >
+      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/nosotros') ?>" data-te-nav-link-ref> Nosotros </a>
       </li>
-      <li
-        class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-        data-te-nav-item-ref>
-        <a
-          class="active lg:px-2  text-white"
-          aria-current="page"
-          href="<?= url('/tienda') ?>"
-          data-te-nav-link-ref
-          >Tienda</a
-        >
+      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/tienda') ?>" data-te-nav-link-ref> Tienda </a>
       </li>
-      <li
-        class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-        data-te-nav-item-ref>
-        <a
-          class="active lg:px-2  text-white"
-          aria-current="page"
-          href="<?= url('/blog') ?>"
-          data-te-nav-link-ref
-          >Blog</a
-        >
+      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/blog') ?>" data-te-nav-link-ref> Blog </a>
       </li>
-      <li
-        class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-        data-te-nav-item-ref>
-        <a
-          class="active lg:px-2  text-white"
-          aria-current="page"
-          href="<?= url('/contacto') ?>"
-          data-te-nav-link-ref
-          >Contacto</a
-        >
+      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/contacto') ?>" data-te-nav-link-ref> Contacto </a>
       </li>
 
       @if (!auth()->check())
-      {{-- <li
-        class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-        data-te-nav-item-ref>
-        <a
-          class="active lg:px-2  text-white"
-          aria-current="page"
-          href="<?= url('/crear_cuenta') ?>"
-          data-te-nav-link-ref
-          >Crear cuenta</a
-        >
-      </li> --}}
+      <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
+        <a class="active lg:px-2  text-white" aria-current="page" href="<?= url('/crear_cuenta') ?>" data-te-nav-link-ref> Crear cuenta </a>
+      </li>
       <li
         class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
         data-te-nav-item-ref>

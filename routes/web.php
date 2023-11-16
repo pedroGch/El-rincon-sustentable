@@ -28,7 +28,8 @@ Route::post('/contacto', [\App\Http\Controllers\ContactoController::class, 'vali
 
 //RUTAS RELACIONADAS AL INICIO DE SESION
 Route::get('/iniciar_sesion', [\App\Http\Controllers\SesionController::class, 'iniciar_sesion']);
-Route::get('/crear_cuenta', [\App\Http\Controllers\SesionController::class, 'crear_cuenta']);
+Route::get('/crear_cuenta', [\App\Http\Controllers\SesionController::class, 'crear_cuenta_form']);
+Route::post('/crear_cuenta', [\App\Http\Controllers\SesionController::class, 'crear_cuenta_action']);
 Route::post('/validar_usuario', [\App\Http\Controllers\SesionController::class, 'validar_usuario']);
 Route::post('/cerrar_sesion', [\App\Http\Controllers\SesionController::class, 'cerrar_sesion']);
 

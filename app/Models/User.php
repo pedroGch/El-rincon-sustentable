@@ -57,6 +57,29 @@ class User extends Authenticatable
     'rol',
   ];
 
+
+  public static $rules = [
+    'name' => 'required|max:255',
+    'surname' => 'required|max:255',
+    'email' => 'required|email|max:255',
+    'password' => 'required|max:255',
+    'rol' => 'required|max:255',
+  ];
+
+  public static $errorMessages = [
+    'name.required' => 'El nombre es requerido',
+    'name.max' => 'El nombre no puede contener más de 255 carateres',
+    'surname.required' => 'El apellido es requerido',
+    'surname.max' => 'El apellido no puede contener más de 255 carateres',
+    'email.required' => 'El email es requerido',
+    'email.email' => 'El email debe ser válido',
+    'email.max' => 'El email no puede contener más de 255 carateres',
+    'password.required' => 'La contraseña es requerida',
+    'password.max' => 'La contraseña no puede contener más de 255 carateres',
+    'rol.required' => 'El rol es requerido',
+    'rol.max' => 'El rol no puede contener más de 255 carateres',
+  ];
+
   /**
    * The attributes that should be hidden for serialization.
    *
