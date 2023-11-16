@@ -27,8 +27,10 @@ class SesionController extends Controller
   {
     $credentials = $request->only(['email', 'password']);
     if (!Auth::attempt($credentials)) {
-      return redirect('/iniciar_sesion')->with('status.message', 'email y/o contraseña incorrecta')
-        ->withInput();
+      return redirect('/iniciar_sesion')->with('status.message', 'Email y/o contraseña incorrecta')
+      ->with('status.type', 'danger')
+      ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
+      ->withInput();
     }
 
     $url = (Auth::user()->rol_fk == 1) ? '/panel_admin' : '/panel_admin';
