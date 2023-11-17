@@ -17,25 +17,17 @@ class CompraSeeder extends Seeder
           [
             [
               'compra_id' => 1,
-              'usuario_id' => 1,
-              'fecha_compra' => '2021-11-14',
-              'importe_compra' => 1000,
+              'usuario_id' => 2,
+              'fecha_compra' => '2021-11-20',
+              'importe_compra' => 2304128,
               'created_at' => now(),
               'updated_at' => now(),
             ],
             [
               'compra_id' => 2,
-              'usuario_id' => 1,
-              'fecha_compra' => '2021-11-14',
-              'importe_compra' => 2000,
-              'created_at' => now(),
-              'updated_at' => now(),
-            ],
-            [
-              'compra_id' => 3,
-              'usuario_id' => 2,
-              'fecha_compra' => '2021-11-20',
-              'importe_compra' => 2800,
+              'usuario_id' => 3,
+              'fecha_compra' => '2021-11-17',
+              'importe_compra' => 69853,
               'created_at' => now(),
               'updated_at' => now(),
             ]

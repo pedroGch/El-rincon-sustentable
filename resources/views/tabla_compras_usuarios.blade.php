@@ -40,14 +40,15 @@
                               <div class="mb-5">
                                   <p><b>Fecha de compra:</b> {{ $compra->fecha_compra }}</p>
                                   <p><b>Productos:</b></p>
-                                  <ul>
+                                  <ul class="ms-4">
 
                                   @foreach ($compra->productos as $producto)
-                                      <li>{{ $producto->nombre_prod }}</li>
+                                      <li>* {{ $producto->nombre_prod }} - {{ $producto->precio_formateado($producto->precio)  }}</li>
                                   @endforeach
                                 </ul>
+                                <p><b>Importe total:</b> ${{ $compra->importe_compra }}</p>
                                 @empty
-                                  <p>No hay compras realizadas</p>
+                                  <p>Aún no ha realizado compras.</p>
                                 @endforelse
                                 </td>
                             </td>

@@ -4,6 +4,7 @@
  * @var \App\Models\Usuario[] | \Illuminate\Database\Eloquent\Collection $usuarios
  * @var \App\Models\Noticia[] | \Illuminate\Database\Eloquent\Collection $noticias
  * @var \App\Models\Producto[] | \Illuminate\Database\Eloquent\Collection $productos
+ * @var \App\Models\User $adminUsers
  */
 ?>
 
@@ -78,7 +79,7 @@
             </div>
             <div class="mb-8 flex flex-wrap justify-center">
                 <div>
-                    <p class="text-center">Actualmente tenés {{ $usuarios->count() }} usuarios registrados en el sitio.</p>
+                    <p class="text-center">Actualmente tenés {{ $usuariosTotales->count() - $adminUsers->count() }} usuarios registrados en el sitio.</p>
                 </div>
             </div>
         </div>

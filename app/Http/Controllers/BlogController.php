@@ -161,10 +161,14 @@ class BlogController extends Controller
    */
   public function dashboardAdmin()
   {
+    $adminUsers = User::where('rol', 'admin')->get();
+
     return view('dashboard_admin', [
       'noticias' => Noticia::all(),
       'productos' => Producto::all(),
-      'usuarios' => User::where('id', '!=', Auth::user()->id)->get(),
+      'usuariosMenosElLogueado' => User::where('id', '!=', Auth::user()->id)->get(),
+      'usuariosTotales' => User::all(),
+      'adminUsers' => $adminUsers,
     ]);
   }
 }
