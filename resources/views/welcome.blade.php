@@ -13,22 +13,22 @@
                 <!--First item-->
                 <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item data-te-carousel-active>
-                    <img src="./img/slider-1.jpg" class="block w-full" alt="Wild Landscape" />
+                    <img src="./img/slider-1.jpg" class="block w-full" alt="Niño abrazando un árbol" />
                 </div>
                 <!--Second item-->
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./img/slider-2.jpg" class="block w-full" alt="Camera" />
+                    <img src="./img/slider-2.jpg" class="block w-full" alt="Paneles solares" />
                 </div>
                 <!--Third item-->
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./img/slider-3.jpg" class="block w-full" alt="Exotic Fruits" />
+                    <img src="./img/slider-3.jpg" class="block w-full" alt="Brote creciendo dentro de lamparita rota" />
                 </div>
                 <!--Fourth item -->
                 <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                     data-te-carousel-item>
-                    <img src="./img/slider-4.jpg" class="block w-full" alt="Exotic Fruits" />
+                    <img src="./img/slider-4.jpg" class="block w-full" alt="Símbolo de reciclaje en un bosque" />
                 </div>
             </div>
             <!--Carousel controls - prev item-->
@@ -129,14 +129,4 @@
 
 @endsection
 
-<script>
-    // Initialization for ES Users
-    import {
-        Carousel,
-        initTE,
-    } from "tw-elements";
 
-    initTE({
-        Carousel
-    });
-</script>

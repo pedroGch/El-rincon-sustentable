@@ -72,14 +72,4 @@ use Illuminate\Pagination\LengthAwarePaginator;
     </section>
 @endsection
 
-<script>
-    // Initialization for ES Users
-    import {
-        Ripple,
-        initTE,
-    } from "tw-elements";
 
-    initTE({
-        Ripple
-    });
-</script>

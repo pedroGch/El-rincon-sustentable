@@ -50,7 +50,7 @@
                                 @empty
                                   <p>Aún no ha realizado compras.</p>
                                 @endforelse
-                                </td>
+                              </div>
                             </td>
 
                         </tr>

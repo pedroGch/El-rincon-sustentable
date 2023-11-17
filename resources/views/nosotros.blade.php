@@ -11,7 +11,7 @@
         </div>
         <div class="flex flex-wrap">
             <div class="py-3 lg:flex-1 lg:p-10">
-                <img src="img/nosotros.webp" alt="">
+                <img src="img/nosotros.webp" alt="Dos hombres trabajando">
             </div>
             <div class="lg:flex-1 lg:p-10 lg:text-xl m-auto">
                 <p>Desde 1980 nos enorgullece ser una tienda comprometida con la promoción de prácticas responsables y
