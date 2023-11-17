@@ -16,9 +16,10 @@ class ContactoController extends Controller
     return view('contacto');
   }
 
-  /*
+  /**
    * Valida los datos del formulario de contacto
-   * @return \Illuminate\View\View
+   * @param  Request $request
+   * @return \Illuminate\Http\RedirectResponse
    */
   public function validar_contacto(Request $request)
   {

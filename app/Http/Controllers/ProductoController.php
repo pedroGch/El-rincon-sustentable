@@ -178,7 +178,7 @@ class ProductoController extends Controller
 
 
   /**
-   * Muestra el formulario para editar una noticia
+   * Muestra el formulario para editar un producto
    * @param int $id
    * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
    */

@@ -88,17 +88,6 @@ class SesionController extends Controller
     }
   }
 
-
-
-  /**
-   * Retorna la vista de la página del dashboard del administrador
-   * @return \Illuminate\View\View
-   */
-  public function dashboard_admin()
-  {
-    return view('dashboard_admin');
-  }
-
   /**
    * Retorna la vista de la página del perfil del usuario
    * @return \Illuminate\View\View
