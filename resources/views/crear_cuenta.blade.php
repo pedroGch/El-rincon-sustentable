@@ -2,7 +2,7 @@
 
 {{-- @section('title') Página Principal @endsection --}}
 
-@section('title', 'crear cuenta')
+@section('title', 'Crear cuenta')
 
 @section('content')
     <div class="max-w-[100%] mx-auto ">

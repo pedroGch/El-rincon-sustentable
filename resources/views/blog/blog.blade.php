@@ -10,7 +10,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 {{-- @section('title') Blog @endsection --}}
 
-@section('title', 'Inicio')
+@section('title', 'Blog')
 
 @section('content')
 

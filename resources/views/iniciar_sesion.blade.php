@@ -2,7 +2,7 @@
 
 {{-- @section('title') Página Principal @endsection --}}
 
-@section('title', 'inicio de sesión')
+@section('title', 'Inicio de sesión')
 
 @section('content')
     <div class="bg-[url('./img/mano-tocando-arbol.jpg')] mx-0">
