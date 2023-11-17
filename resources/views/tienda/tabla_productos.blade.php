@@ -77,8 +77,8 @@
 
             Swal.fire({
 
-                title: '¿Estás seguro que querés eliminar el siguiente producto?',
-                text:"\"{{ $producto->nombre_prod }}\"",
+                title: '¿Estás seguro que querés eliminar el producto?',
+                //text:"\"{{ $producto->nombre_prod }}\"",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#459646',

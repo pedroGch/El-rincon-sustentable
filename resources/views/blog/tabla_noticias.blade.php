@@ -65,8 +65,8 @@
         function borrarNoticia(id) {
 
             Swal.fire({
-                title: '¿Estás seguro que querés eliminar la siguiente noticia?',
-                text: "\"{{ $noticia->titulo }}\"",
+                title: '¿Estás seguro que querés eliminar la noticia?',
+                //text: "\"{{ $noticia->titulo }}\"",
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#459646',
