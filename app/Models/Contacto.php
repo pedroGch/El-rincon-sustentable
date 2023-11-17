@@ -5,6 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Contacto
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|Contacto newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Contacto newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Contacto query()
+ * @mixin \Eloquent
+ */
 class Contacto extends Model
 {
   //use HasFactory;

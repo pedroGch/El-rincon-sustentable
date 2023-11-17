@@ -187,7 +187,7 @@
         </nav>
         <main class="container mx-auto flex-grow">
             @if (\Session::has('status.message'))
-                <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-{{ \Session::get('status.type', 'success') }}-100 px-6 py-5 text-base text-{{ \Session::get('status.type', 'success') }}-700"
+                <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-{{ \Session::get('status.type', 'success') }}-100 px-6 py-5 bg- text-base text-{{ \Session::get('status.type', 'success') }}-700"
                     role="alert">
                     <span class="mr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"

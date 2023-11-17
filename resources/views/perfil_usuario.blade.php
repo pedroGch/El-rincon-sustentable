@@ -31,8 +31,8 @@
 
             </div>
         </div>
-       
-        <div class="">
+
+        <div class="mb-8">
             <div class="mb-5">
                 <h3 class="text-2xl font-semibold">Compras realizadas</h3>
             </div>

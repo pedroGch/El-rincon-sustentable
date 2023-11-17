@@ -122,31 +122,35 @@ class ProductoController extends Controller
    * @param int $id
    * @return \Illuminate\Http\RedirectResponse
    */
-  public function bajaDeProducto($id)
+  public function bajaDeProducto(int $id)
   {
-    try
-    {
-      //buscamos el producto a eliminar
-      $producto = Producto::findOrFail($id);
-      //rompemos la relacion con las etiquetas
-      $producto->etiquetas()->detach();
-      //eliminamos el producto
-      $producto->delete();
-      //si tenia una magen cargada la borramos de la carpeta storage
-      if ($producto->imagen_prod && Storage::has($producto->imagen_prod)){
-        Storage::delete($producto->imagen_prod);
-      }
-      return redirect('/tienda/gestor_productos')
-        ->with('status.message', 'El producto fue correctamente eliminado.');
+    try {
+        // Buscamos el producto a eliminar
+        $producto = Producto::findOrFail($id);
+
+        // Si tenía una imagen cargada, la borramos de la carpeta storage
+        if ($producto->imagen_prod && Storage::has($producto->imagen_prod)) {
+            Storage::delete($producto->imagen_prod);
+        }
+
+        // Rompemos la relación con las etiquetas antes de eliminar el producto
+        $producto->etiquetas()->detach();
+
+        // Eliminamos el producto
+        $producto->delete();
+
+        return redirect('/tienda/gestor_productos')
+            ->with('status.message', 'El producto fue correctamente eliminado.')
+            ->with('status.type', 'success');
     } catch (\Exception $e) {
-      return redirect()
-        ->back()
-        ->with('status.message', 'Error al intentar eliminar un producto')
-        ->with('status.type', 'danger')
-        ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
-        ->withInput();
+        return redirect()
+            ->back()
+            ->with('status.message', 'Error al intentar eliminar un producto')
+            ->with('status.type', 'danger')
+            ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
+            ->withInput();
     }
-  }
+}
 
 
    /**

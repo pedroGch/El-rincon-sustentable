@@ -34,6 +34,12 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Producto wherePrecio($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereStock($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereUpdatedAt($value)
+ * @property-read \App\Models\Categoria|null $categoria
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Compra> $compras
+ * @property-read int|null $compras_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Etiqueta> $etiquetas
+ * @property-read int|null $etiquetas_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Producto whereCategoriaId($value)
  * @mixin \Eloquent
  */
 class Producto extends Model

@@ -8,6 +8,29 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * App\Models\Compra
+ *
+ * @property int $compra_id
+ * @property int $usuario_id
+ * @property string $fecha_compra
+ * @property int $importe_compra
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Producto> $productos
+ * @property-read int|null $productos_count
+ * @property-read \App\Models\User $usuario
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra whereCompraId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra whereFechaCompra($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra whereImporteCompra($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Compra whereUsuarioId($value)
+ * @mixin \Eloquent
+ */
 class Compra extends Model
 {
     //use HasFactory;

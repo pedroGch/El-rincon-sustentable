@@ -38,6 +38,10 @@ use Laravel\Sanctum\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereUpdatedAt($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Compra> $compras
+ * @property-read int|null $compras_count
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereRol($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereSurname($value)
  * @mixin \Eloquent
  */
 class User extends Authenticatable
