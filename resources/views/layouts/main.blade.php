@@ -139,7 +139,7 @@
                                         class="flex items-center whitespace-nowrap rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] motion-reduce:transition-none dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                                         type="button" id="dropdownMenuButton1d" data-te-dropdown-toggle-ref
                                         aria-expanded="false" data-te-ripple-init data-te-ripple-color="light">
-                                       
+
                                         <?= Auth::user()->name ?>
                                         <span class="ml-2 w-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -184,7 +184,7 @@
         </nav>
         <main class="container mx-auto flex-grow">
             @if (\Session::has('status.message'))
-                <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-{{ \Session::get('status.type', 'success') }}-100 px-6 py-5 bg- text-base text-{{ \Session::get('status.type', 'success') }}-700"
+                <div class="mt-5 mb-3 inline-flex w-full items-center rounded-lg bg-{{ \Session::get('status.type') ? \Session::get('status.type') : 'success' }}-100 px-6 py-5 bg- text-base text-{{ \Session::get('status.type') ? \Session::get('status.type') : 'success' }}-700"
                     role="alert">
                     <span class="mr-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -288,7 +288,6 @@
         </footer>
     </div>
 
-    <script type="text/javascript" src="{{ url('./../node_modules/tw-elements/dist/js/tw-elements.umd.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
