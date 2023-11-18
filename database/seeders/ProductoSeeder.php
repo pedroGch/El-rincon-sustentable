@@ -28,6 +28,7 @@ class ProductoSeeder extends Seeder
             Los cestos están fabricados con materiales resistentes y duraderos, lo que garantiza su larga vida útil. Cada cesto tiene una capacidad de 30 litros, lo que proporciona un amplio espacio para depositar los residuos sin necesidad de vaciarlos con frecuencia.',
             'stock' => 9,
             'precio' => 6036300,
+            'estado' => 'activo',
           ],
           [
             'id' => 2,
@@ -42,6 +43,7 @@ class ProductoSeeder extends Seeder
             Los cestos de la Ecobox son fáciles de armar y tienen el tamaño ideal para adaptarse a diferentes espacios. Con medidas de 30x30x45 cm para los tachos de 18 litros y 30x40x45 cm para los tachos de 24 litros, estos cestos ofrecen una capacidad adecuada sin ocupar demasiado espacio.',
             'stock' => 16,
             'precio' => 350000,
+            'estado' => 'activo',
           ],
           [
             'id' => 3,
@@ -56,6 +58,7 @@ class ProductoSeeder extends Seeder
             Con medidas de 110 cm de altura, 33 cm de ancho y 33 cm de largo, esta compostera se adapta perfectamente a espacios pequeños sin comprometer su capacidad de compostaje. Aunque no cuenta con una canilla, su diseño permite una adecuada circulación de aire y humedad para acelerar el proceso de descomposición.',
             'stock' => 6,
             'precio' => 949000,
+            'estado' => 'activo',
           ],
           [
             'id' => 4,
@@ -73,6 +76,7 @@ class ProductoSeeder extends Seeder
             Ubicación: donde quieras, están preparadas para interior y exterior, ¡se adaptan a vos!',
             'stock' => 17,
             'precio' => 1619100,
+            'estado' => 'activo',
           ],
           [
             'id' => 5,
@@ -89,6 +93,7 @@ class ProductoSeeder extends Seeder
             Este sistema es ideal para hogares, granjas, campos y lugares donde se necesite agua para irrigación o para el consumo humano. Además, el sistema es amigable con el medio ambiente y no produce emisiones de gases de efecto invernadero. ¡Compre ahora nuestro sistema de bombeo solar y disfrute del agua limpia y renovable en cualquier lugar!',
             'stock' => 11,
             'precio' => 197100200,
+            'estado' => 'activo',
           ],
           [
             'id' => 6,
@@ -103,6 +108,7 @@ class ProductoSeeder extends Seeder
             Genera 12V y 5V-120 Watts',
             'stock' => 4,
             'precio' => 32382000,
+            'estado' => 'activo',
           ],
           [
             'id' => 7,
@@ -117,6 +123,7 @@ class ProductoSeeder extends Seeder
             Además de su atractivo diseño, estas tapas tapones también cumplen una función práctica al sellar herméticamente tus botellas. Esto ayuda a mantener la frescura y el sabor de tus bebidas, evitando derrames accidentales y manteniendo el contenido seguro mientras estás en movimiento.',
             'stock' => 17,
             'precio' => 231600,
+            'estado' => 'activo',
           ],
           [
             'id' => 8,
@@ -131,6 +138,7 @@ class ProductoSeeder extends Seeder
             Importada y aprobada por INAL',
             'stock' => 14,
             'precio' => 699000,
+            'estado' => 'activo',
           ],
         ]
         );

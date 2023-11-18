@@ -20,6 +20,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
     <section class="mx-auto max-w-screen-xl">
         <div class="flex flex-row flex-wrap">
             @foreach ($productos as $producto)
+              @if ($producto->estado !== 'inactivo')
                 <div class="flex flex-col w-full lg:w-1/4 md:w-1/2 p-4">
                     <div
                         class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
@@ -62,6 +63,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
                         </div>
                     </div>
                 </div>
+              @endif
             @endforeach
         </div>
         <div class="mb-5">

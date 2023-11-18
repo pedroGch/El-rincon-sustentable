@@ -125,19 +125,12 @@ class ProductoController extends Controller
   public function bajaDeProducto(int $id)
   {
     try {
+        // Realizamos un soft delete para que el producto no se muestre en la tienda pero no se borre de la base de datos
         // Buscamos el producto a eliminar
         $producto = Producto::findOrFail($id);
-
-        // Si tenía una imagen cargada, la borramos de la carpeta storage
-        if ($producto->imagen_prod && Storage::has($producto->imagen_prod)) {
-            Storage::delete($producto->imagen_prod);
-        }
-
-        // Rompemos la relación con las etiquetas antes de eliminar el producto
-        $producto->etiquetas()->detach();
-
-        // Eliminamos el producto
-        $producto->delete();
+        // Actualizamos el estado del producto a 'inactivo'
+        $producto->estado = 'inactivo';
+        $producto->save();
 
         return redirect('/tienda/gestor_productos')
             ->with('status.message', 'El producto fue correctamente eliminado.')

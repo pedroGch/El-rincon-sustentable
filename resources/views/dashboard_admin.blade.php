@@ -61,7 +61,7 @@
             </div>
             <div class="mb-8 flex flex-wrap justify-center">
                 <div>
-                    <p class="text-center">Actualmente tenés {{ $productos->count() }} productos cargados en la tienda.</p>
+                    <p class="text-center">Actualmente tenés {{ $productosActivos->count() }} productos activos en la tienda.</p>
                 </div>
             </div>
           </div>

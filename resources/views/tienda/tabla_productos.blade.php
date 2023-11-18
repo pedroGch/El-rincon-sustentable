@@ -39,6 +39,7 @@
                 </thead>
                 <tbody class="border-2">
                     @foreach ($productos as $producto)
+                      @if ($producto->estado !== 'inactivo')
                         <tr class="border-2">
                             <td class="p-3 border-2">{{ $producto->id }}</td>
                             <td class="text-sm p-3 border-2">{{ $producto->nombre_prod }}</td>
@@ -66,6 +67,7 @@
                                 </form>
                             </td>
                         </tr>
+                      @endif
                     @endforeach
                 </tbody>
             </table>
