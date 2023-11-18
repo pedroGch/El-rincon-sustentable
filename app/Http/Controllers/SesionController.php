@@ -33,7 +33,7 @@ class SesionController extends Controller
       ->withInput();
     }
 
-    $url = (Auth::user()->rol_fk == 1) ? '/panel_admin' : '/panel_admin';
+    $url = (Auth::user()->rol == 'admin') ? '/panel_admin' : '/perfil_usuario';
 
     return redirect($url)->with('status.message', 'Hola ' . Auth::user()->name . ', iniciaste sesión con éxito');
   }
