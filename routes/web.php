@@ -60,3 +60,6 @@ Route::post('/tienda/producto/nuevo', [\App\Http\Controllers\ProductoController:
 Route::get('/tienda/{id}/editar', [\App\Http\Controllers\ProductoController::class, 'formularioEditarProducto'])->middleware(['auth']);
 Route::post('/tienda/{id}/editar', [\App\Http\Controllers\ProductoController::class, 'editarProducto'])->middleware(['auth']);
 Route::get('/tienda/{id}/eliminar', [\App\Http\Controllers\ProductoController::class, 'bajaDeProducto'])->whereNumber('id');
+
+Route::get('/carrito', [\App\Http\Controllers\MercadoPagoController::class, 'obtenerCarrito'])
+  ->name('formCarrito');
