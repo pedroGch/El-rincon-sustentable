@@ -57,7 +57,7 @@
                                         class="w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Editar</button>
                                 </form>
 
-                                <button type="button" onclick="borrarProducto({{ $producto->id }})"
+                                <button type="button" onclick="borrarProducto({{ $producto->id }}, '{{ $producto->nombre_prod }}')"
                                     class="my-3 w-full inline-block rounded bg-danger px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-inputBoxHover  focus:bg-danger focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-danger ">Eliminar</button>
 
                                 <form action="{{ route('detalle.producto', ['id' => $producto->id]) }}" method="GET">
@@ -75,12 +75,12 @@
     </section>
 
     <script>
-        function borrarProducto(id) {
+        function borrarProducto(id, nombre) {
 
             Swal.fire({
 
                 title: '¿Estás seguro que querés eliminar el producto?',
-                //text:"\"{{ $producto->nombre_prod }}\"",
+                text:'"' + nombre + '"',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#459646',
