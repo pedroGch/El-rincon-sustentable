@@ -43,12 +43,12 @@ public function obtenerCarrito()
   $client = new PreferenceClient();
   $preference = $client->create([
     'items' => $items,
-    // 'back_urls' => [
-    //   'success' => route('pago.aprobado'),
-    //   'failure' => route('pago.rechazado'),
-    //   'pending' => route('pago.pendiente'),
-    // ],
-    // 'auto_return' => 'approved',
+    'back_urls' => [
+      'success' => route('pago.aprobado'),
+      'failure' => route('pago.rechazado'),
+      'pending' => route('pago.pendiente'),
+    ],
+    'auto_return' => 'approved',
   ]);
 
   return view('tienda.carrito', [
