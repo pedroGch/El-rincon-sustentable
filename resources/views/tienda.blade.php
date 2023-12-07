@@ -8,8 +8,6 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 @extends('layouts.main')
 
-{{-- @section('title') Página Principal @endsection --}}
-
 @section('title', 'Tienda')
 
 @section('content')
@@ -31,7 +29,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
                             <hr>
                             <div class="h-72  mx-auto">
                               @if ($producto->imagen_prod !== null)
-                                <img src="{{ asset('./storage/' . $producto->imagen_prod) }}" alt="{{ $producto->alt }}">
+                                <img src="{{ asset('../storage/' . $producto->imagen_prod) }}" alt="{{ $producto->alt }}">
                               @else
                                 <p>Este producto no tiene imagen</p>
                               @endif
