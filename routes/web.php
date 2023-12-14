@@ -80,15 +80,19 @@ Route::get('/carrito', [\App\Http\Controllers\MercadoPagoController::class, 'obt
   ->middleware(['auth'])
   ->name('formCarrito');
 
-Route::get('/pago/aprobado', [\App\Http\Controllers\MercadoPagoController::class, 'pagoAprobado'])
+Route::post('/carrito/{id}', [\App\Http\Controllers\CarritoController::class, 'agregarProductoCarrito'])
+  ->middleware(['auth'])
+  ->name('agregarProductoCarrito');
+
+Route::get('/pago/aprobado', [\App\Http\Controllers\MercadoPagoController::class, 'success'])
   ->middleware(['auth'])
   ->name('pago.aprobado');
 
-Route::get('/pago/rechazado', [\App\Http\Controllers\MercadoPagoController::class, 'pagoRechazado'])
+Route::get('/pago/rechazado', [\App\Http\Controllers\MercadoPagoController::class, 'pending'])
   ->middleware(['auth'])
   ->name('pago.rechazado');
 
-Route::get('/pago/pendiente', [\App\Http\Controllers\MercadoPagoController::class, 'pagoPendiente'])
+Route::get('/pago/pendiente', [\App\Http\Controllers\MercadoPagoController::class, 'failure'])
   ->middleware(['auth'])
   ->name('pago.pendiente');
 
