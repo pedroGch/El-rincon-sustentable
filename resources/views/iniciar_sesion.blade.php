@@ -33,7 +33,9 @@
                     data-te-ripple-init>
                     Ingresar
                 </button>
+                <p class="mt-5 ">¿No tenés cuenta?, <a href="<?= url('/crear_cuenta') ?>"><span class="font-bold underline">Registrate</span></a></p>
             </form>
+
         </section>
     </div>
 @endsection

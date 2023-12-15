@@ -64,13 +64,20 @@
                             {{ $producto->precio_formateado($producto->precio) }}
                         </li>
                     </ul>
-                    <form action="{{ url('/producto/' . $producto->id) }}" method="GET" class="mb-5">
-                        <button type="submit"
-                            class="mt-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
-                            data-te-ripple-init data-te-ripple-color="light">
-                            Comprar
-                        </button>
+                    @if(auth()->check())
+                    <form action="{{ route('agregarProductoCarrito', ['id' => $producto->id]) }}" method="POST" class="mb-5">
+                      @csrf
+                      <label for="cantidad_prod_{{ $producto->id }}" class="visually-hidden">Cantidad</label>
+                      <input type="number" name="cantidad_prod_{{ $producto->id }}[]" id="cantidad_prod_{{ $producto->id }}" value="1" class="form-control border border-gray-500 rounded">
+                      <button type="submit"
+                          class="mt-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
+                          data-te-ripple-init data-te-ripple-color="light">
+                          Agregar al carrito
+                      </button>
                     </form>
+                    @else
+                      <p class="mt-5 p-3 border-yellow-300 border bg-yellow-100 ">Para agregar productos al carrito debés <a href="<?= url('/iniciar_sesion') ?>"><span class="font-bold underline">iniciar sesión</span></a></p>
+                    @endif
                 </div>
             </div>
         </div>

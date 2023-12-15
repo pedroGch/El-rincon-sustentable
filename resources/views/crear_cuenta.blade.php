@@ -127,6 +127,7 @@
                     data-te-ripple-init>
                     Siguiente
                 </button>
+                <p class="mt-5 ">¿Ya tenés una cuenta?, <a href="<?= url('/iniciar_sesion') ?>"><span class="font-bold underline">Iniciá sesión</span></a></p>
             </form>
         </section>
     </div>
