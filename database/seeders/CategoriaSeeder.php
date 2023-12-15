@@ -32,8 +32,8 @@ class CategoriaSeeder extends Seeder
           ],
           [
             'id' => 4,
-            'nombre_cat' => 'Yo Reutilizo!',
-            'descripcion' => 'Sumate al movimiento "Yo Reutilizo!" y reducí tu huella ecológica. Descubrí productos reutilizables y soluciones eco-amigables que te ayudarán a cuidar el planeta mientras ahorrás dinero a largo plazo.',
+            'nombre_cat' => '¡Yo Reutilizo!',
+            'descripcion' => 'Sumate al movimiento "¡Yo Reutilizo!" y reducí tu huella ecológica. Descubrí productos reutilizables y soluciones eco-amigables que te ayudarán a cuidar el planeta mientras ahorrás dinero a largo plazo.',
           ]
         ]
       );
