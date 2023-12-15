@@ -167,4 +167,22 @@ class Producto extends Model
       'compra_id' // "relatedKey" Modelo con el que se relaciona
     );
   }
+
+  /**
+   * Creamos la relación entre la tabla productos y la tabla carritos
+   * (Relación muchos a muchos)
+   * Esta función devuelve un array de objetos de la clase Carrito
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+   */
+  public function carritos() :BelongsToMany
+  {
+    return $this->belongsToMany(
+      Carrito::class, //FQN del Modelo que representa la tabla pivot
+      'productos_x_carrito', // "table" nombre de la tabla pivot
+      'producto_id', // "foreignPivotKey" (este Modelo en la pivot)
+      'carrito_id', // "relatedPivotKey" Modelo con el que se relaciona
+      'id', // "parentKey" este Modelo
+      'carrito_id' // "relatedKey" Modelo con el que se relaciona
+    );
+  }
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Carrito;
+use Illuminate\Support\Facades\Auth;
 use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
 
@@ -11,30 +13,24 @@ class MercadoPagoController extends Controller
 {
 public function obtenerCarrito()
 {
-  // $carrito = session()->get('carrito');
-  // $productos = [];
-  // $total = 0;
-  // if ($carrito) {
-  //   foreach ($carrito as $id => $detalles) {
-  //     $producto = Producto::findOrFail($id);
-  //     $producto->cantidad = $detalles['cantidad'];
-  //     $producto->total = $producto->precio * $detalles['cantidad'];
-  //     $total += $producto->total;
-  //     $productos[] = $producto;
-  //   }
-  $productos = Producto::whereIn('id', [1, 2, 3])->get();
+  try {
+    $productos = Carrito::where('usuario_id', Auth::user()->id)->first()
+    ->with('productos')
+    ->get();
+
   $totalPrice = 0;
 
   //Preparación de preferencia de pago
   $items = [];
-  foreach ($productos as $producto) {
+  foreach ($productos as $productoCarrito) {
     $items[] = [
-      'title' => $producto->nombre_prod,
-      'quantity' => 1,
+      'title' => $productoCarrito->nombre_prod,
+      'quantity' => $productoCarrito->cantidad_prod,
       'currency_id' => 'ARS',
-      'unit_price' => $producto->precio,
+      'unit_price' => $productoCarrito->productos->precio,
     ];
-    $totalPrice += $producto->precio * 1;
+    $subtotal = $productoCarrito->cantidad_prod * $productoCarrito->productos->precio;
+    $totalPrice += $subtotal;
   }
   //Configuración SDK Mercado Pago
   MercadoPagoConfig::setAccessToken(env('MP_ACCESS_TOKEN'));
@@ -43,6 +39,7 @@ public function obtenerCarrito()
   $client = new PreferenceClient();
   $preference = $client->create([
     'items' => $items,
+    //redireccionamiento al terminar el flujo de cobro
     'back_urls' => [
       'success' => route('pago.aprobado'),
       'failure' => route('pago.rechazado'),
@@ -51,12 +48,23 @@ public function obtenerCarrito()
     'auto_return' => 'approved',
   ]);
 
-  return view('tienda.carrito', [
+  return view('tienda.checkout', [
     'productos' => $productos,
     'totalPrice' => $totalPrice,
+    'subtotal' => $subtotal ?? '',
     'preference' => $preference,
     'mpPublicKey' => env('MP_PUBLIC_KEY'),
   ]);
+  } catch (\Exception $e) {
+    dd($e);
+  }
+
 
 }
+
+public function success()
+{
+  return view('tienda.pago.aprobado');
+}
+
 }

@@ -76,13 +76,18 @@ Route::get('/tienda/{id}/eliminar', [\App\Http\Controllers\ProductoController::c
   ->whereNumber('id');
 
 // RUTAS RELACIONADAS AL PROCESO DE COMPRA
-Route::get('/carrito', [\App\Http\Controllers\MercadoPagoController::class, 'obtenerCarrito'])
+Route::get('/carrito', [\App\Http\Controllers\CarritoController::class, 'index'])
   ->middleware(['auth'])
-  ->name('formCarrito');
+  ->name('tablaCarrito');
 
 Route::post('/carrito/{id}', [\App\Http\Controllers\CarritoController::class, 'agregarProductoCarrito'])
+    ->middleware(['auth'])
+    ->whereNumber('id')
+    ->name('agregarProductoCarrito');
+
+Route::get('/checkout', [\App\Http\Controllers\MercadoPagoController::class, 'obtenerCarrito'])
   ->middleware(['auth'])
-  ->name('agregarProductoCarrito');
+  ->name('formCarrito');
 
 Route::get('/pago/aprobado', [\App\Http\Controllers\MercadoPagoController::class, 'success'])
   ->middleware(['auth'])

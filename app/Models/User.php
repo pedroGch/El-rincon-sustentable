@@ -118,4 +118,16 @@ class User extends Authenticatable
     );
   }
 
+
+  /**
+   * Creamos la relación entre la tabla usuarios y la tabla carritos
+   * (Relación uno a uno)
+   * Esta función devuelve el objeto de la clase Carrito al que pertenece el usuario
+   * @return \Illuminate\Database\Eloquent\Relations\HasOne
+   */
+  public function carrito(): HasOne
+  {
+    return $this->hasOne(Carrito::class, 'usuario_id', 'id');
+  }
+
 }
