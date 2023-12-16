@@ -65,6 +65,9 @@
                         </li>
                     </ul>
                     @if(auth()->check())
+                    @if(Auth::user()->rol == 'admin')
+                    <p class="mt-5 p-3 border-yellow-300 border bg-yellow-100 ">Los administradores no pueden realizar compras en el sitio.</p>
+                    @else
                     <form action="{{ route('agregarProductoCarrito', ['id' => $producto->id]) }}" method="POST" class="mb-5">
                       @csrf
                       <label for="cantidad_prod" class="visually-hidden">Cantidad</label>
@@ -89,6 +92,7 @@
                           Agregar al carrito
                       </button>
                     </form>
+                    @endif
                     @else
                       <p class="mt-5 p-3 border-yellow-300 border bg-yellow-100 ">Para agregar productos al carrito debés <a href="<?= url('/iniciar_sesion') ?>"><span class="font-bold underline">iniciar sesión</span></a></p>
                     @endif

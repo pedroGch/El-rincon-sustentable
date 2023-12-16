@@ -47,6 +47,7 @@
                         <li>{{ $producto->nombre_prod }}</li>
                     @endforeach
                   </ul>
+                  <p><b>Importe total:</b> {{ $compra->importe_compra }}</p>
                 </div>
 
             @empty

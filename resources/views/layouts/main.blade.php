@@ -125,9 +125,11 @@
 
                     </ul>
                     @if (auth()->check())
+                    @if(Auth::user()->rol != 'admin')
                     <div class="me-3">
                       <a href="<?= url('/carrito') ?>"><img src="{{ asset('img/shopping_trolley_icon.png') }}" alt="Carrito"></a>
                     </div>
+                    @endif
                     @endif
                     @if (auth()->check())
                       @if(Auth::user()->rol == 'admin')
