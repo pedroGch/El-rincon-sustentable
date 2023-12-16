@@ -103,4 +103,29 @@ public function index()
     return redirect()->route('tablaCarrito');
   }
 
+
+  /**
+   * Método que elimina un producto del carrito
+   * @param $id
+   * @return \Illuminate\Http\RedirectResponse
+   */
+  public function eliminarProductoCarrito(int $id)
+  {
+    $producto = Producto::findOrFail($id);
+    $usuarioId = Auth::user()->id;
+
+    // Buscamos si el producto ya está en el carrito del usuario
+    $productoEnCarrito = Carrito::where('usuario_id', $usuarioId)
+    ->where('producto_id', $producto->id)
+    ->first();
+
+    if ($productoEnCarrito) {
+      $productoEnCarrito->delete();
+
+      return redirect()->route('tablaCarrito')
+        ->with('status.message', 'El producto se eliminó del carrito');
+    }
+
+    return redirect()->route('tablaCarrito');
+  }
 }

@@ -65,11 +65,12 @@ use Illuminate\Database\Eloquent\Collection;
                                   </td>
                                   <td class="align-middle text-center">${{ $producto->subtotal }}</td>
                                   <td class="align-middle">
-                                    <div class="flex justify-center">
-                                      <a href="#">
-                                        <img src="{{ asset('img/delete-icon.png') }}" alt="eliminar producto">
-                                      </a>
-                                    </div>
+                                    <form action="{{ route('eliminarProductoCarrito', ['id' => $producto->productos->id]) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="flex justify-center">
+                                      <img src="{{ asset('img/delete-icon.png') }}" alt="eliminar producto">
+                                    </button>
+                                  </form>
                                   </td>
                                 </tr>
                             @endforeach
@@ -84,7 +85,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 
             <div class="row flex justify-evenly mt-5 mb-5">
-                
+
                 <div class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
                     <a href="<?= url('/tienda') ?>" class="btn btn-grey-white w-100">Seguir comprando</a>
                 </div>
