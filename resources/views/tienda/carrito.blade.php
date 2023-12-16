@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Collection;
 
     <section class="mx-auto max-w-screen-xl">
         <div class="row container mx-auto mt-4">
-            <h2 class="text-center mt-5 mb-4">Carrito</h2>
+            <h2 class="text-principal my-4 mt-10 text-4xl font-semibold text-center">Carrito</h2>
 
             <div>
               @if(count($productos) > 0)
@@ -36,8 +36,8 @@ use Illuminate\Database\Eloquent\Collection;
                             </tr>
                         </thead>
                         <tbody>
-              @endif
-                            @forelse ($productos as $producto)
+
+                            @foreach ($productos as $producto)
                                 <tr class="border">
                                   <td class="align-middle">
                                     <a href="{{ url('/producto/' . $producto->productos->id) }}">
@@ -59,19 +59,7 @@ use Illuminate\Database\Eloquent\Collection;
                                     </div>
                                   </td>
                                 </tr>
-
-                            @empty
-                                <div class="flex flex-column row align-items-center">
-                                    <div class="col-6 flex justify-content-center">
-                                        <h3 class="text-center">¡No hay productos en el carrito!</h3>
-                                        <div class="d-flex justify-content-center"><img class="img-fluid d-block"
-                                                src="{{ asset('./img/carrito-vacio.jpg ') }}"
-                                                alt="ilustración de un carrito vacío y una mujer con cara triste"></div>
-                                        <a href="<?= url('/tienda') ?>" class="btn btn-grey-white mx-auto mt-5 mb-5">Volver
-                                            a la tienda</a>
-                                    </div>
-
-                            @endforelse
+                            @endforeach
                             <tr class="pt-3">
                               <td  class="text-end pt-8"colspan="5">Total</td>
                               <td  class="pt-8">$ {{ $totalPrice }}</td>
@@ -100,6 +88,22 @@ use Illuminate\Database\Eloquent\Collection;
                   @endif
                 </div>
             </div>
+            @else
+            <div>
+              <div>
+                <h3 class="text-center">¡No hay productos en el carrito!</h3>
+              </div>
+              <div class="col-6">
+                <div class="flex justify-center">
+                  <img class="img-fluid d-block" src="{{ asset('./img/carrito-vacio.jpg ') }}" alt="ilustración de un carrito vacío y una mujer con cara triste">
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-center">
+              <a href="<?= url('/tienda') ?>" class="mt-5 mb-10 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Volver
+              a la tienda</a>
+            </div>
+            @endif
 
 
 
