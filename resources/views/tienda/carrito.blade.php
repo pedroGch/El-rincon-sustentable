@@ -41,7 +41,9 @@ use Illuminate\Database\Eloquent\Collection;
                                 <tr class="border">
                                   <td class="align-middle">
                                     <a href="{{ url('/producto/' . $producto->productos->id) }}">
-                                      <img src="{{ asset('./storage/' . $producto->productos->imagen_prod) }}" alt="{{ $producto->productos->alt }}" class="img-fluid shadow-sm" width="100">
+                                      <div class="flex justify-center">
+                                        <img src="{{ asset('./storage/' . $producto->productos->imagen_prod) }}" alt="{{ $producto->productos->alt }}" class="img-fluid shadow-sm" width="100">
+                                      </div>
                                     </a>
                                   </td>
                                   <td class="align-middle text-center">{{ $producto->productos->nombre_prod }}</td>
@@ -100,8 +102,7 @@ use Illuminate\Database\Eloquent\Collection;
               </div>
             </div>
             <div class="flex justify-center">
-              <a href="<?= url('/tienda') ?>" class="mt-5 mb-10 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Volver
-              a la tienda</a>
+              <a href="<?= url('/tienda') ?>" class="mt-5 mb-10 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Volver a la tienda</a>
             </div>
             @endif
 
