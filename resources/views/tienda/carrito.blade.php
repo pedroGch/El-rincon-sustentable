@@ -38,23 +38,26 @@ use Illuminate\Database\Eloquent\Collection;
                         <tbody>
               @endif
                             @forelse ($productos as $producto)
-                                <tr>
-                                    <td class="align-middle"><a href="{{ url('/producto/' . $producto->productos->id) }}"><img
-                                                src="{{ asset('./storage/' . $producto->productos->imagen_prod) }}"
-                                                alt="{{ $producto->productos->alt }}" class="img-fluid shadow-sm" width="100"></a>
-                                    </td>
-                                    <td class="align-middle">{{ $producto->productos->nombre_prod }}</td>
-                                    <td class="align-middle">${{ $producto->productos->precio }}</td>
-                                    <td class="align-middle" width="10%">
-                                        <label for="cantidad_prod" class="visually-hidden">Cantidad</label>
-                                        <input type="number" name="cantidad_prod" id="cantidad_prod" value="{{ $producto->cantidad_prod }}" class="form-control border border-gray-500 rounded">
-                                    </td>
-                                    <td class="align-middle">${{ $subtotal }}</td>
-                                    <td class="align-middle">
+                                <tr class="border">
+                                  <td class="align-middle">
+                                    <a href="{{ url('/producto/' . $producto->productos->id) }}">
+                                      <img src="{{ asset('./storage/' . $producto->productos->imagen_prod) }}" alt="{{ $producto->productos->alt }}" class="img-fluid shadow-sm" width="100">
+                                    </a>
+                                  </td>
+                                  <td class="align-middle text-center">{{ $producto->productos->nombre_prod }}</td>
+                                  <td class="align-middle text-center">${{ $producto->productos->precio }}</td>
+                                  <td class="align-middle text-center" width="10%">
+                                    <label for="cantidad_prod" class="sr-only">Cantidad</label>
+                                    <input type="number" name="cantidad_prod" id="cantidad_prod" value="{{ $producto->cantidad_prod }}" class="form-control border border-gray-500 rounded p-1 w-10/12">
+                                  </td>
+                                  <td class="align-middle text-center">${{ $producto->subtotal }}</td>
+                                  <td class="align-middle">
+                                    <div class="flex justify-center">
                                       <a href="#">
-                                        <img src="{{ asset('img/delete-icon.png') }}" alt="eliminar producto"></a>
-                                    </td>
-
+                                        <img src="{{ asset('img/delete-icon.png') }}" alt="eliminar producto">
+                                      </a>
+                                    </div>
+                                  </td>
                                 </tr>
 
                             @empty
@@ -69,9 +72,9 @@ use Illuminate\Database\Eloquent\Collection;
                                     </div>
 
                             @endforelse
-                            <tr>
-                              <td colspan="4" class="text-end">Total</td>
-                              <td>$ {{ $totalPrice }}</td>
+                            <tr class="pt-3">
+                              <td  class="text-end pt-8"colspan="5">Total</td>
+                              <td  class="pt-8">$ {{ $totalPrice }}</td>
                               <td></td>
                           </tr>
                           </table>
@@ -80,16 +83,16 @@ use Illuminate\Database\Eloquent\Collection;
 
 
             <div class="row flex justify-evenly mt-5 mb-5">
-                <div class="col">
-                    <input type="submit" value="Actualizar carrito" class="btn btn-grey-white w-100">
+                <div class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
+                    <input type="submit" value="ACTUALIZAR CANTIDADES" class="btn btn-grey-white w-100">
                 </div>
-                <div class="col">
+                <div class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
                     <a href="<?= url('/tienda') ?>" class="btn btn-grey-white w-100">Seguir comprando</a>
                 </div>
-                <div class="col">
+                <div class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
                     <a href="actions/empty_carrito_act.php" class="btn btn-danger w-100">Vaciar carrito</a>
                 </div>
-                <div class="col">
+                <div class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
                   @if(empty($productos))
                       <a href="#" class="btn btn-primary w-100" disabled>Proceder al pago</a>
                   @else

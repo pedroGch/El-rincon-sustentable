@@ -27,13 +27,13 @@ public function index()
 
   foreach ($productos as $producto) {
     $subtotal = $producto->cantidad_prod * $producto->productos->precio;
+    $producto->subtotal = $subtotal;
     $totalPrice += $subtotal;
   }
 
   return view('tienda.carrito', [
     'productos' => $productos,
     'totalPrice' => $totalPrice,
-    'subtotal' => $subtotal ?? '',
   ]);
 }
 
