@@ -128,12 +128,15 @@
                     <div class="me-3">
                       <a href="<?= url('/carrito') ?>"><img src="{{ asset('img/shopping_trolley_icon.png') }}" alt="Carrito"></a>
                     </div>
+                    @endif
+                    @if(Auth::user()->rol == 'admin')
                     <div>
                       <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-white hover:text-stone-950 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                           href="<?= url('/panel_admin') ?>" data-te-dropdown-item-ref>Panel Admin</a>
-                     </div>
-                    <div>
+                    </div>
                     @endif
+                    <div>
+
                         <!-- Boton usuario logueado -->
                         <div class="hidden lg:block">
                             @if (auth()->check())
