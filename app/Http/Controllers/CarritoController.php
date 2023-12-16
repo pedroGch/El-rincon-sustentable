@@ -45,6 +45,7 @@ public function index()
  */
   public function agregarProductoCarrito(Request $request, int $id)
   {
+    $request->validate(Carrito::$rules, Carrito::$errorMessages);
     $producto = Producto::findOrFail($id);
     $usuarioId = Auth::user()->id;
 
@@ -82,6 +83,7 @@ public function index()
    */
   public function actualizarProductoCarrito(Request $request, int $id)
   {
+    $request->validate(Carrito::$rules, Carrito::$errorMessages);
     $producto = Producto::findOrFail($id);
     $usuarioId = Auth::user()->id;
 
@@ -96,7 +98,7 @@ public function index()
       $productoEnCarrito->update(['cantidad_prod' => $nuevaCantidad]);
 
       return redirect()->route('tablaCarrito')
-        ->with('status.message', 'El producto se actualizó en el carrito');
+        ->with('status.message', 'La cantidad se actualizó en el carrito');
     }
 
     return redirect()->route('tablaCarrito');

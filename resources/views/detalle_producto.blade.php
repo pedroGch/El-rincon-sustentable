@@ -68,7 +68,21 @@
                     <form action="{{ route('agregarProductoCarrito', ['id' => $producto->id]) }}" method="POST" class="mb-5">
                       @csrf
                       <label for="cantidad_prod" class="visually-hidden">Cantidad</label>
-                      <input type="number" name="cantidad_prod" id="cantidad_prod" value="1" class="form-control border border-gray-500 rounded">
+                      <input type="number" name="cantidad_prod" id="cantidad_prod" value="1" class="form-control border border-gray-500 rounded p-2 w-full @error('cantidad_prod') border-red-700 @enderror"
+                                        @error('cantidad_prod')
+                                        aria-invalid="true"
+                                        aria-describedby="error-cantidad_prod"
+                                        @enderror>
+                                        @error('cantidad_prod')
+                                        <div class="mt-1 flex">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
+                                                <path fill-rule="evenodd"
+                                                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            <p class="text-danger-700" id="error-cantidad_prod"> {{ $message }}</p>
+                                        </div>
+                @enderror
                       <button type="submit"
                           class="mt-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
                           data-te-ripple-init data-te-ripple-color="light">

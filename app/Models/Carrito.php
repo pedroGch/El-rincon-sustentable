@@ -20,6 +20,14 @@ class Carrito extends Model
         'precio',
     ];
 
+    public static $rules = [
+        'cantidad_prod' => 'integer|min:1',
+    ];
+
+    public static $errorMessages = [
+        'cantidad_prod.min' => 'Tenés que agregar al menos un producto',
+    ];
+
     /**
    * Esta función devuelve el precio formateado
    * @return string
