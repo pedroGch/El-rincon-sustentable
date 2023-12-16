@@ -83,11 +83,22 @@ public function index()
    */
   public function actualizarProductoCarrito(Request $request, int $id)
   {
-    $producto = Carrito::findOrFail($id);
+    $producto = Producto::findOrFail($id);
+    $usuarioId = Auth::user()->id;
 
-    $producto->update([
-      'cantidad_prod' => $request->cantidad_prod,
-    ]);
+    // Buscamos si el producto ya está en el carrito del usuario
+    $productoEnCarrito = Carrito::where('usuario_id', $usuarioId)
+    ->where('producto_id', $producto->id)
+    ->first();
+
+    if ($productoEnCarrito) {
+      // Si el producto ya está en el carrito, actualiza la cantidad sumando la nueva cantidad
+      $nuevaCantidad = $request->cantidad_prod;
+      $productoEnCarrito->update(['cantidad_prod' => $nuevaCantidad]);
+
+      return redirect()->route('tablaCarrito')
+        ->with('status.message', 'El producto se actualizó en el carrito');
+    }
 
     return redirect()->route('tablaCarrito');
   }

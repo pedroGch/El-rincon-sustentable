@@ -49,8 +49,19 @@ use Illuminate\Database\Eloquent\Collection;
                                   <td class="align-middle text-center">{{ $producto->productos->nombre_prod }}</td>
                                   <td class="align-middle text-center">${{ $producto->productos->precio }}</td>
                                   <td class="align-middle text-center" width="10%">
-                                    <label for="cantidad_prod" class="sr-only">Cantidad</label>
-                                    <input type="number" name="cantidad_prod" id="cantidad_prod" value="{{ $producto->cantidad_prod }}" class="form-control border border-gray-500 rounded p-1 w-10/12">
+                                    <form action="{{ route('actualizarProductoCarrito', ['id' => $producto->productos->id]) }}" method="POST">
+                                    @csrf
+                                      <div class="flex">
+                                        <label for="cantidad_prod" class="sr-only">Cantidad</label>
+                                        <input type="number" name="cantidad_prod" id="cantidad_prod" value="{{ $producto->cantidad_prod }}" class="form-control border border-gray-500 rounded p-1 w-10/12">
+                                        <button type="submit" class="ps-2 pt-1">
+                                          <a href="#">
+                                            <img src="{{ asset('img/refresh_icon.png') }}" alt="actualizar cantidad">
+                                          </a>
+                                        </button>
+                                      </div>
+                                    </form>
+
                                   </td>
                                   <td class="align-middle text-center">${{ $producto->subtotal }}</td>
                                   <td class="align-middle">
@@ -73,9 +84,7 @@ use Illuminate\Database\Eloquent\Collection;
 
 
             <div class="row flex justify-evenly mt-5 mb-5">
-                <div class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
-                    <input type="submit" value="ACTUALIZAR CANTIDADES" class="btn btn-grey-white w-100">
-                </div>
+                
                 <div class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
                     <a href="<?= url('/tienda') ?>" class="btn btn-grey-white w-100">Seguir comprando</a>
                 </div>
