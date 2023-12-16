@@ -32,7 +32,7 @@ use Illuminate\Database\Eloquent\Collection;
                                 <th>Precio</th>
                                 <th>Cantidad</th>
                                 <th>Subtotal</th>
-                                {{-- <th>Eliminar</th> --}}
+                                <th>Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,6 +50,10 @@ use Illuminate\Database\Eloquent\Collection;
                                         <input type="number" name="cantidad_prod" id="cantidad_prod" value="{{ $producto->cantidad_prod }}" class="form-control border border-gray-500 rounded">
                                     </td>
                                     <td class="align-middle">${{ $subtotal }}</td>
+                                    <td class="align-middle">
+                                      <a href="#">
+                                        <img src="{{ asset('img/delete-icon.png') }}" alt="eliminar producto"></a>
+                                    </td>
 
                                 </tr>
 
