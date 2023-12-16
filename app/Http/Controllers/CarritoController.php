@@ -46,15 +46,50 @@ public function index()
   public function agregarProductoCarrito(Request $request, int $id)
   {
     $producto = Producto::findOrFail($id);
+    $usuarioId = Auth::user()->id;
 
-    Carrito::create([
-      'usuario_id' => Auth::user()->id,
-      'producto_id' => $producto->id,
+    // Buscamos si el producto ya está en el carrito del usuario
+    $productoEnCarrito = Carrito::where('usuario_id', $usuarioId)
+    ->where('producto_id', $producto->id)
+    ->first();
+
+    if ($productoEnCarrito) {
+      // Si el producto ya está en el carrito, actualiza la cantidad sumando la nueva cantidad
+      $nuevaCantidad = $productoEnCarrito->cantidad_prod + $request->cantidad_prod;
+      $productoEnCarrito->update(['cantidad_prod' => $nuevaCantidad]);
+
+      return redirect()->route('tablaCarrito')
+        ->with('status.message', 'El producto se agregó al carrito');
+    } else {
+      // Si el producto no está en el carrito, crea un nuevo registro
+      Carrito::create([
+          'usuario_id' => $usuarioId,
+          'producto_id' => $producto->id,
+          'cantidad_prod' => $request->cantidad_prod,
+      ]);
+    }
+
+    return redirect()->route('tablaCarrito')
+      ->with('status.message', 'El producto se agregó al carrito');
+
+  }
+
+
+  /**
+   * Método que actualiza la cantidad de productos en el carrito
+   * @param $id
+   * @param Request $request
+   * @return \Illuminate\Http\RedirectResponse
+   */
+  public function actualizarProductoCarrito(Request $request, int $id)
+  {
+    $producto = Carrito::findOrFail($id);
+
+    $producto->update([
       'cantidad_prod' => $request->cantidad_prod,
     ]);
 
     return redirect()->route('tablaCarrito');
-
   }
 
 }
