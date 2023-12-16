@@ -22,7 +22,7 @@
             <div class="flex w-full flex-wrap items-center justify-between px-3">
                 <div class="flex items-center">
                     <div class="mx-6 p-1 bg-white w-[80px]  shadow-lg">
-                        <img src="{{ asset('img/logo.png') }}" alt="logo del rincon sustentable"
+                        <img src="{{ asset('img/logo.png') }}" alt="logo del rincón sustentable"
                             class=" w-screen my-2  ">
                         <h1 class="text-[0px]">El Rincón Sustentable</h1>
                     </div>
@@ -125,6 +125,9 @@
 
                     </ul>
                     @if (auth()->check())
+                    <div class="me-3">
+                      <a href="<?= url('/carrito') ?>"><img src="{{ asset('img/shopping_trolley_icon.png') }}" alt="Carrito"></a>
+                    </div>
                     <div>
                       <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-white hover:text-stone-950 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
                           href="<?= url('/panel_admin') ?>" data-te-dropdown-item-ref>Panel Admin</a>
@@ -209,7 +212,7 @@
                     <div class="p-4 lg:p-0 lg:flex-1 ">
                         <div class="mb-4">
                             <h3 class="block mb-2 lg:text-2xl font-bold ">Materia:</h3>
-                            <p class="lg:text-xl">Portales y Comercio Electrónico - Parcial 1</p>
+                            <p class="lg:text-xl">Portales y Comercio Electrónico - Final</p>
                         </div>
                         <div class="mb-4">
                             <h3 class="block mb-2 lg:text-2xl font-bold ">Profesor:</h3>
