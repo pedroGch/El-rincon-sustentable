@@ -93,8 +93,9 @@ public function success()
   $metodosCarrito->vaciarCarrito();
 
   $user = User::findOrFail(Auth::user()->id);
-  $compras = Compra::where('usuario_id', Auth::user()->id)->with(['productos'])->get();
-    //dd($compras);
+  $compras = Compra::where('usuario_id', Auth::user()->id)
+    ->where('importe_compra', '>', 0)
+    ->with(['productos'])->get();
     return view('perfil_usuario', [
       'user'=> Auth::user(),
       'user_db' => $user,

@@ -38,16 +38,16 @@
             </div>
 
             @forelse ($compras as $compra)
-                <div class="mb-5">
+                <div class="mb-5 border p-2">
                     <p><b>Fecha de compra:</b> {{ $compra->fecha_compra }}</p>
                     <p><b>Productos:</b></p>
                     <ul>
 
                     @foreach ($compra->productos as $producto)
-                        <li>{{ $producto->nombre_prod }}</li>
+                        <li class="ps-3">* {{ $producto->nombre_prod }}</li>
                     @endforeach
                   </ul>
-                  <p><b>Importe total:</b> {{ $compra->importe_compra }}</p>
+                  <p><b>Importe total:</b> $ {{ $compra->importe_compra }}</p>
                 </div>
 
             @empty
