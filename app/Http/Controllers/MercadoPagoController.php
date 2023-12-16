@@ -30,6 +30,7 @@ public function obtenerCarrito()
       'unit_price' => $productoCarrito->productos->precio,
     ];
     $subtotal = $productoCarrito->cantidad_prod * $productoCarrito->productos->precio;
+    $productoCarrito->subtotal = $subtotal;
     $totalPrice += $subtotal;
   }
   //Configuración SDK Mercado Pago

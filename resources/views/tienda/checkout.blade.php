@@ -43,8 +43,8 @@ use MercadoPago\Resources\Preference;
               </a>
             </td>
             <td class="align-middle text-center" width="25%">{{ $producto->productos->nombre_prod }} ({{ $producto->cantidad_prod }} unidades)</td>
-            <td class="align-middle text-center" width="25%">{{ $producto->productos->precio }}</td>
-            <td class="align-middle text-center">${{ $subtotal }}</td>
+            <td class="align-middle text-center" width="25%">${{ $producto->productos->precio }}</td>
+            <td class="align-middle text-center">${{ $producto->subtotal }}</td>
           </tr>
         @endforeach
           <tr>
