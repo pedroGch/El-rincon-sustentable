@@ -50,7 +50,8 @@ Route::get('/blog/{id}/eliminar', [\App\Http\Controllers\BlogController::class, 
 
 //RUTA RELACIONADA AL USUARIO
 Route::get('/perfil_usuario', [\App\Http\Controllers\SesionController::class, 'perfil_usuario'])
-  ->middleware(['auth']);
+  ->middleware(['auth'])
+  ->name('perfilUsuario');
 
 //RUTAS RELACIONADAS AL PANEL DE ADMINISTRACIÓN
 Route::get('/panel_admin', [\App\Http\Controllers\BlogController::class, 'dashboardAdmin'])

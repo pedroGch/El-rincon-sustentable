@@ -39,6 +39,11 @@ class Compra extends Model
     protected $primaryKey = 'compra_id';
 
 
+    protected $fillable = [
+        'usuario_id',
+        'fecha_compra',
+        'importe_compra',
+    ];
 
     /* RELACIONES */
 

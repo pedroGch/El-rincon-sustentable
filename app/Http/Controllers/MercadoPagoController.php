@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Carrito;
+use App\Models\Compra;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
@@ -14,7 +16,7 @@ class MercadoPagoController extends Controller
 public function obtenerCarrito()
 {
   try {
-    $productos = Carrito::where('usuario_id', Auth::user()->id)->first()
+    $productos = Carrito::where('usuario_id', Auth::user()->id)
     ->with('productos')
     ->get();
 
@@ -65,7 +67,42 @@ public function obtenerCarrito()
 
 public function success()
 {
-  return view('tienda.pago.aprobado');
+  $productos = Carrito::where('usuario_id', Auth::user()->id)
+  ->get();
+
+  $totalPrice = 0;
+  $productosIds = [];
+
+  foreach ($productos as $producto) {
+    $subtotal = $producto->cantidad_prod * $producto->productos->precio;
+    $producto->subtotal = $subtotal;
+    $totalPrice += $subtotal;
+
+    $productosIds[] = $producto->productos->id;
+  }
+
+  $compra = Compra::create([
+    'usuario_id' => Auth::user()->id,
+    'fecha_compra' => now(),
+    'importe_compra' => $totalPrice,
+  ]);
+
+  $compra->productos()->attach($productosIds);
+
+  $metodosCarrito = new CarritoController();
+  $metodosCarrito->vaciarCarrito();
+
+  $user = User::findOrFail(Auth::user()->id);
+  $compras = Compra::where('usuario_id', Auth::user()->id)->with(['productos'])->get();
+    //dd($compras);
+    return view('perfil_usuario', [
+      'user'=> Auth::user(),
+      'user_db' => $user,
+      'compras' => $compras,
+    ])
+    ->with('status.message', 'El pago fue procesado correctamente. ¡Muchas gracias por tu compra!');
+
+
 }
 
 }
