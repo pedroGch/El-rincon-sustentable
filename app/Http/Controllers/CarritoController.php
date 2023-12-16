@@ -69,8 +69,7 @@ public function index()
       ]);
     }
 
-    return redirect()->route('tablaCarrito')
-      ->with('status.message', 'El producto se agregó al carrito');
+    return redirect()->route('tablaCarrito');
 
   }
 
@@ -127,5 +126,25 @@ public function index()
     }
 
     return redirect()->route('tablaCarrito');
+  }
+
+
+  /**
+   * Método que vacía el carrito
+   * @return \Illuminate\Http\RedirectResponse
+   */
+  public function vaciarCarrito()
+  {
+    $usuarioId = Auth::user()->id;
+
+    // Buscamos el carrito por el id del usuario
+    $carrito = Carrito::where('usuario_id', $usuarioId)->get();
+
+    if ($carrito) {
+      // Si el carrito existe, lo eliminamos
+      $carrito->each->delete();
+
+      return redirect()->route('tablaCarrito');
+    }
   }
 }

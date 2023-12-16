@@ -80,6 +80,10 @@ Route::get('/carrito', [\App\Http\Controllers\CarritoController::class, 'index']
   ->middleware(['auth'])
   ->name('tablaCarrito');
 
+Route::post('/carrito/vaciar', [\App\Http\Controllers\CarritoController::class, 'vaciarCarrito'])
+  ->middleware(['auth'])
+  ->name('vaciarCarrito');
+
 Route::post('/carrito/actualizar/{id}', [\App\Http\Controllers\CarritoController::class, 'actualizarProductoCarrito'])
   ->middleware(['auth'])
   ->name('actualizarProductoCarrito');
