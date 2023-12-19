@@ -19,8 +19,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property string $descripcion
  * @property int $stock
  * @property int $precio
+ * @property string $estado
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Categoria|null $categoria
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Compra> $compras
+ * @property-read int|null $compras_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Etiqueta> $etiquetas
+ * @property-read int|null $etiquetas_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Carrito> $carritos
+ * @property-read int|null $carritos_count
  * @method static \Illuminate\Database\Eloquent\Builder|Producto newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Producto newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Producto query()
@@ -34,12 +42,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Producto wherePrecio($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereStock($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereUpdatedAt($value)
- * @property-read \App\Models\Categoria|null $categoria
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Compra> $compras
- * @property-read int|null $compras_count
- * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Etiqueta> $etiquetas
- * @property-read int|null $etiquetas_count
  * @method static \Illuminate\Database\Eloquent\Builder|Producto whereCategoriaId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Producto whereEstado($value)
  * @mixin \Eloquent
  */
 class Producto extends Model

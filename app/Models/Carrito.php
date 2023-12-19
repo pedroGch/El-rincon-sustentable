@@ -5,6 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Models\Carrito
+ *
+ * @property int $carrito_id
+ * @property int $usuario_id
+ * @property int $producto_id
+ * @property int $cantidad_prod
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Producto $productos
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito whereCantidadProd($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito whereCarritoId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito whereProductoId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Carrito whereUsuarioId($value)
+ * @mixin \Eloquent
+ */
 class Carrito extends Model
 {
    // use HasFactory;
