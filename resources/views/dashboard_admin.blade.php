@@ -35,7 +35,7 @@
             <div class="flex flex-wrap justify-center">
                 <div class="mb-5">
                     <a href="<?= url('/blog/gestor_noticias') ?>">
-                        <div class="mb-5 w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
+                        <div class="w-full botonPersonalizado"
                             data-te-ripple-init data-te-ripple-color="light">
                             <p>Administrar Noticias</p>
                         </div>
@@ -52,7 +52,7 @@
             <div class="flex flex-wrap justify-center">
                 <div class="mb-5">
                     <a href="<?= url('/tienda/gestor_productos') ?>">
-                        <div class="mb-5 w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
+                        <div class="w-full botonPersonalizado"
                             data-te-ripple-init data-te-ripple-color="light">
                             <p>Administrar Productos</p>
                         </div>
@@ -70,7 +70,7 @@
             <div class="flex flex-wrap justify-center">
                 <div class="mb-5">
                     <a href="<?= url('tabla_compras_usuarios') ?>">
-                        <div class="mb-5 w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
+                        <div class="w-full botonPersonalizado"
                             data-te-ripple-init data-te-ripple-color="light">
                             <p>Ver usuarios y compras</p>
                         </div>

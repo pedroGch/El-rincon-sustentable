@@ -29,7 +29,7 @@
                 </div>
 
                 <button type="submit"
-                    class="w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
+                    class="w-full botonPersonalizado"
                     data-te-ripple-init>
                     Ingresar
                 </button>

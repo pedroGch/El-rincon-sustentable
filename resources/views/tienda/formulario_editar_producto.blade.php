@@ -192,14 +192,14 @@
             </fieldset>
 
             <input type="submit"
-                class="my-7 ps-9 pe-9 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario"
+                class="w-6/12 botonPersonalizado"
                 value="Enviar">
         </form>
 
             <a href="<?= url('/tienda/gestor_productos') ?>">
                 <div
-                    class="inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
-                    <p>Cancelar</p>
+                    class="w-6/12 botonPersonalizado">
+                    <p class="text-center">Cancelar</p>
                 </div>
             </a>
         </div>

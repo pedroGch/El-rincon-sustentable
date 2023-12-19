@@ -20,7 +20,7 @@
             <div class="ps-10 mt-6 flex items-center">
                 <a href="<?= url('/tienda/producto/nuevo') ?>">
                     <div
-                        class="inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-xs lg:text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
+                        class="botonPersonalizado">
                         <p>Crear Producto</p>
                     </div>
                 </a>
@@ -54,15 +54,15 @@
                             <td class="p-3 border-2">
                                 <form action="{{ url('/tienda/' . $producto->id . '/editar') }}" method="GET">
                                     <button type="submit"
-                                        class="w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Editar</button>
+                                        class="w-full botonPersonalizado-text-xs">Editar</button>
                                 </form>
 
                                 <button type="button" onclick="borrarProducto({{ $producto->id }}, '{{ $producto->nombre_prod }}')"
-                                    class="my-3 w-full inline-block rounded bg-danger px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-danger-600 hover:shadow-inputBoxHover  focus:bg-danger focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-danger ">Eliminar</button>
+                                    class=" w-full botonPersonalizado-text-xs-rojo">Eliminar</button>
 
                                 <form action="{{ route('detalle.producto', ['id' => $producto->id]) }}" method="GET">
                                     <button type="submit"
-                                        class="w-full inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-xs font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Leer
+                                        class="w-full text-xs botonPersonalizado-text-xs">Leer
                                         más</button>
                                 </form>
                             </td>

@@ -93,16 +93,16 @@ use Illuminate\Database\Eloquent\Collection;
       @enderror
     </div>
     <div class="row flex justify-evenly mt-5 mb-5">
-      <div class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
+      <div class="col mb-5 botonPersonalizado">
         <a href="<?= url('/tienda') ?>" class="btn btn-grey-white w-100">Seguir comprando</a>
       </div>
       <form action="{{ route('vaciarCarrito') }}" method="POST">
       @csrf
-        <button type="submit" class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Vaciar carrito
+        <button type="submit" class="col mb-5 botonPersonalizado">Vaciar carrito
         </button>
       </form>
       @if(!$errors->has('cantidad_prod'))
-      <button class="col mb-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">
+      <button class="col mb-5 botonPersonalizado">
         <a href="{{ route('formCarrito') }}" class="btn btn-primary w-100">Proceder al pago</a>
       </button>
     @endif
@@ -119,7 +119,7 @@ use Illuminate\Database\Eloquent\Collection;
       </div>
     </div>
     <div class="flex justify-center">
-      <a href="<?= url('/tienda') ?>" class="mt-5 mb-10 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Volver a la tienda</a>
+      <a href="<?= url('/tienda') ?>" class="mt-5 mb-10 botonPersonalizado">Volver a la tienda</a>
     </div>
     @endif
 </section>

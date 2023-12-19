@@ -56,7 +56,7 @@ use MercadoPago\Resources\Preference;
     <div id="checkout">
     </div>
     <div class="flex justify-center">
-      <a href="<?= url('/carrito') ?>" class="mt-5 w-full text-center mb-10 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Volver</a>
+      <a href="<?= url('/carrito') ?>" class="mt-5 w-full text-center mb-10 botonPersonalizado">Volver</a>
     </div>
   </div>
   @endif

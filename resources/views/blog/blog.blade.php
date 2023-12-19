@@ -42,7 +42,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
                 <div class="card-footer">
                     <form action="{{ url('/blog/' . $noticia->id . '/leer_mas') }}" method="GET">
                         <button type="submit"
-                            class="mt-5 mb-3 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario">Leer
+                            class="mt-5 mb-3 botonPersonalizado">Leer
                             más</button>
                     </form>
                 </div>

@@ -66,7 +66,7 @@
                   <p class="text-danger-700" id="error-cantidad_prod"> {{ $message }}</p>
               </div>
               @enderror
-              <button type="submit" class="mt-5 inline-block rounded bg-terciario px-6 pb-2 pt-2.5 text-s font-bold uppercase leading-normal text-black shadow-inputBox transition duration-150 ease-in-out hover:bg-terciario hover:shadow-inputBoxHover focus:bg-terciario focus:shadow-inputBoxHover focus:outline-none focus:ring-0 active:bg-terciario" data-te-ripple-init data-te-ripple-color="light">Agregar al carrito
+              <button type="submit" class="mt-5 botonPersonalizado" data-te-ripple-init data-te-ripple-color="light">Agregar al carrito
               </button>
             </form>
           @endif
