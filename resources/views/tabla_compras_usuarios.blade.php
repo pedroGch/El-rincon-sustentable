@@ -38,7 +38,7 @@
                             <td class="text-sm p-3 border-2">
                               @forelse ($usuario->compras as $compra)
                               <div class="mb-5">
-                                  <p><b>Fecha de compra:</b> {{ $compra->fecha_compra }}</p>
+                                  <p class="pt-4"><b>Fecha de compra:</b> {{ $compra->fecha_compra }}</p>
                                   <p><b>Productos:</b></p>
                                   <ul class="ms-4">
 
