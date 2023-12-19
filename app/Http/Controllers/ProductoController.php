@@ -41,10 +41,10 @@ class ProductoController extends Controller
    */
   public function altaDeProducto(Request $request)
   {
+    //validamos los datos
+    $request->validate(Producto::$rules, Producto::$errorMessages);
     try
     {
-      //validamos los datos
-      $request->validate(Producto::$rules, Producto::$errorMessages);
       $data = $request->only('nombre_prod', 'categoria_id', 'descripcion', 'stock', 'precio', 'alt', 'imagen_prod');
 
       //si viene una imagen en el request
@@ -82,12 +82,12 @@ class ProductoController extends Controller
    */
   public function editarProducto(int $id, Request $request)
   {
+    //validamos con las reglas los datos del request
+    $request->validate(Producto::$rules, Producto::$errorMessages);
     try
     {
       //buscamos el producto que queremos editar
       $producto = Producto::findOrFail($id);
-      //validamos con las reglas los datos del request
-      $request->validate(Producto::$rules, Producto::$errorMessages);
       $data = $request->only('nombre_prod', 'categoria_id', 'descripcion', 'stock', 'precio', 'alt', 'imagen_prod', 'etiquetas');
 
       //preguntamos si se subio una imagen

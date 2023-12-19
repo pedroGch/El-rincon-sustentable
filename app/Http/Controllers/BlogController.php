@@ -87,9 +87,9 @@ class BlogController extends Controller
    */
   public function crearNoticia(Request $request)
   {
+    $request->validate(Noticia::$rules, Noticia::$errorMessages);
     try {
       //$data = $request->except(['_token']);
-      $request->validate(Noticia::$rules, Noticia::$errorMessages);
       $data = $request->only(['titulo', 'imagen', 'alt', 'contenido']);
       if ($request->hasFile('imagen')) {
         $data['imagen'] = $request->file('imagen')->store('noticias');
@@ -126,11 +126,11 @@ class BlogController extends Controller
    */
   public function editarNoticia(int $id, Request $request)
   {
+    $request->validate(Noticia::$rules, Noticia::$errorMessages);
     try {
       //buscamos la noticia que queremos editar
       $noticia = Noticia::findOrFail($id);
       //validamos con las reglas los datos del request
-      $request->validate(Noticia::$rules, Noticia::$errorMessages);
       $data = $request->only(['titulo', 'imagen', 'alt', 'contenido']);
       //preguntamos si se subio una imagen
       if ($request->hasFile('imagen')) {

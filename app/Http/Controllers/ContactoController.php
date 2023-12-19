@@ -23,13 +23,9 @@ class ContactoController extends Controller
    */
   public function validar_contacto(Request $request)
   {
-
     $request->validate(Contacto::$rules, Contacto::$errorMessages);
-
     // $data = $request->only(['nombre','email','asunto','mensaje']);
-
     // Contacto::create($data);
-
     return redirect('/contacto');
   }
 }

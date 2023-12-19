@@ -68,9 +68,8 @@ class SesionController extends Controller
    */
   public function crear_cuenta_action(Request $request)
   {
+    $request->validate(User::$rules, User::$errorMessages);
     try {
-      $request->validate(User::$rules, User::$errorMessages);
-
       $data = $request->only(['name', 'surname', 'email', 'password']);
 
       User::create($data);
