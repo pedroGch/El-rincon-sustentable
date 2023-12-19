@@ -52,7 +52,7 @@ use MercadoPago\Resources\Preference;
           </tr>
       </table>
     </div>
-    <!-- Botón de Mercado Pago. -->
+    <!-- BOTÓN MERCADO PAGO -->
     <div id="checkout">
     </div>
     <div class="flex justify-center">
@@ -62,13 +62,11 @@ use MercadoPago\Resources\Preference;
   @endif
 </section>
 
-
 {{-- SDK MercadoPago.js --}}
 <script src="https://sdk.mercadopago.com/js/v2"></script>
 <script>
   // Se instancia el objeto de MercadoPago con la clave pública
   const mp = new MercadoPago('<?= $mpPublicKey ?>');
-
   // Se inicializa el botón de MercadoPago
   mp.bricks().create('wallet', 'checkout', {
     initialization: {

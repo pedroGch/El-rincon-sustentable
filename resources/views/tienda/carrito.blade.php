@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Collection;
 
 @section('content')
 
-
 <section class="mx-auto max-w-screen-xl">
   <div class="row container mx-auto mt-4">
     <h2 class="text-principal my-4 mt-10 text-4xl font-semibold text-center">Carrito</h2>
@@ -67,30 +66,29 @@ use Illuminate\Database\Eloquent\Collection;
             <td class="align-middle">
               <form action="{{ route('eliminarProductoCarrito', ['id' => $producto->productos->id]) }}" method="POST">
               @csrf
-              <button type="submit">
-                <div class="flex justify-center">
-                  <img src="{{ asset('img/delete-icon.png') }}" alt="eliminar producto" class="ps-10">
-                </div>
-              </button>
-            </form>
+                <button type="submit">
+                  <div class="flex justify-center">
+                    <img src="{{ asset('img/delete-icon.png') }}" alt="eliminar producto" class="ps-10">
+                  </div>
+                </button>
+              </form>
             </td>
           </tr>
         @endforeach
-          <tr class="pt-3">
-            <td  class="text-end pt-8"colspan="5">Total</td>
-            <td  class="pt-8">$ {{ $totalPrice }}</td>
-          </tr>
+        <tr class="pt-3">
+          <td class="text-end pt-8"colspan="5">Total</td>
+          <td class="pt-8">$ {{ $totalPrice }}</td>
+        </tr>
       </table>
       @error('cantidad_prod')
       <div class="mt-1 flex">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
-            <path fill-rule="evenodd"
-                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                clip-rule="evenodd" />
+          <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+          clip-rule="evenodd" />
         </svg>
         <p class="text-danger-700" id="error-cantidad_prod"> {{ $message }}</p>
       </div>
-      @enderror
+    @enderror
     </div>
     <div class="row flex justify-evenly mt-5 mb-5">
       <div class="col mb-5 botonPersonalizado">
@@ -105,7 +103,7 @@ use Illuminate\Database\Eloquent\Collection;
       <button class="col mb-5 botonPersonalizado">
         <a href="{{ route('formCarrito') }}" class="btn btn-primary w-100">Proceder al pago</a>
       </button>
-    @endif
+      @endif
     </div>
     @else
     <div>
@@ -122,6 +120,7 @@ use Illuminate\Database\Eloquent\Collection;
       <a href="<?= url('/tienda') ?>" class="mt-5 mb-10 botonPersonalizado">Volver a la tienda</a>
     </div>
     @endif
+  </div>
 </section>
 
 @endsection

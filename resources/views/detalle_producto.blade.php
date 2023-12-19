@@ -32,16 +32,16 @@
         <h3 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">{{ $producto->nombre_prod }}</h3>
         <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">{!! nl2br($producto->descripcion) !!}</p>
         <ul class="w-full">
-            <li class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">Categoria: {{ $producto->categoria->nombre_cat }}</li>
-            <li class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">Etiquetas:
-              @forelse ($producto->etiquetas as $etiqueta)
-                <span class="bg-blue-500 text-white font-semibold rounded-full py-1 px-3 text-xs">{{ $etiqueta->nombre }}</span>
-              @empty
-                <span>Este producto no posee etiquetas</span>
-              @endforelse
-            </li>
-            <li class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">Stock: {{ $producto->stock }}</li>
-            <li class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50"> {{ $producto->precio_formateado($producto->precio) }}</li>
+          <li class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">Categoria: {{ $producto->categoria->nombre_cat }}</li>
+          <li class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">Etiquetas:
+            @forelse ($producto->etiquetas as $etiqueta)
+              <span class="bg-blue-500 text-white font-semibold rounded-full py-1 px-3 text-xs">{{ $etiqueta->nombre }}</span>
+            @empty
+              <span>Este producto no posee etiquetas</span>
+            @endforelse
+          </li>
+          <li class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50">Stock: {{ $producto->stock }}</li>
+          <li class="w-full border-b-2 border-neutral-100 border-opacity-100 px-4 py-3 dark:border-opacity-50"> {{ $producto->precio_formateado($producto->precio) }}</li>
         </ul>
         @if (auth()->check())
           @if (Auth::user()->rol == 'admin')
@@ -57,13 +57,11 @@
               @enderror>
               @error('cantidad_prod')
               <div class="mt-1 flex">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a"
-                      class="h-5 w-5">
-                      <path fill-rule="evenodd"
-                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                          clip-rule="evenodd" />
-                  </svg>
-                  <p class="text-danger-700" id="error-cantidad_prod"> {{ $message }}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#b0233a" class="h-5 w-5">
+                  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                  clip-rule="evenodd" />
+                </svg>
+                <p class="text-danger-700" id="error-cantidad_prod"> {{ $message }}</p>
               </div>
               @enderror
               <button type="submit" class="mt-5 botonPersonalizado" data-te-ripple-init data-te-ripple-color="light">Agregar al carrito

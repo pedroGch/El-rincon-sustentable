@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])
   ->name('inicio');
 Route::get('/nosotros', [\App\Http\Controllers\AboutController::class, 'index'])
@@ -80,36 +69,28 @@ Route::get('/tienda/{id}/eliminar', [\App\Http\Controllers\ProductoController::c
 Route::get('/carrito', [\App\Http\Controllers\CarritoController::class, 'index'])
   ->middleware(['auth'])
   ->name('tablaCarrito');
-
 Route::post('/carrito/vaciar', [\App\Http\Controllers\CarritoController::class, 'vaciarCarrito'])
   ->middleware(['auth'])
   ->name('vaciarCarrito');
-
 Route::post('/carrito/actualizar/{id}', [\App\Http\Controllers\CarritoController::class, 'actualizarProductoCarrito'])
   ->middleware(['auth'])
   ->name('actualizarProductoCarrito');
-
 Route::post('/carrito/eliminar/{id}', [\App\Http\Controllers\CarritoController::class, 'eliminarProductoCarrito'])
   ->middleware(['auth'])
   ->name('eliminarProductoCarrito');
-
 Route::post('/carrito/{id}', [\App\Http\Controllers\CarritoController::class, 'agregarProductoCarrito'])
     ->middleware(['auth'])
     ->whereNumber('id')
     ->name('agregarProductoCarrito');
-
 Route::get('/checkout', [\App\Http\Controllers\MercadoPagoController::class, 'obtenerCarrito'])
   ->middleware(['auth'])
   ->name('formCarrito');
-
 Route::get('/pago/aprobado', [\App\Http\Controllers\MercadoPagoController::class, 'success'])
   ->middleware(['auth'])
   ->name('pago.aprobado');
-
 Route::get('/pago/rechazado', [\App\Http\Controllers\MercadoPagoController::class, 'pending'])
   ->middleware(['auth'])
   ->name('pago.rechazado');
-
 Route::get('/pago/pendiente', [\App\Http\Controllers\MercadoPagoController::class, 'failure'])
   ->middleware(['auth'])
   ->name('pago.pendiente');
