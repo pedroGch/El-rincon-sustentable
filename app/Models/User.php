@@ -69,6 +69,12 @@ class User extends Authenticatable
     'password' => 'required|max:255',
   ];
 
+  public static $updateRules = [
+    'name' => 'required|max:255',
+    'surname' => 'required|max:255',
+    'email' => 'required|email|max:255',
+  ];
+
   public static $errorMessages = [
     'name.required' => 'El nombre es requerido',
     'name.max' => 'El nombre no puede contener más de 255 carateres',

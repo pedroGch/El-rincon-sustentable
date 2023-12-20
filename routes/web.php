@@ -47,6 +47,8 @@ Route::get('/perfil_usuario', [\App\Http\Controllers\SesionController::class, 'p
   ->middleware(['auth'])
   ->middleware('only_user_allow')
   ->name('perfilUsuario');
+Route::get('/perfil_usuario/editar', [\App\Http\Controllers\SesionController::class, 'formularioEditarDatosUsuario']);
+Route::post('/perfil_usuario/editar', [\App\Http\Controllers\SesionController::class, 'editarDatosUsuario']);
 
 //RUTAS RELACIONADAS AL PANEL DE ADMINISTRACIÓN
 Route::get('/panel_admin', [\App\Http\Controllers\BlogController::class, 'dashboardAdmin'])

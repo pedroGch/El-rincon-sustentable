@@ -104,6 +104,42 @@ class SesionController extends Controller
     ]);
   }
 
+  /**
+   * Método que edita los datos del usuario
+   * @param Request $request
+   * @return \Illuminate\View\View
+   */
+  public function formularioEditarDatosUsuario(Request $request)
+  {
+    $user = User::findOrFail(Auth::user()->id);
+    return view('editar_datos_usuario', [
+      'user' => $user,
+    ]);
+  }
+
+
+  /**
+   * Método que edita los datos del usuario
+   * @param Request $request
+   * @return \Illuminate\View\View
+   */
+  public function editarDatosUsuario(Request $request)
+  {
+    $request->validate(User::$updateRules, User::$errorMessages);
+    try {
+      $data = $request->only(['name', 'surname', 'email']);
+      $user = User::findOrFail(Auth::user()->id);
+      $user->update($data);
+
+      return redirect('/perfil_usuario')->with('status.message', 'Datos actualizados con éxito')
+        ->with('status.type', 'success');
+    } catch (\Exception $e) {
+      return redirect('/perfil_usuario/editar')->with('status.message', 'Error al actualizar los datos: ' . $e->getMessage())
+        ->with('status.type', 'danger')
+        ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
+        ->withInput();
+    }
+  }
 
   /**
    * Muestra el panel de administración enviando el usuario logueado
