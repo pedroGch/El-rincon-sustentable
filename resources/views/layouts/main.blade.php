@@ -17,7 +17,7 @@
       <div class="flex w-full flex-wrap items-center justify-between px-3">
         <div class="flex items-center">
           <div class="mx-6 p-1 bg-white w-[80px]  shadow-lg">
-            <img src="{{ asset('img/logo.png') }}" alt="logo del rincón sustentable" class=" w-screen my-2  ">
+            <img src="{{ asset('img/logo.png') }}" alt="logo del rincón sustentable" class="w-screen my-2">
               <h1 class="text-[0px]">El Rincón Sustentable</h1>
           </div>
           <div class="flex justify-center align-middle">

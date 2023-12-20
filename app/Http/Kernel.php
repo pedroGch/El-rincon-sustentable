@@ -66,5 +66,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         'only_admin_allow' => \App\Http\Middleware\OnlyAdminAllow::class,
+        'only_user_allow' => \App\Http\Middleware\OnlyUserAllow::class,
+        'only_checkout_with_full_trolley' => \App\Http\Middleware\OnlyCheckoutWithFullTrolley::class,
     ];
 }
