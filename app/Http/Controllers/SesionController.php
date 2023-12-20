@@ -50,7 +50,7 @@ class SesionController extends Controller
     $request->session()->invalidate();
     $request->session()->regenerateToken();
 
-    return view('welcome')->with('status.message', 'Sesión cerrada correctamente')
+    return view('iniciar_sesion')->with('status.message', 'Sesión cerrada correctamente')
       ->with('status.type', 'green');
   }
 
