@@ -166,6 +166,7 @@ class BlogController extends Controller
   {
     $adminUsers = User::where('rol', 'admin')->get();
     $productosActivos = Producto::where('estado', 'activo')->get();
+    $productosInactivos = Producto::where('estado', 'inactivo')->get();
 
     return view('dashboard_admin', [
       'noticias' => Noticia::all(),
@@ -173,7 +174,8 @@ class BlogController extends Controller
       'usuariosMenosElLogueado' => User::where('id', '!=', Auth::user()->id)->get(),
       'usuariosTotales' => User::all(),
       'adminUsers' => $adminUsers,
-      'productosActivos'=> $productosActivos
+      'productosActivos'=> $productosActivos,
+      'productosInactivos'=> $productosInactivos,
     ]);
   }
 }

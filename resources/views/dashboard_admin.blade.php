@@ -4,7 +4,11 @@
  * @var \App\Models\Usuario[] | \Illuminate\Database\Eloquent\Collection $usuarios
  * @var \App\Models\Noticia[] | \Illuminate\Database\Eloquent\Collection $noticias
  * @var \App\Models\Producto[] | \Illuminate\Database\Eloquent\Collection $productos
+ * @var \App\Models\Producto[] | \Illuminate\Database\Eloquent\Collection $productosActivos
+ * @var \App\Models\Producto[] | \Illuminate\Database\Eloquent\Collection $productosInactivos
  * @var \App\Models\User $adminUsers
+ * @var \App\Models\Compra[] | \Illuminate\Database\Eloquent\Collection $compras
+ *
  */
 ?>
 
@@ -45,6 +49,22 @@
         </div>
       </div>
     </div>
+    <div>
+      <div class="flex flex-wrap justify-center">
+        <div class="mb-5">
+          <a href="<?= url('tabla_compras_usuarios') ?>">
+            <div class="w-full botonPersonalizado" data-te-ripple-init data-te-ripple-color="light">
+              <p>Ver usuarios y compras</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="mb-8 flex flex-wrap justify-center">
+        <div>
+          <p class="text-center">Actualmente tenés {{ $usuariosTotales->count() - $adminUsers->count() }} usuarios registrados en el sitio.</p>
+        </div>
+      </div>
+    </div>
     <div class="flex-1">
       <div class="flex flex-wrap justify-center">
         <div class="mb-5">
@@ -62,21 +82,42 @@
       </div>
     </div>
   </div>
-  <div>
-    <div class="flex flex-wrap justify-center">
-      <div class="mb-5">
-        <a href="<?= url('tabla_compras_usuarios') ?>">
-          <div class="w-full botonPersonalizado" data-te-ripple-init data-te-ripple-color="light">
-            <p>Ver usuarios y compras</p>
-          </div>
-        </a>
-      </div>
-    </div>
-    <div class="mb-8 flex flex-wrap justify-center">
-      <div>
-        <p class="text-center">Actualmente tenés {{ $usuariosTotales->count() - $adminUsers->count() }} usuarios registrados en el sitio.</p>
-      </div>
-    </div>
+
+  <div class="flex justify-center">
+    <canvas id="miGrafico" width="200" height="200"></canvas>
   </div>
 </section>
+
+
+
+    <script>
+        var ctx = document.getElementById('miGrafico').getContext('2d');
+        var productosActivos = @json($productos); // Convierte los datos de PHP a formato JSON para JavaScript
+
+        var productosActivos = @json($productosActivos);
+        var productosInactivos = @json($productosInactivos);
+
+        var chart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Productos Activos', 'Productos Inactivos'],
+                datasets: [{
+                    label: 'Productos',
+                    data: [productosActivos.length, productosInactivos.length],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                // Configuración adicional si es necesaria
+            }
+        });
+    </script>
 @endsection

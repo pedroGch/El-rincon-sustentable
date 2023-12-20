@@ -9,6 +9,7 @@
   @vite('resources/css/styles.css')
   @vite('resources/js/app.js')
   <title> @yield('title') :: El Rincón Sustentable</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div id="app" class="min-h-screen flex flex-col">

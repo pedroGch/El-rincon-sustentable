@@ -4,8 +4,8 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "db:seeder" : "php artisan migrate:refresh --seed && npm run dev",
-        "host" : "php artisan serve --host test.com"
+        "db:seeder": "php artisan migrate:refresh --seed && npm run dev",
+        "host": "php artisan serve --host test.com"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.15",
@@ -16,6 +16,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "chart.js": "^4.4.1",
         "sweetalert2": "^11.7.31",
         "tw-elements": "^1.0.0"
     }
