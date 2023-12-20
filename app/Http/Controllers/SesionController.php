@@ -28,14 +28,15 @@ class SesionController extends Controller
     $credentials = $request->only(['email', 'password']);
     if (!Auth::attempt($credentials)) {
       return redirect('/iniciar_sesion')->with('status.message', 'Email y/o contraseña incorrecta')
-      ->with('status.type', 'danger')
+      ->with('status.type', 'red')
       ->with('status.svg', 'M17.293 6.293a1 1 0 0 0-1.414-1.414L12 10.586 7.707 6.293a1 1 0 0 0-1.414 1.414L10.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414L12 13.414l4.293 4.293a1 1 0 0 0 1.414-1.414L13.414 12l4.293-4.293z')
       ->withInput();
     }
 
     $url = (Auth::user()->rol == 'admin') ? '/panel_admin' : '/perfil_usuario';
 
-    return redirect($url)->with('status.message', 'Hola ' . Auth::user()->name . ', iniciaste sesión con éxito');
+    return redirect($url)->with('status.message', 'Hola ' . Auth::user()->name . ', iniciaste sesión con éxito')
+      ->with('status.type', 'green');
   }
 
   /**
@@ -49,7 +50,8 @@ class SesionController extends Controller
     $request->session()->invalidate();
     $request->session()->regenerateToken();
 
-    return view('welcome')->with('status.message', 'Sesión cerrada correctamente');
+    return view('welcome')->with('status.message', 'Sesión cerrada correctamente')
+      ->with('status.type', 'green');
   }
 
   /**
@@ -78,7 +80,8 @@ class SesionController extends Controller
 
       Auth::attempt($credentials);
 
-      return redirect('/perfil_usuario')->with('status.message', 'Cuenta creada con éxito');
+      return redirect('/perfil_usuario')->with('status.message', 'Cuenta creada con éxito')
+        ->with('status.type', 'green');
     } catch (\Exception $e) {
       return redirect('/crear_cuenta')->with('status.message', 'Error al crear la cuenta: ' . $e->getMessage())
         ->with('status.type', 'danger')
@@ -132,7 +135,7 @@ class SesionController extends Controller
       $user->update($data);
 
       return redirect('/perfil_usuario')->with('status.message', 'Datos actualizados con éxito')
-        ->with('status.type', 'success');
+        ->with('status.type', 'green');
     } catch (\Exception $e) {
       return redirect('/perfil_usuario/editar')->with('status.message', 'Error al actualizar los datos: ' . $e->getMessage())
         ->with('status.type', 'danger')

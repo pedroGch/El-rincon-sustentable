@@ -62,7 +62,8 @@ class ProductoController extends Controller
       $producto->compras()->attach($request->input('compras') ?? []);
 
       return redirect('/tienda/gestor_productos')
-        ->with('status.message', 'El producto fue correctamente agregado');
+        ->with('status.message', 'El producto fue correctamente agregado')
+        ->with('status.type', 'green');
     } catch (\Exception $e) {
       return redirect()
         ->back()
@@ -105,7 +106,8 @@ class ProductoController extends Controller
       $producto->update($data, $request->except(['_token']));
 
       return redirect('/tienda/gestor_productos')
-        ->with('status.message', 'El producto fue correctamente editado');
+        ->with('status.message', 'El producto fue correctamente editado')
+        ->with('status.type', 'green');
     } catch (\Exception $e) {
       return redirect()
         ->back()
@@ -134,7 +136,7 @@ class ProductoController extends Controller
 
         return redirect('/tienda/gestor_productos')
             ->with('status.message', 'El producto fue correctamente eliminado.')
-            ->with('status.type', 'success');
+            ->with('status.type', 'green');
     } catch (\Exception $e) {
         return redirect()
             ->back()

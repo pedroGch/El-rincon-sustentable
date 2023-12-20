@@ -60,7 +60,8 @@ class BlogController extends Controller
       if ($noticia->imagen && Storage::has($noticia->imagen)){
         Storage::delete($noticia->imagen);
       }
-      return redirect('/blog/gestor_noticias')->with('status.message', 'La noticia ' . e($noticia->titulo) . ' fue eliminada con éxito.');
+      return redirect('/blog/gestor_noticias')->with('status.message', 'La noticia "' . e($noticia->titulo) . '" fue eliminada con éxito.')
+        ->with('status.type', 'green');;
     } catch (\Exception $e) {
       return redirect()
         ->back()
@@ -96,7 +97,8 @@ class BlogController extends Controller
       }
       Noticia::create($data);
       return redirect('/blog/gestor_noticias')
-        ->with('status.message', 'La noticia fue correctamente agregada');
+        ->with('status.message', 'La noticia fue correctamente agregada')
+        ->with('status.type', 'green');
     } catch (\Exception $e) {
       return redirect()
         ->back()
@@ -143,7 +145,8 @@ class BlogController extends Controller
       $noticia->update($data, $request->except(['_token']));
       // $noticia->update($request->except(['_token']));
       return redirect('/blog/gestor_noticias')
-        ->with('status.message', 'La noticia fue correctamente editada');
+        ->with('status.message', 'La noticia fue correctamente editada')
+        ->with('status.type', 'green');
     } catch (\Exception $e) {
       return redirect()
         ->back()

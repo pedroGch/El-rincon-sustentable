@@ -60,7 +60,8 @@ public function index()
       $productoEnCarrito->update(['cantidad_prod' => $nuevaCantidad]);
 
       return redirect()->route('tablaCarrito')
-        ->with('status.message', 'El producto se agregó al carrito');
+        ->with('status.message', 'El producto se agregó al carrito')
+        ->with('status.type', 'green');
     } else {
       // Si el producto no está en el carrito, crea un nuevo registro
       Carrito::create([
@@ -98,7 +99,8 @@ public function index()
       $productoEnCarrito->update(['cantidad_prod' => $nuevaCantidad]);
 
       return redirect()->route('tablaCarrito')
-        ->with('status.message', 'La cantidad se actualizó en el carrito');
+        ->with('status.message', 'La cantidad se actualizó en el carrito')
+        ->with('status.type', 'green');
     }
 
     return redirect()->route('tablaCarrito');
@@ -124,7 +126,8 @@ public function index()
       $productoEnCarrito->delete();
 
       return redirect()->route('tablaCarrito')
-        ->with('status.message', 'El producto se eliminó del carrito');
+        ->with('status.message', 'El producto se eliminó del carrito')
+        ->with('status.type', 'green');
     }
 
     return redirect()->route('tablaCarrito');
