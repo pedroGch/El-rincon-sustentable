@@ -13,6 +13,11 @@ use MercadoPago\Client\Preference\PreferenceClient;
 
 class MercadoPagoController extends Controller
 {
+
+/**
+ * Método que retorna la vista del checkout y crea la preferencia de pago de Mercado Pago
+ * @return \Illuminate\View
+ */
 public function obtenerCarrito()
 {
   try {
@@ -61,10 +66,12 @@ public function obtenerCarrito()
   } catch (\Exception $e) {
     dd($e);
   }
-
-
 }
 
+/**
+ * Método que procesa el pago exitoso
+ * @return \Illuminate\View
+ */
 public function success()
 {
   $productos = Carrito::where('usuario_id', Auth::user()->id)
@@ -92,18 +99,26 @@ public function success()
   $metodosCarrito = new CarritoController();
   $metodosCarrito->vaciarCarrito();
 
-  $user = User::findOrFail(Auth::user()->id);
-  $compras = Compra::where('usuario_id', Auth::user()->id)
-    ->where('importe_compra', '>', 0)
-    ->with(['productos'])->get();
-    return view('perfil_usuario', [
-      'user'=> Auth::user(),
-      'user_db' => $user,
-      'compras' => $compras,
-    ])
-    ->with('status.message', 'El pago fue procesado correctamente. ¡Muchas gracias por tu compra!');
+  return view('tienda.payment_success');
+}
+
+/**
+ * Método que procesa el pago pendiente
+ * @return \Illuminate\View
+ */
+public function pending()
+{
+    return view('tienda.payment_pending');
+}
 
 
+/**
+ * Método que procesa el pago rechazado
+ * @return \Illuminate\View
+ */
+public function failure()
+{
+  return view('tienda.payment_failure');
 }
 
 }
