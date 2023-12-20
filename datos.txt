@@ -9,7 +9,7 @@ Estudiantes:
                      Valdiviezo, Ezequiel Francisco.
                      Scotto, Rocío Belén.
   Docente: Gallino, Santiago.
-  Carácter de entrega: 2do parcial.
+  Carácter de entrega: Final.
 
 
 Instalación del Proyecto:
