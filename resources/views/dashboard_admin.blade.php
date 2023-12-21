@@ -82,42 +82,39 @@
       </div>
     </div>
   </div>
-
   <div class="flex justify-center">
     <canvas id="miGrafico" width="200" height="200"></canvas>
   </div>
 </section>
 
+<script>
+  var ctx = document.getElementById('miGrafico').getContext('2d');
+  var productosActivos = @json($productos); // Convierte los datos de PHP a formato JSON para JavaScript
 
+  var productosActivos = @json($productosActivos);
+  var productosInactivos = @json($productosInactivos);
 
-    <script>
-        var ctx = document.getElementById('miGrafico').getContext('2d');
-        var productosActivos = @json($productos); // Convierte los datos de PHP a formato JSON para JavaScript
-
-        var productosActivos = @json($productosActivos);
-        var productosInactivos = @json($productosInactivos);
-
-        var chart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Productos Activos', 'Productos Inactivos'],
-                datasets: [{
-                    label: 'Productos',
-                    data: [productosActivos.length, productosInactivos.length],
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(255, 99, 132, 0.2)',
-                    ],
-                    borderColor: [
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(255, 99, 132, 1)',
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                // Configuración adicional si es necesaria
-            }
-        });
-    </script>
+  var chart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Productos Activos', 'Productos Inactivos'],
+      datasets: [{
+        label: 'Productos',
+        data: [productosActivos.length, productosInactivos.length],
+        backgroundColor: [
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+        ],
+        borderColor: [
+          'rgba(75, 192, 192, 1)',
+          'rgba(255, 99, 132, 1)',
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      // Configuración adicional si es necesaria
+    }
+  });
+</script>
 @endsection
