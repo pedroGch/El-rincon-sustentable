@@ -99,10 +99,10 @@ Route::post('/carrito/eliminar/{id}', [\App\Http\Controllers\CarritoController::
   ->middleware('only_user_allow')
   ->name('eliminarProductoCarrito');
 Route::post('/carrito/{id}', [\App\Http\Controllers\CarritoController::class, 'agregarProductoCarrito'])
-    ->middleware(['auth'])
-    ->whereNumber('id')
-    ->middleware('only_user_allow')
-    ->name('agregarProductoCarrito');
+  ->middleware(['auth'])
+  ->whereNumber('id')
+  ->middleware('only_user_allow')
+  ->name('agregarProductoCarrito');
 Route::get('/checkout', [\App\Http\Controllers\MercadoPagoController::class, 'obtenerCarrito'])
   ->middleware(['auth'])
   ->middleware('only_user_allow')
